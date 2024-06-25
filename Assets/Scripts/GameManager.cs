@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public ScoreSystem _score;
 
     [SerializeField] private ColorSO[] _colorList;
+    [SerializeField, Tooltip("The color that the cat will always be. Leave null for random cat color choice.")] private ColorSO _enforcedCatColor = null;
     public int NumberOfColors => _colorList.Length;
 
     public GameObject catGameObject;
@@ -93,7 +94,7 @@ public class GameManager : MonoBehaviour
 
         Collectable[] list = FindObjectsOfType<Collectable>();
 
-        foreach(Collectable item in list)
+        foreach (Collectable item in list)
         {
             item.OnCollect.AddListener(UpdateScoreCollectable);
         }
@@ -111,7 +112,7 @@ public class GameManager : MonoBehaviour
 
         // Instantiate, then assign position+rotation
         catGameObject = Instantiate(catGameObject);
-        if(spawnLocPrefab.Length == 1)
+        if (spawnLocPrefab.Length == 1)
         {
             catGameObject.transform.SetPositionAndRotation(spawnLocPrefab[0].transform.position, spawnLocPrefab[0].transform.rotation);
             UpdateCatColor();
@@ -120,7 +121,7 @@ public class GameManager : MonoBehaviour
         {
             ChangeCatLocation(0 <= _firstSpawnIndex && _firstSpawnIndex < spawnLocPrefab.Length ? _firstSpawnIndex : null);
         }
-                
+
         CatYarnInteraction CatInteract = catGameObject.GetComponent<CatYarnInteraction>();
 
         CatInteract.OnCatScored.AddListener(UpdateScore);
@@ -181,7 +182,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateCatColor()
     {
-        ColorSO color = GetRandomColor();
+        ColorSO color = _enforcedCatColor != null ? _enforcedCatColor : GetRandomColor();
         catGameObject.GetComponent<CatYarnInteraction>().SetFavoriteColor(color);
         catGameObject.GetComponentInChildren<Renderer>().material.color = color.Color;
     }

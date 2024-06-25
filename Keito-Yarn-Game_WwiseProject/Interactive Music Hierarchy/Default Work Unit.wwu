@@ -1904,6 +1904,1048 @@
 								</MusicPlaylistItem>
 							</Playlist>
 						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="KeitoChildrens" ID="{D15BEAA7-5EBA-4D81-9760-293EF5105872}" ShortID="934166719">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49230A57-CA9B-4EC7-A979-132E006EAD43}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="JasminaCarevic_Keito_Childrens_124bmp_4-4" ID="{24FB70CC-4F80-47A5-A195-BDAC7114BF19}" ShortID="35096884">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="61935.4875283447"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49230A57-CA9B-4EC7-A979-132E006EAD43}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="JasminaCarevic_Keito_Childrens_124bmp_4-4" ID="{50B2CCC9-7F28-4195-A1AF-09DB9A658314}" ShortID="911549696">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="JasminaCarevic_Keito_Childrens_124bmp_4-4" ID="{4371B5BC-FE97-479E-992B-80F6122D4459}">
+													<Language>SFX</Language>
+													<AudioFile>JasminaCarevic_Keito_Childrens_124bmp_4-4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="70731105"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{53ADA566-78E5-4F1F-AAA1-71422741A18C}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{8F39C30F-CB45-4F10-BD33-EC8089A713BD}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="JasminaCarevic_Keito_Childrens_124bmp_4-4" ID="{94B6B7F2-23A7-4202-8F51-61B5116162CB}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="61935.4875283447"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="JasminaCarevic_Keito_Childrens_124bmp_4-4" ID="{4371B5BC-FE97-479E-992B-80F6122D4459}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{8B21F195-2769-42A0-9B73-D3F5A1CF1269}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{23753E03-0B34-4897-93CC-DFA1C518C363}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="61935.4875283447"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{9D134EEB-8F66-42A6-A505-FC6DBF10B41D}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="3870.96774193548"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{76B28190-EEE6-4C3F-9836-07A9E073E488}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="7741.93548387097"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{72E0A056-DD21-4F3A-8FF9-CD14E46DE1BF}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="11612.9032258065"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{900897F2-5705-4DC3-A58E-AEE5D57B7846}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="15483.8709677419"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{604F6D24-7A05-470E-83C3-DA6A24CA4AE6}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="19354.8387096774"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{9EDE8DC3-F030-4F04-95AD-C4E122180E45}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="23225.8064516129"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{45BD7317-C611-4392-87CC-3ACAD412F0D7}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="27096.7741935484"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{C5DEFD41-6094-41D7-84B6-00D1C44A803D}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="30967.7419354839"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{0F811D37-69B4-4E3F-9CBA-0BB23DF1C53A}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="34838.7096774194"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{F5C23F07-F519-4039-9B26-EBCA760F484E}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="38709.6774193548"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{06136772-BCB4-4312-9265-0DCDA5CA5682}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="42580.6451612903"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{7ECC4C39-F1E5-40DE-94D3-FD02DB1F6D8B}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="46451.6129032258"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{B4937805-A2FA-46AE-A313-E8C606C155A3}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="50322.5806451613"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{7DB16F64-E888-436A-9200-8A85DF723703}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="54193.5483870968"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{76D41447-3604-4AD5-B6EC-A4FB6B387098}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="58064.5161290323"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{8AF4DB0A-1F97-4A59-BDDD-E3CDF4385C2C}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{1908DD04-BB8C-44DC-AFDC-4CC8FF75C4BD}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{A72AF86A-3321-4EAC-8353-0B16132F5CAB}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{17ACF441-A36E-437D-B914-2361CA7459E5}" ShortID="738958896">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+										<Property Name="PlayMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{DF657A92-EDE7-4850-A079-E1C591B0D61F}" ShortID="18223520">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="JasminaCarevic_Keito_Childrens_124bmp_4-4" ID="{24FB70CC-4F80-47A5-A195-BDAC7114BF19}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="KeitoRock" ID="{85734E81-0E89-40AD-82F0-5A4F48FAFBF4}" ShortID="615808737">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49230A57-CA9B-4EC7-A979-132E006EAD43}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="JasminaCarevic_Keito_Rock_124bmp_4-4" ID="{1AC947C6-1C7C-4808-83B2-E9EBA3FD24A1}" ShortID="727794413">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="61935.4875283447"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49230A57-CA9B-4EC7-A979-132E006EAD43}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="JasminaCarevic_Keito_Rock_124bmp_4-4" ID="{C5DD5269-FF51-4A1A-8D33-3A49211E4730}" ShortID="255540677">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="JasminaCarevic_Keito_Rock_124bmp_4-4" ID="{EBEAEF95-9454-49EB-9FA2-55F0C2D54AA0}">
+													<Language>SFX</Language>
+													<AudioFile>JasminaCarevic_Keito_Rock_124bmp_4-4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="912151954"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{8D29B5A9-E393-42D5-88F4-01BA9FE0BF14}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{BC34BC23-7E21-4870-A1E1-8CAAB66AC1C1}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="JasminaCarevic_Keito_Rock_124bmp_4-4" ID="{F9CECC65-C825-4FE3-BD00-569B944BC58E}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="61935.4875283447"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="JasminaCarevic_Keito_Rock_124bmp_4-4" ID="{EBEAEF95-9454-49EB-9FA2-55F0C2D54AA0}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{D93BEF51-8D3F-429A-8BC3-9CADB7BC8D06}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{FCF8AFDF-4EC4-4D4E-A2DF-218B36E13865}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="61935.4875283447"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{968CC611-F580-40AB-9C8A-4EF5301F06FF}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="3870.96774193548"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{EEEE2DFF-A54C-4E5D-B321-CC6932B39B44}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="7741.93548387097"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{E7E57757-14EB-4D9B-9549-90BFE6A8B57F}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="11612.9032258065"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{B4212B6D-3EB5-4160-889D-31DE9BB39B87}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="15483.8709677419"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{9DB6224D-086C-466D-8CF3-B0A680CC6868}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="19354.8387096774"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{38A99A21-0F00-47B0-9523-1102450F9AE0}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="23225.8064516129"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{94CF8342-A913-4EFF-8F86-571C21A5A224}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="27096.7741935484"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{9BFF6DEA-800B-4587-8F49-D04A114C0C2A}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="30967.7419354839"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{03A7CD29-C5CB-4664-8B51-E6E03132CEB5}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="34838.7096774194"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{5CC9680A-B326-423A-B080-87FE58AE5F31}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="38709.6774193548"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{E9C405C0-6970-44EB-B9B0-EFBA0D93B4CF}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="42580.6451612903"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{71610D64-8AAA-4D2D-AA79-004BA102409B}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="46451.6129032258"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{3BBCAECB-6694-40E1-9250-9A2CA7E8F8EA}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="50322.5806451613"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{0BE489A4-AD28-4202-A403-D00DF00A488A}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="54193.5483870968"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{6388AF85-D38A-4A7A-A1C9-023B3AA46675}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="58064.5161290323"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{D139143D-7AB7-470D-8F42-B959736A37D0}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{86EF1897-5A26-4E52-925D-96232D502343}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{6067655E-75EE-43FF-9AF1-32945F829E13}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{77A95803-335F-4954-A886-951A62D71B90}" ShortID="480675044">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{E754DE43-96AD-48A0-A9AC-A038E5787409}" ShortID="259854672">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="JasminaCarevic_Keito_Rock_124bmp_4-4" ID="{1AC947C6-1C7C-4808-83B2-E9EBA3FD24A1}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="KeitoDisco" ID="{C649C57B-FA01-4368-8E72-CAE92EAD1018}" ShortID="1013351132">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49230A57-CA9B-4EC7-A979-132E006EAD43}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="JasminaCarevic_Keito_Disco_124bmp_4-4" ID="{6396EC15-D3EB-44EE-A108-774EAB886D8C}" ShortID="309029541">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="61935.4875283447"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49230A57-CA9B-4EC7-A979-132E006EAD43}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="JasminaCarevic_Keito_Disco_124bmp_4-4" ID="{8D636F24-6796-4787-8A18-DD7AE650593D}" ShortID="854722838">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="JasminaCarevic_Keito_Disco_124bmp_4-4" ID="{15E88CB4-B02B-4344-88E5-21F3806E5636}">
+													<Language>SFX</Language>
+													<AudioFile>JasminaCarevic_Keito_Disco_124bmp_4-4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="542991959"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{CD98FDF8-AA34-4875-8E7B-4CC442BE87B7}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{C614D880-FE7D-4171-B2AC-9296948BDEFD}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="JasminaCarevic_Keito_Disco_124bmp_4-4" ID="{84C57FDB-1195-49DC-8E36-965110905823}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="61935.4875283447"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="JasminaCarevic_Keito_Disco_124bmp_4-4" ID="{15E88CB4-B02B-4344-88E5-21F3806E5636}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{78F64EFE-A47C-4CF7-B3A5-B85D810A902A}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{8EE47839-EC2D-4B24-A3EC-0F1897A1ACA0}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="61935.4875283447"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{1366329A-D7E4-4A39-9462-425AA01DFADB}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="3870.96774193548"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{33CDC4BE-A301-465D-82FF-365872F3397E}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="7741.93548387097"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{162E2CB9-2E49-41AF-A97F-0ED58D323624}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="11612.9032258065"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{0FE351B0-D6E2-41DD-B29D-3D19C3016A2D}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="15483.8709677419"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{130946B8-33D3-4339-B365-D885F7FA6CC1}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="19354.8387096774"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{472C614D-ABFE-4AA2-A9A2-D2EA9D42FA3E}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="23225.8064516129"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{4D784808-E5A7-412D-87B1-DC2C7E8C32CF}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="27096.7741935484"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{71045EF5-072F-4E92-A4A2-97E90A94C1D9}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="30967.7419354839"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{E4D2B2AC-691B-40D3-87CB-62C85B299F02}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="34838.7096774194"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{15E2C8CE-A123-4172-891C-22692C353C71}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="38709.6774193548"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{0857EB80-13DE-423D-ACC7-9A6016BCF7CF}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="42580.6451612903"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{8F16A249-B4C1-4225-94B7-BF6EE28D8EB1}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="46451.6129032258"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{3DD93CAE-45D6-4E81-9C8A-AE73A2B4B15D}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="50322.5806451613"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{2F853E04-3B8A-4F31-BEE0-8E74E1536AAE}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="54193.5483870968"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{4EC8A266-436C-4C08-845A-5051A73721EB}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+															<Property Name="TimeMs" Type="Real64" Value="58064.5161290323"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="" ID="{550E2F43-684B-4026-997E-D7031B2B6F0C}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="2"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{AD6C7DB5-325A-4FD6-AA05-18AB6FF05D94}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{60D91771-4298-4B89-9F6A-58998AD32067}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{688F1869-1AF6-4333-B192-9DD1362E8916}" ShortID="753104180">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{4460D420-BD84-439D-AC7D-0AE880402DFE}" ShortID="730824906">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="JasminaCarevic_Keito_Disco_124bmp_4-4" ID="{6396EC15-D3EB-44EE-A108-774EAB886D8C}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicSegment Name="Keito_Drums_Transition" ID="{86B01164-7239-4F8D-9008-0CAB2ED393E5}" ShortID="140758178">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49230A57-CA9B-4EC7-A979-132E006EAD43}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Keito_Drums_Transition" ID="{73D562DE-CAD7-46F9-A91E-0E28AC4796FD}" ShortID="19452106">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Keito_Drums_Transition" ID="{34455D64-67A7-44F6-9E5A-E45E11D09647}">
+											<Language>SFX</Language>
+											<AudioFile>Keito_Drums_Transition.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="391273396"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{874877C6-7313-4B7D-B9B1-998CEBB7A678}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{D1B1AED3-ED70-4792-926C-362AC1B67EF3}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Keito_Drums_Transition" ID="{81F5F9BB-18F2-4C31-B04F-BAFFC9A4714E}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="1935.48752834467"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Keito_Drums_Transition" ID="{34455D64-67A7-44F6-9E5A-E45E11D09647}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{91A8C8E0-2D6D-4F7A-B5A8-D7B940219BAD}">
+												<PropertyList>
+													<Property Name="TimeMs" Type="Real64" Value="967.741935483871"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{9FA588E9-3B13-47FB-8B6E-8EBFE267FECE}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="967.741935483871"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+						<MusicSegment Name="Keito_Drums_Transition_2" ID="{401C0414-59AE-441A-8B4C-FF156120AAD4}" ShortID="34203324">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49230A57-CA9B-4EC7-A979-132E006EAD43}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Keito_Drums_Transition_2" ID="{5BA072FB-813A-421A-9A0A-2661005187B7}" ShortID="867938364">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="MasterVolume" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6EA42FA9-AF09-40E7-B758-5A08C9D5B94D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Keito_Drums_Transition_2" ID="{FEFD1494-9696-4D92-8B51-9FA5187D5B72}">
+											<Language>SFX</Language>
+											<AudioFile>Keito_Drums_Transition_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="7798867"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{29338E60-BA7C-40A4-8778-2D031B3943F7}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{440080BB-6846-4260-8D9B-83C9F6859308}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Keito_Drums_Transition_2" ID="{15E18D83-F328-4DC5-98D3-FCD7CEB43F91}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="1935.48752834467"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Keito_Drums_Transition_2" ID="{FEFD1494-9696-4D92-8B51-9FA5187D5B72}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{FE4F96D8-3F72-420B-9616-36243EAD7213}">
+												<PropertyList>
+													<Property Name="TimeMs" Type="Real64" Value="967.741935483871"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{F62ACF6D-4D7B-46F9-9E99-1DB362B005D1}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="967.741935483871"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
 					</ChildrenList>
 					<TransitionList>
 						<MusicTransition Name="Root" ID="{08FF9F00-B156-4B32-A357-80616F9A2B9C}">
@@ -1942,6 +2984,195 @@
 										</Reference>
 									</ReferenceList>
 									<TransitionInfo/>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{D867F11E-0B06-4080-AF2B-A665C2D48BCA}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+										<Property Name="DestinationPlaylistJumpTo" Type="int16" Value="2"/>
+										<Property Name="EnableTransitionFadeIn" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="PlayTransitionPostExit" Type="bool" Value="False"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="KeitoDisco" ID="{C649C57B-FA01-4368-8E72-CAE92EAD1018}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="KeitoChildrens" ID="{D15BEAA7-5EBA-4D81-9760-293EF5105872}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<TransitionObjectRef Name="Keito_Drums_Transition_2" ID="{401C0414-59AE-441A-8B4C-FF156120AAD4}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										<TransitionFadeIn>
+											<MusicFade Name="Transition Fade-in" ID="{3AAEF156-E0EF-4077-B251-CDAA14F4B0AF}">
+												<PropertyList>
+													<Property Name="FadeOffset" Type="Real64" Value="-1.936"/>
+													<Property Name="FadeTime" Type="Real64" Value="1.936"/>
+												</PropertyList>
+											</MusicFade>
+										</TransitionFadeIn>
+										<TransitionFadeOut>
+											<MusicFade Name="Transition Fade-out" ID="{075F39C9-3A1F-4C87-B8D6-8FB594B469E1}">
+												<PropertyList>
+													<Property Name="FadeOffset" Type="Real64" Value="3.872"/>
+													<Property Name="FadeTime" Type="Real64" Value="3.872"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</TransitionFadeOut>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{13A525A0-C090-40A7-A8F3-BB9181451F55}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+										<Property Name="DestinationPlaylistJumpTo" Type="int16" Value="2"/>
+										<Property Name="EnableTransitionFadeIn" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="PlayTransitionPostExit" Type="bool" Value="False"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="KeitoChildrens" ID="{D15BEAA7-5EBA-4D81-9760-293EF5105872}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="KeitoDisco" ID="{C649C57B-FA01-4368-8E72-CAE92EAD1018}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<TransitionObjectRef Name="Keito_Drums_Transition_2" ID="{401C0414-59AE-441A-8B4C-FF156120AAD4}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										<TransitionFadeIn>
+											<MusicFade Name="Transition Fade-in" ID="{83D5134C-95C2-42B4-9929-A718DC711BC6}">
+												<PropertyList>
+													<Property Name="FadeOffset" Type="Real64" Value="-1.936"/>
+													<Property Name="FadeTime" Type="Real64" Value="1.936"/>
+												</PropertyList>
+											</MusicFade>
+										</TransitionFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{BE0E2326-0689-4DBE-B653-B5586062F7B2}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+										<Property Name="DestinationPlaylistJumpTo" Type="int16" Value="2"/>
+										<Property Name="EnableTransitionFadeIn" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="PlayTransitionPostExit" Type="bool" Value="False"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="KeitoRock" ID="{85734E81-0E89-40AD-82F0-5A4F48FAFBF4}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="KeitoChildrens" ID="{D15BEAA7-5EBA-4D81-9760-293EF5105872}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<TransitionObjectRef Name="Keito_Drums_Transition_2" ID="{401C0414-59AE-441A-8B4C-FF156120AAD4}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										<TransitionFadeIn>
+											<MusicFade Name="Transition Fade-in" ID="{90C5A26E-5F05-4B95-BCBA-FC22542461E4}">
+												<PropertyList>
+													<Property Name="FadeOffset" Type="Real64" Value="-1.936"/>
+													<Property Name="FadeTime" Type="Real64" Value="1.936"/>
+												</PropertyList>
+											</MusicFade>
+										</TransitionFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{740D9E50-30D7-4E2C-B2AA-B1C81277F9AB}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+										<Property Name="DestinationPlaylistJumpTo" Type="int16" Value="2"/>
+										<Property Name="EnableTransitionFadeIn" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="PlayTransitionPostExit" Type="bool" Value="False"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="KeitoChildrens" ID="{D15BEAA7-5EBA-4D81-9760-293EF5105872}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="KeitoRock" ID="{85734E81-0E89-40AD-82F0-5A4F48FAFBF4}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<TransitionObjectRef Name="Keito_Drums_Transition_2" ID="{401C0414-59AE-441A-8B4C-FF156120AAD4}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										<TransitionFadeIn>
+											<MusicFade Name="Transition Fade-in" ID="{02FC14C7-DE44-41F3-A72C-8260B34FDD23}">
+												<PropertyList>
+													<Property Name="FadeOffset" Type="Real64" Value="-1.936"/>
+													<Property Name="FadeTime" Type="Real64" Value="1.936"/>
+												</PropertyList>
+											</MusicFade>
+										</TransitionFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{DE85F87E-6122-426A-9E8D-F56AC5C8DF97}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+										<Property Name="DestinationPlaylistJumpTo" Type="int16" Value="2"/>
+										<Property Name="EnableTransitionFadeIn" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="PlayTransitionPostExit" Type="bool" Value="False"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="KeitoRock" ID="{85734E81-0E89-40AD-82F0-5A4F48FAFBF4}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="KeitoDisco" ID="{C649C57B-FA01-4368-8E72-CAE92EAD1018}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<TransitionObjectRef Name="Keito_Drums_Transition_2" ID="{401C0414-59AE-441A-8B4C-FF156120AAD4}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										<TransitionFadeIn>
+											<MusicFade Name="Transition Fade-in" ID="{5DEF8C78-0926-4034-A87A-FBA7A3E1BBB9}">
+												<PropertyList>
+													<Property Name="FadeOffset" Type="Real64" Value="-1.936"/>
+													<Property Name="FadeTime" Type="Real64" Value="1.936"/>
+												</PropertyList>
+											</MusicFade>
+										</TransitionFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{AA919A4F-B74E-49BA-AFA3-A330D340DA84}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+										<Property Name="DestinationPlaylistJumpTo" Type="int16" Value="2"/>
+										<Property Name="EnableTransitionFadeIn" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="PlayTransitionPostExit" Type="bool" Value="False"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="KeitoDisco" ID="{C649C57B-FA01-4368-8E72-CAE92EAD1018}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="KeitoRock" ID="{85734E81-0E89-40AD-82F0-5A4F48FAFBF4}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<TransitionObjectRef Name="Keito_Drums_Transition_2" ID="{401C0414-59AE-441A-8B4C-FF156120AAD4}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}"/>
+										<TransitionFadeIn>
+											<MusicFade Name="Transition Fade-in" ID="{A3F0FB3C-B042-4515-834A-66387CE663A5}">
+												<PropertyList>
+													<Property Name="FadeOffset" Type="Real64" Value="-1.936"/>
+													<Property Name="FadeTime" Type="Real64" Value="1.936"/>
+												</PropertyList>
+											</MusicFade>
+										</TransitionFadeIn>
+									</TransitionInfo>
 								</MusicTransition>
 							</ChildrenList>
 							<TransitionInfo/>
@@ -1990,6 +3221,30 @@
 							</Path>
 							<AudioNodeInfo>
 								<AudioNodeRef Name="Gameover_Playlist" ID="{9D0C124E-13E1-47DA-B87F-E69348C3BAD3}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Childrens_State" ID="{9B0C0C8E-CFBD-44DF-97F6-247C7AD243BB}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="KeitoChildrens" ID="{D15BEAA7-5EBA-4D81-9760-293EF5105872}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Disco_State" ID="{E375BBCF-7334-495E-B404-64EA9CCC0B7C}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="KeitoDisco" ID="{C649C57B-FA01-4368-8E72-CAE92EAD1018}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Rock_State" ID="{595620FE-D61A-43D3-A76F-B7D27784784A}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="KeitoRock" ID="{85734E81-0E89-40AD-82F0-5A4F48FAFBF4}" WorkUnitID="{1DA99209-5068-45EA-906C-0B308922446A}" Platform="Linked"/>
 							</AudioNodeInfo>
 						</Entry>
 					</EntryList>

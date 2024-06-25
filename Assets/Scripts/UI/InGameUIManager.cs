@@ -107,7 +107,7 @@ public class InGameUIManager : MonoBehaviour
         OnPauseMenuOpen.Invoke();
         _pauseUI.SetActive(true);
         _gameManager.PauseGame();
-        AkSoundEngine.SetState("GameStates", "Pause_State");
+      //  AkSoundEngine.SetState("GameStates", "Pause_State");
     }
 
     public void OnResetGame()
@@ -136,7 +136,7 @@ public class InGameUIManager : MonoBehaviour
     {
         OnPauseMenuClose.Invoke();
         _gameManager.ResumeGame();
-        AkSoundEngine.SetState("GameStates", "IngameState");
+      //  AkSoundEngine.SetState("GameStates", "IngameState");
         _pauseUI.SetActive(false);
     }
 
