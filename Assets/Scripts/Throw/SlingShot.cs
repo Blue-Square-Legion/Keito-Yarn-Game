@@ -26,7 +26,7 @@ public class SlingShot : MonoBehaviour
     [SerializeField] private bool _isToggle = false;
     [SerializeField] private AlignmentControl _horizontal;
     [SerializeField] private AlignmentControl _forceVertical;
-    
+
     [SerializeField, Range(0, 1)] private float _startForceMulti = 0.5f;
     #endregion
 
@@ -36,6 +36,7 @@ public class SlingShot : MonoBehaviour
     public UnityEvent OnThrow;
     public UnityEvent OnStartThrow;
     public UnityEvent<Queue<Color>> OnNextColorChange;
+    public UnityEvent<ColorSO> OnNewThrowingColorChange;
     #endregion
 
     private LineRenderer _lineRenderer;
@@ -54,7 +55,7 @@ public class SlingShot : MonoBehaviour
     private Vector3 StartOffset => CalcOffset(Camera.main.transform, _postionOffset);
     public GameObject CurrentBall => _currentBall;
 
-    public float mouseX { get { return _horizontal.Speed; } set { _horizontal.Speed = value; } } 
+    public float mouseX { get { return _horizontal.Speed; } set { _horizontal.Speed = value; } }
     public float mouseY { get { return _forceVertical.Speed; } set { _forceVertical.Speed = value; } }
 
     public static SlingShot Instance;
@@ -64,6 +65,7 @@ public class SlingShot : MonoBehaviour
         var gameManager = FindObjectOfType<GameManager>();
         _PrefabPicker.Setup(gameManager);
         OnNextColorChange.Invoke(GetNextColors());
+        OnNewThrowingColorChange.Invoke(_PrefabPicker.GetColorSO());
 
         _lineRenderer = gameObject.GetComponent<LineRenderer>();
 
@@ -97,7 +99,7 @@ public class SlingShot : MonoBehaviour
     {
         if (_isHeld)
         {
-            
+
         }
         // Try having them outside the is held
         UpdateRotation();
@@ -120,7 +122,7 @@ public class SlingShot : MonoBehaviour
         _force = _forceVertical.CalcRotation(_force, mouseDelta.y);
 
         _currentRotation.y = _horizontal.CalcRotation(_currentRotation.y, mouseDelta.x);
-        transform.localRotation = Quaternion.Euler(_currentRotation.x, _currentRotation.y, 0);        
+        transform.localRotation = Quaternion.Euler(_currentRotation.x, _currentRotation.y, 0);
     }
 
 
@@ -134,7 +136,7 @@ public class SlingShot : MonoBehaviour
         }
 
         _isHeld = _isToggle ? !_isHeld : true;
-        
+
         if (_isHeld)
         {
             StartThrow();
@@ -187,6 +189,7 @@ public class SlingShot : MonoBehaviour
 
         SpawnNextThrownObject();
         UpdateLineColor(_PrefabPicker.GetColor());
+        OnNewThrowingColorChange.Invoke(_PrefabPicker.GetColorSO());
 
         StartCoroutine(RunCoolDown(_afterFireCD));
         OnThrow.Invoke();
@@ -202,7 +205,7 @@ public class SlingShot : MonoBehaviour
             UpdateLineColor(_PrefabPicker.GetColor());
         }
         ResetSelf();
-        
+
         // Force the rotation of the slingshot to be 0 for Y to keep indicator at center
         transform.rotation = Quaternion.Euler(transform.rotation.x, 0, 0);
         gameSetupPhase = false;

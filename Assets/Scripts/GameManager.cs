@@ -37,7 +37,8 @@ public class GameManager : MonoBehaviour
     public UnityEvent OnGameEnd = new();
     // HACK: There should probably be a variable for giving score data properly, rather then just the event
     public UnityEvent<ScoreData> OnCatScored => _score.OnCatScored;
-    public UnityEvent<GameObject> OnCatSpawn;
+    public UnityEvent<GameObject> OnCatSpawn = new();
+    public UnityEvent<ColorSO> OnNewColor = new();
 
     public float Score
     {
@@ -185,6 +186,7 @@ public class GameManager : MonoBehaviour
         ColorSO color = _enforcedCatColor != null ? _enforcedCatColor : GetRandomColor();
         catGameObject.GetComponent<CatYarnInteraction>().SetFavoriteColor(color);
         catGameObject.GetComponentInChildren<Renderer>().material.color = color.Color;
+        OnNewColor.Invoke(color);
     }
 
     private ColorSO GetRandomColor()
