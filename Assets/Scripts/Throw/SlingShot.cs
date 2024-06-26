@@ -65,7 +65,6 @@ public class SlingShot : MonoBehaviour
         var gameManager = FindObjectOfType<GameManager>();
         _PrefabPicker.Setup(gameManager);
         OnNextColorChange.Invoke(GetNextColors());
-        OnNewThrowingColorChange.Invoke(_PrefabPicker.GetColorSO());
 
         _lineRenderer = gameObject.GetComponent<LineRenderer>();
 
@@ -204,6 +203,7 @@ public class SlingShot : MonoBehaviour
             SpawnNextThrownObject();
             UpdateLineColor(_PrefabPicker.GetColor());
         }
+        OnNewThrowingColorChange.Invoke(_PrefabPicker.GetColorSO());
         ResetSelf();
 
         // Force the rotation of the slingshot to be 0 for Y to keep indicator at center
