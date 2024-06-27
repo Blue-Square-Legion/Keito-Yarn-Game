@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 2505694825250285039}
   - component: {fileID: -7796720557547338020}
   - component: {fileID: -6499248760467099502}
+  - component: {fileID: 3962984202859031381}
   m_Layer: 8
   m_Name: Yarn
   m_TagString: Yarn
@@ -339,6 +340,8 @@ MonoBehaviour:
   YarnCollisionSound: Play_Yarn_Hit
   YarnMergeCollisionSound: Play_Yarn_Merge
   MaxSizeGlowSound: Play_MaxSizeGlow
+  fanEvent: Play_Fan
+  stopFanEvent: Stop_Fan
 --- !u!114 &2558765689392952487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,3 +397,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _intensity: 2
+--- !u!114 &3962984202859031381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998775315433358910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e6cfcb5add12c4d9420488c9f6742b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  focalpoint: {fileID: 0}

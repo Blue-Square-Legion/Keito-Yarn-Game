@@ -83,5 +83,25 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ee3630fb32c644f3fa8a1777d790976c, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3962984202859031381, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+--- !u!1 &660840053069172341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1998775315433358910, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+  m_PrefabInstance: {fileID: 1339492177556817995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-4918014494791762058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660840053069172341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e6cfcb5add12c4d9420488c9f6742b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  focalpoint: {fileID: 0}
