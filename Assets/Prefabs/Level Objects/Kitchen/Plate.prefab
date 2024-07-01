@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: m_Lightmapping
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -5713056762112849301, guid: 3cd821f0f8d3b4d52b613040ac720236, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e381057783e9449d68d8f282ec035257, type: 2}
     - target: {fileID: -2267386370532640393, guid: 3cd821f0f8d3b4d52b613040ac720236, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
