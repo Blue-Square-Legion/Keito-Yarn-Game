@@ -178,7 +178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Light with Blocks -- Programmer/Team Lead
+  m_text: 'Light with Blocks -- Team Lead/Programmer
 
     Jasmina -- Sound Designer
 
@@ -206,9 +206,21 @@ MonoBehaviour:
     azicii
     -- Programmer
 
-    Alina K -- Artist
+    Alina K -- 3D Artist
 
-    Arier -- Artist'
+    Arier -- 3D Artist
+
+    Austin --
+    3D Artist
+
+    Justin W -- Game Designer
+
+    KallenXCC -- Programmer
+
+    Louie
+    -- Game Designer
+
+    Synuk -- 3D Artist'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8fa2ed7838f9f4362ae19387a95c7ec8, type: 2}
   m_sharedMaterial: {fileID: -2949289493946278995, guid: 8fa2ed7838f9f4362ae19387a95c7ec8, type: 2}
@@ -235,7 +247,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.6
+  m_fontSize: 50
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
