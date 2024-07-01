@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2250400891846304981}
+  - component: {fileID: 5371013724832333784}
   m_Layer: 6
   m_Name: Wall Mounted TV
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5371013724832333784
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2250400891846304980}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.6555864, z: 0.04068184}
+  m_Center: {x: 0, y: -0.002495736, z: 0.005466461}
 --- !u!1001 &2250400892472203041
 PrefabInstance:
   m_ObjectHideFlags: 0

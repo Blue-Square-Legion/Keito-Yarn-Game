@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3420940805220405496}
   - component: {fileID: 1789692792512061277}
   - component: {fileID: 4553899351831931799}
+  - component: {fileID: 5634917300106995460}
   m_Layer: 0
   m_Name: cat tower
   m_TagString: Untagged
@@ -85,3 +86,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5634917300106995460
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2608234154776414786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2530784542940930148, guid: 9d319248ab79c4efd9efc1c667b25087, type: 3}

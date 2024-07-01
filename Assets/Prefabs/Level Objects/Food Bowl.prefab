@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1239102434656518993}
   - component: {fileID: 2782651226679479540}
   - component: {fileID: 106118015163693118}
+  - component: {fileID: 974836554139541625}
   m_Layer: 0
   m_Name: Food Bowl
   m_TagString: Untagged
@@ -84,3 +85,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &974836554139541625
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907834875037506027}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4860142605466966641, guid: 35c49d293013e44329eea3c3a3b6b0e0, type: 3}
