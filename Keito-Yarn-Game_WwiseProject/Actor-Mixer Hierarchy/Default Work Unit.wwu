@@ -3979,6 +3979,10 @@
 										</CustomState>
 									</CustomState>
 									<CustomState>
+										<StateRef Name="Rock_State" ID="{595620FE-D61A-43D3-A76F-B7D27784784A}"/>
+										<CustomState Name="" ID="{87E68713-A734-4987-B20D-0C44CCF9C84D}" ShortID="50079312"/>
+									</CustomState>
+									<CustomState>
 										<StateRef Name="Game_over" ID="{A0DCA826-7E6F-4462-87D3-15F4CCF6BFC5}"/>
 										<CustomState Name="" ID="{942415A1-3470-4B11-A4ED-40E6C18ED5BD}" ShortID="20947231">
 											<PropertyList>
@@ -3987,8 +3991,16 @@
 										</CustomState>
 									</CustomState>
 									<CustomState>
+										<StateRef Name="Childrens_State" ID="{9B0C0C8E-CFBD-44DF-97F6-247C7AD243BB}"/>
+										<CustomState Name="" ID="{898E22F1-592E-449F-A13C-228B4DC73BF5}" ShortID="521938856"/>
+									</CustomState>
+									<CustomState>
 										<StateRef Name="IngameState" ID="{AE3FB139-1538-47C7-8325-8451E6E562C0}"/>
 										<CustomState Name="" ID="{F08DE800-935E-4AC5-99C8-130BEE886418}" ShortID="918726215"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="Disco_State" ID="{E375BBCF-7334-495E-B404-64EA9CCC0B7C}"/>
+										<CustomState Name="" ID="{BF284AE3-0F5C-4B13-8CB6-BDA7636E18A5}" ShortID="36906966"/>
 									</CustomState>
 									<CustomState>
 										<StateRef Name="MainMenu_State" ID="{2DDE41CF-9A05-4A70-8D2D-E01A0ECF4F28}"/>

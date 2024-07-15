@@ -51,11 +51,14 @@ namespace AK
 
             namespace STATE
             {
+                static const AkUniqueID CHILDRENS_STATE = 822846821U;
+                static const AkUniqueID DISCO_STATE = 896387339U;
                 static const AkUniqueID GAME_OVER = 1432716332U;
                 static const AkUniqueID INGAMESTATE = 3656907969U;
                 static const AkUniqueID MAINMENU_STATE = 3205958645U;
                 static const AkUniqueID NONE = 748895195U;
                 static const AkUniqueID PAUSE_STATE = 1944582999U;
+                static const AkUniqueID ROCK_STATE = 1665225948U;
             } // namespace STATE
         } // namespace GAMESTATES
 
