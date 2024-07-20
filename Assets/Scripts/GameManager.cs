@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerPrefSO _BestTimePlayerPref;
 
     [SerializeField] public ScoreSystem _score;
-
+    [SerializeField] public bool _ColorChangeRand;
     [SerializeField] private ColorSO[] _colorList;
     public int NumberOfColors => _colorList.Length;
 
