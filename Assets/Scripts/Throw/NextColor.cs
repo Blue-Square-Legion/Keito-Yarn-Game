@@ -49,14 +49,14 @@ public class NextColor
 
     private void Add()
     {
-<<<<<<< Updated upstream
-        GameObject go = GetRandomPrefab();
-=======
+
+        
+
         ColorSO nextColor = ThreeColors();
         GameObject go = nextColor.YarnPrefab;
         colorindex++;
-        NextColorQueue.Enqueue(nextColor);
->>>>>>> Stashed changes
+       
+
         NextYarns.Enqueue(go);
         NextColors.Enqueue(go.GetComponent<Renderer>().sharedMaterial.color);
     }
@@ -65,8 +65,7 @@ public class NextColor
     {
         return _gameManager.GetRandomColorYarn();
     }
-<<<<<<< Updated upstream
-=======
+
 
     private ColorSO GetRandomColorSO()
     {
@@ -87,5 +86,5 @@ public class NextColor
 
       
     }
->>>>>>> Stashed changes
+
 }
