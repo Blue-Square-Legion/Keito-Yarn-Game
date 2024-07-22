@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public ScoreSystem _score;
 
-    [SerializeField] private ColorSO[] _colorList;
+    [SerializeField] private YarnAttributesSO[] _colorList;
     [SerializeField, Tooltip("The color that the cat will always be. Leave null for random cat color choice.")] private ColorSO _enforcedCatColor = null;
     public int NumberOfColors => _colorList.Length;
 
@@ -192,26 +192,22 @@ public class GameManager : MonoBehaviour
     private ColorSO GetRandomColor()
     {
         int RandInt = Random.Range(0, _colorList.Length);
-        return _colorList[RandInt];
+        return _colorList[RandInt].color;
     }
 
     // New functions to support color script and yarn prefabs
-    public ColorSO GetRandomColorSO()
+    public YarnAttributesSO GetRandomColorSO()
     {
         int RandInt = Random.Range(0, _colorList.Length);
         return _colorList[RandInt];
     }
-    public GameObject GetRandomColorYarn()
-    {
-        return GetRandomColorSO().YarnPrefab;
-    }
-    public ColorSO GetIndexColorSO(int index)
+    public YarnAttributesSO GetIndexColorSO(int index)
     {
         return _colorList[index];
     }
     public GameObject GetIndexColorYarn(int index)
     {
-        return GetIndexColorSO(index).YarnPrefab;
+        return GetIndexColorSO(index).color.YarnPrefab;
     }
     // new functions to support color script and yarn prefabs
 

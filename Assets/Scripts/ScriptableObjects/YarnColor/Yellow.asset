@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a04513f5ff3eb04aa1d99f35d135005, type: 3}
   m_Name: Yellow
   m_EditorClassIdentifier: 
-  Name: White
+  Name: 10
   Color: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
   YarnPrefab: {fileID: 660840053069172341, guid: 69846678ac26d0c4ba65d3020a4a9409, type: 3}
   YarnMaterial: {fileID: 2100000, guid: 126f444b8fac2704aa3e799e79fa06e7, type: 2}
