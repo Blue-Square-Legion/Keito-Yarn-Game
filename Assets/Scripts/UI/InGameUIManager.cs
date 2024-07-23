@@ -17,11 +17,13 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField] GameObject _confirmationUI;
     [SerializeField] GameObject _gameOverUI;
     [SerializeField] OffScreenIndicator _indicator;
+    [SerializeField] Button _tryAgainButton;
     [SerializeField] PlayerPrefSO masterSO, musicSO, soundSO, _BestTimePlayerPref;
-    [SerializeField] private TextMeshProUGUI endTimeText, bestTimeText, currTimeText;
+    [SerializeField] private TextMeshProUGUI tryAgainButtonText, gameOverText, endTimeText, bestTimeText, currTimeText, ballsLeftText;
     [SerializeField] private ScoreProgressController _scoreController;
     
-
+    private bool countdownStarted = false;
+    private int countdownEnd;
     public UnityEvent OnPauseMenuOpen, OnPauseMenuClose, OnGameEnd;
 
     
@@ -102,6 +104,39 @@ public class InGameUIManager : MonoBehaviour
         OnPauseGame();
     }
 
+    private void UpdateEndGameUI()
+    {
+        _tryAgainButton.onClick.RemoveListener(OnResetGame);
+        _tryAgainButton.onClick.RemoveListener(OnLevelChange);
+        _tryAgainButton.onClick.RemoveListener(OnBackToMainMenu);
+
+        if (_gameManager.Score < _gameManager.TargetScore) {
+            gameOverText.text = "Game Over!";
+            tryAgainButtonText.text = "Play Again";
+            _tryAgainButton.onClick.AddListener(OnResetGame);
+        } else {
+            gameOverText.text = "Level Complete!";
+            int sceneCount = SceneManager.sceneCountInBuildSettings;
+            int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            if(nextLevelIndex < sceneCount) {
+                tryAgainButtonText.text = "Next Level";
+                _tryAgainButton.onClick.AddListener(OnLevelChange);
+            } else {
+                tryAgainButtonText.text = "Back to Main Menu";
+                _tryAgainButton.onClick.AddListener(OnBackToMainMenu);
+            }
+        }
+    }
+
+    public void UpdateBallsLeft(int balls) {
+        if(balls > 0) {
+            ballsLeftText.text = "Balls Left: " + balls;
+        } else {
+            countdownStarted = true;
+            countdownEnd = _gameManager.CurrentTime + 5;
+        }
+    }
+
     public void OnPauseGame()
     {
         OnPauseMenuOpen.Invoke();
@@ -131,6 +166,13 @@ public class InGameUIManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    private void OnLevelChange()
+    {
+        int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        _gameManager.ResumeGame();
+        AkSoundEngine.StopAll();
+        SceneManager.LoadScene(nextLevelIndex);
+    }
 
     public void OnResumeGame()
     {
@@ -176,6 +218,8 @@ public class InGameUIManager : MonoBehaviour
         _gameManager.PauseGame();
         _gameOverUI.SetActive(true);
         
+        UpdateEndGameUI();
+        
         AkSoundEngine.SetState("GameStates", "Game_over");
         OnGameEnd.Invoke();
     }
@@ -208,13 +252,25 @@ public class InGameUIManager : MonoBehaviour
             PlayerPrefs.SetInt(_BestTimePlayerPref.currKey.ToString(), _gameManager.BestTime);
             PlayerPrefs.Save();
 
-            CancelInvoke("Timer");
-
             endTimeText.text = string.Format("Final Time: {0}", ConvertTime(_gameManager.CurrentTime));
-            bestTimeText.text = string.Format("Best Time: {0}", ConvertTime(_gameManager.BestTime));
-
-            _gameManager.OnGameEnd.Invoke();
+            StopTimer();
         }
+
+        if (countdownStarted) {
+            int secondsRemaining = countdownEnd - _gameManager.CurrentTime;
+            ballsLeftText.text = "Countdown: " + secondsRemaining;
+            if(secondsRemaining <= 0) {
+                endTimeText.text = "Final Time: -:--";
+                StopTimer();
+            }
+        }
+    }
+
+    private void StopTimer()
+    {
+        CancelInvoke("Timer");
+        bestTimeText.text = string.Format("Best Time: {0}", ConvertTime(_gameManager.BestTime));
+        _gameManager.OnGameEnd.Invoke();
     }
 
     public void ChangeProgressBar()

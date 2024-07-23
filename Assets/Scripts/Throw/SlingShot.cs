@@ -28,6 +28,8 @@ public class SlingShot : MonoBehaviour
     [SerializeField] private AlignmentControl _forceVertical;
     
     [SerializeField, Range(0, 1)] private float _startForceMulti = 0.5f;
+
+    [SerializeField] private int _remainingYarn = 30;
     #endregion
 
     #region Events
@@ -132,6 +134,10 @@ public class SlingShot : MonoBehaviour
         {
             return;
         }
+        if (_remainingYarn <= 0)
+        {
+            return;
+        }
 
         _isHeld = _isToggle ? !_isHeld : true;
         
@@ -190,6 +196,10 @@ public class SlingShot : MonoBehaviour
 
         StartCoroutine(RunCoolDown(_afterFireCD));
         OnThrow.Invoke();
+
+        _remainingYarn--;
+        var gameUIManager = FindObjectOfType<InGameUIManager>();
+        gameUIManager.UpdateBallsLeft(_remainingYarn);
     }
 
     private void SetupFirstShot()
