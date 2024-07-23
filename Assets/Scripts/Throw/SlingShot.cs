@@ -41,13 +41,15 @@ public class SlingShot : MonoBehaviour
 
     private LineRenderer _lineRenderer;
 
-    private float _force, _mass, _drag, _radius;
+    [SerializeField]private float _force, _mass, _drag, _radius;
+    [SerializeField]private bool _impulse, _forceBool, _acceleration, _velocityChange;
+    
     private GameObject _currentBall;
 
     private bool _isHeld = false;
     private Vector2 _currentRotation;
 
-    private Vector3 _forceVector;
+    [SerializeField]private Vector3 _forceVector;
     private bool _onCoolDown;
 
     private bool gameSetupPhase;
@@ -244,8 +246,14 @@ public class SlingShot : MonoBehaviour
 
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-
-        rb.AddForce(_forceVector, ForceMode.Impulse);
+        if (_impulse)//Original Force Mode
+            rb.AddForce(_forceVector, ForceMode.Impulse);
+        else if (_forceBool)
+            rb.AddForce(_forceVector, ForceMode.Acceleration);
+        else if (_velocityChange)//Gives result similiar to the original force mode
+            rb.AddForce(_forceVector, ForceMode.VelocityChange);
+        //else if (_forceBool)//Does not launch forward with default settings
+            //rb.AddExplosionForce(_forceVector.x, Vector3.zero, Vector3.forward.x, Vector3.up.x, ForceMode.Force);
     }
 
     private void EnableThrownObject(GameObject go)
