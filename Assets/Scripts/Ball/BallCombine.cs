@@ -5,19 +5,11 @@ using UnityEngine.Events;
 
 public class BallCombine : MonoBehaviour
 {
+    [SerializeField] private YarnAttributesSO yarnAttributesSO;
+
+    [Space(5)]
     public UnityEvent OnCombine;
     public UnityEvent OnMaxSize;
-
-    [Space(5)]
-    [SerializeField] private float _massMultiplier = 1f;
-    [SerializeField] private float _massCap = 5f;
-
-    [Space(5)]
-    [SerializeField] private float _scaleMultiplier = 1f;
-    [SerializeField] private float _scaleCap = 5f;
-
-    [Space(5)]
-    [SerializeField] private bool _allowDamageCombine = false;
 
     private Rigidbody _rigidBody;
     private Renderer _renderer;
@@ -34,7 +26,7 @@ public class BallCombine : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody>();
         _renderer = GetComponent<Renderer>();
 
-        _scaleVectorCap = new Vector3(_scaleCap, _scaleCap, _scaleCap);
+        _scaleVectorCap = new Vector3(yarnAttributesSO.scaleCap, yarnAttributesSO.scaleCap, yarnAttributesSO.scaleCap);
 
         _colorController = GetComponent<ColorController>();
     }
@@ -51,7 +43,7 @@ public class BallCombine : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
-        if(!_allowDamageCombine && (IsDamaged || !collision.gameObject.TryGetComponent<IDamageable>(out IDamageable hitDamage) || hitDamage.isDamaged()))
+        if(!yarnAttributesSO.allowDamageCombine && (IsDamaged || !collision.gameObject.TryGetComponent(out IDamageable hitDamage) || hitDamage.isDamaged()))
         {
             return;
         }
@@ -63,8 +55,8 @@ public class BallCombine : MonoBehaviour
                 return;
             }
 
-            Vector3 combinedScale = transform.localScale + hitBall.transform.localScale * _scaleMultiplier;
-            float combinedMass = _rigidBody.mass + collision.rigidbody.mass * _massMultiplier;
+            Vector3 combinedScale = transform.localScale + hitBall.transform.localScale * yarnAttributesSO.scaleMultiplier;
+            float combinedMass = _rigidBody.mass + collision.rigidbody.mass * yarnAttributesSO.massMultiplier;
 
 
             if (transform.localScale.x >= _scaleVectorCap.x * 0.99f)// || _rigidBody.mass >= _massCap)
@@ -76,7 +68,7 @@ public class BallCombine : MonoBehaviour
         
             //Combine / absorb the mass
             transform.localScale = Vector3.Min(combinedScale, _scaleVectorCap);
-            _rigidBody.mass = Mathf.Min(combinedMass, _massCap);
+            _rigidBody.mass = Mathf.Min(combinedMass, yarnAttributesSO.massCap);
 
             if (transform.localScale == _scaleVectorCap)// || _rigidBody.mass == _massCap)
             {

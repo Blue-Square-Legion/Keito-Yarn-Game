@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427063e7f5aa3fe40999755fdf9bc87b, type: 3}
+  m_Name: BlueBall
+  m_EditorClassIdentifier: 
+  color: {fileID: 11400000, guid: 29e19a1c4d33c8a4786ed45a18fdcf21, type: 2}
+  bounciness: 1
+  mass: 1
+  damageMod: 0.5
+  repairMod: 1
+  massMultiplier: 1
+  massCap: 5
+  scaleMultiplier: 1
+  scaleCap: 5
+  allowDamageCombine: 0
