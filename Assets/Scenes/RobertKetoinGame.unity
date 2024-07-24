@@ -889,11 +889,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184349, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.6
+      value: 18.1
       objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184349, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.7
+      value: -19.3
       objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184349, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2365,7 +2365,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 493085171}
-  - component: {fileID: 493085170}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -2373,31 +2372,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &493085170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493085169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb273fdcf2fbbb64989bb1f0c72f8d65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationSettings: {fileID: 11400000, guid: afd7cff103867e641ba1138ef114bb77, type: 2}
-  basePath: 
-  language: 
-  defaultPoolSize: 0
-  lowerPoolSize: 0
-  streamingPoolSize: 0
-  memoryCutoffThreshold: 0
-  monitorPoolSize: 0
-  monitorQueuePoolSize: 0
-  callbackManagerBufferSize: 0
-  spatialAudioPoolSize: 0
-  maxSoundPropagationDepth: 0
-  engineLogging: 0
 --- !u!4 &493085171
 Transform:
   m_ObjectHideFlags: 0
@@ -2647,7 +2621,7 @@ Transform:
   m_GameObject: {fileID: 540056393}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.015488422, z: -0, w: 0.99988014}
-  m_LocalPosition: {x: -2.28, y: 4.17, z: 7.42}
+  m_LocalPosition: {x: 1.13, y: 4.17, z: 7.53}
   m_LocalScale: {x: 7, y: 1, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4848,6 +4822,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a987c25a7c8da40c7bbfeb8e779cd6b3, type: 3}
+--- !u!1 &1146066493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1146066495}
+  - component: {fileID: 1146066494}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1146066494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146066493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb273fdcf2fbbb64989bb1f0c72f8d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: afd7cff103867e641ba1138ef114bb77, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!4 &1146066495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146066493}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1163528153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5055,8 +5086,8 @@ Transform:
   m_GameObject: {fileID: 1163630364}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27, y: 3.5, z: 2.4}
-  m_LocalScale: {x: 10, y: 7, z: 10}
+  m_LocalPosition: {x: 2.1, y: 5.19, z: 2.4}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -7567,3 +7598,4 @@ SceneRoots:
   - {fileID: 493085171}
   - {fileID: 1163630369}
   - {fileID: 540056398}
+  - {fileID: 1146066495}
