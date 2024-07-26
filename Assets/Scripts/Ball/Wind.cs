@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wind : MonoBehaviour
 {
-    [SerializeField] float _windForce = 10f;
+    [SerializeField] float _windForce = 2f;
 
     private void OnTriggerStay(Collider other)
     {
