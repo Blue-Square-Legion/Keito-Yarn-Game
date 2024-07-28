@@ -780,6 +780,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5588047438257184290, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
+      propertyPath: field of view
+      value: 48.159958
+      objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184345, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -790,15 +794,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184349, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.78
+      value: 8.71
       objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184349, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.64
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184349, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: 4.45
       objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184349, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -830,15 +834,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184351, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_positionOffsetData.positionOffset.x
-      value: -0.34055996
+      value: -0.40759552
       objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184351, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_positionOffsetData.positionOffset.y
-      value: -0.36175907
+      value: -0.43296733
       objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184351, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_positionOffsetData.positionOffset.z
-      value: -0.55903304
+      value: -0.6690725
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
@@ -1849,7 +1853,7 @@ GameObject:
   - component: {fileID: 1145098355}
   - component: {fileID: 1145098354}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1900,7 +1904,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: eb0c475ad763d9041b81cf0a8abcd830, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1938,8 +1942,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145098353}
   m_LocalRotation: {x: -0.000009445716, y: 0.7033092, z: -0.0022198355, w: 0.7108807}
-  m_LocalPosition: {x: -8.6, y: 2.8, z: 1.3}
-  m_LocalScale: {x: 5, y: 1.3, z: 0.1}
+  m_LocalPosition: {x: -8.59, y: 4.56, z: 0.44}
+  m_LocalScale: {x: 7, y: 0.6, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2775,7 +2779,7 @@ GameObject:
   - component: {fileID: 1666228383}
   - component: {fileID: 1666228382}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Wind Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2865,7 +2869,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666228381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9, y: 3.5, z: 0.15}
+  m_LocalPosition: {x: -2.11, y: 3.57, z: 1.6}
   m_LocalScale: {x: 10, y: 7, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []

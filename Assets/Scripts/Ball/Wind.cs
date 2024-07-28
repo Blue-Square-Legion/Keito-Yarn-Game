@@ -12,7 +12,7 @@ public class Wind : MonoBehaviour
         if (hitObj != null)
         {
             var rb = hitObj.GetComponent<Rigidbody>();
-            var dir = transform.up;
+            var dir = transform.forward;
             rb.AddForce(dir * _windForce);
         }
     }
