@@ -7,7 +7,7 @@ using Manager.Score;
 
 public class GameManager : MonoBehaviour
 {
-    private int numOfYarn, currTime = 0, bestTime = -1;
+    private int numOfYarn, currTime = 0;
     private int _currentLocationIndex, _sameSpawnCount = 0;
 
     [SerializeField, Tooltip("Max # times cat can stay in same spot before force move")]
@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private string mainMenuSceneName;
     [SerializeField] private TagSO _SpawnPoint;
-    [SerializeField] private PlayerPrefSO _BestTimePlayerPref;
 
     [SerializeField] public ScoreSystem _score;
 
@@ -66,13 +65,6 @@ public class GameManager : MonoBehaviour
         set { targetScore = value; }
     }
 
-    // Records the current best time if it exceeds the previous best time
-    public int BestTime
-    {
-        get { return bestTime; }
-        set { bestTime = bestTime < 0 || value < bestTime ? value : bestTime; }
-    }
-
     public int CurrentTime
     {
         get { return currTime; }
@@ -88,9 +80,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Sets the best time to the default best time if it doesn't find the key for it
-        BestTime = PlayerPrefs.HasKey(_BestTimePlayerPref.currKey.ToString()) ? PlayerPrefs.GetInt(_BestTimePlayerPref.currKey.ToString()) : bestTime;
-
         SetUpCat();
 
         Collectable[] list = FindObjectsOfType<Collectable>();
