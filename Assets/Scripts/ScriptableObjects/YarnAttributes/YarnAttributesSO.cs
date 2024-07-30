@@ -23,4 +23,10 @@ public class YarnAttributesSO : ScriptableObject
 
     [Space(5)]
     public bool allowDamageCombine = false;
+
+    [Space(5)]
+    public List<YarnAttributesSO> mergableBalls = new();
+
+    [Space(5)]
+    public List<ColorCombinationSO> acceptableCombinations = new();
 }

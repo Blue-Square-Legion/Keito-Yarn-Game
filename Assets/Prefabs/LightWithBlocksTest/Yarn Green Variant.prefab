@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: _color
       value: 
       objectReference: {fileID: 11400000, guid: b40ea3a328c5556479e00cc115f57182, type: 2}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: yarnAttributesSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 732d849bcf3de644680670cd466d4024, type: 2}
     - target: {fileID: -4293314133452894743, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 0

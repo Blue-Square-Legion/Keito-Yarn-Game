@@ -13,27 +13,42 @@ public class BallCombine : MonoBehaviour
 
     private Rigidbody _rigidBody;
     private Renderer _renderer;
+    private SphereCollider _collider;
     private Vector3 _scaleVectorCap;
     private ColorController _colorController;
 
     public string YarnCombineSound = "Play_Yarn_Combine";
 
     public Color Color => _renderer.material.color;
-    public bool IsDamaged => _colorController.isDamaged(); 
+    public bool IsDamaged => _colorController.isDamaged();
+
+    [HideInInspector] public bool _colorAlreadyChanged = false;
 
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();
         _renderer = GetComponent<Renderer>();
-
-        _scaleVectorCap = new Vector3(yarnAttributesSO.scaleCap, yarnAttributesSO.scaleCap, yarnAttributesSO.scaleCap);
+        _collider = GetComponent<SphereCollider>();
 
         _colorController = GetComponent<ColorController>();
+
+        if (yarnAttributesSO)
+        {
+            InitializeYarnBall();
+        }
     }
 
     public void SetColor(Color color)
     {
         _renderer.material.color = color;
+    }
+
+    public void InitializeYarnBall()
+    {
+        _scaleVectorCap = new Vector3(yarnAttributesSO.scaleCap, yarnAttributesSO.scaleCap, yarnAttributesSO.scaleCap);
+        _collider.material.bounciness = yarnAttributesSO.bounciness;
+
+        SetColor(yarnAttributesSO.color.Color);
     }
 
     /// <summary>
@@ -48,37 +63,37 @@ public class BallCombine : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.TryGetComponent<BallCombine>(out BallCombine hitBall) && hitBall.Color == Color)
+        if (collision.gameObject.TryGetComponent(out BallCombine hitBall) && hitBall.yarnAttributesSO == yarnAttributesSO)
         {
             if (!DecideBall(collision))
             {
                 return;
             }
 
-            Vector3 combinedScale = transform.localScale + hitBall.transform.localScale * yarnAttributesSO.scaleMultiplier;
-            float combinedMass = _rigidBody.mass + collision.rigidbody.mass * yarnAttributesSO.massMultiplier;
-
-
-            if (transform.localScale.x >= _scaleVectorCap.x * 0.99f)// || _rigidBody.mass >= _massCap)
+            CombineBalls(collision, hitBall);
+        } else if(FindObjectOfType<GameManager>()._challengeMode && transform.localScale == hitBall.transform.localScale)
+        {
+            if (yarnAttributesSO.mergableBalls.Contains(hitBall.yarnAttributesSO) && !hitBall._colorAlreadyChanged && !_colorAlreadyChanged)
             {
-                return;            
+                foreach (ColorCombinationSO color in yarnAttributesSO.acceptableCombinations)
+                {
+                    if (color.AcceptableCombination(yarnAttributesSO, hitBall.yarnAttributesSO))
+                    {
+                        yarnAttributesSO = color.newYarnBall;
+
+                        GetComponent<MeshRenderer>().material = yarnAttributesSO.color.YarnPrefab.GetComponent<MeshRenderer>().material;
+                        GetComponent<TrailRenderer>().startColor = yarnAttributesSO.color.Color;
+
+                        InitializeYarnBall();
+
+                        _colorAlreadyChanged = true;
+                        hitBall._colorAlreadyChanged = true;
+
+                        CombineBalls(collision, hitBall);
+                        break;
+                    }
+                }
             }
-
-            Destroy(collision.gameObject);
-        
-            //Combine / absorb the mass
-            transform.localScale = Vector3.Min(combinedScale, _scaleVectorCap);
-            _rigidBody.mass = Mathf.Min(combinedMass, yarnAttributesSO.massCap);
-
-            if (transform.localScale == _scaleVectorCap)// || _rigidBody.mass == _massCap)
-            {
-                OnMaxSize.Invoke();
-            }
-
-            OnCombine.Invoke();
-
-            AkSoundEngine.PostEvent(YarnCombineSound, gameObject);
-
         }
     }
 
@@ -89,5 +104,32 @@ public class BallCombine : MonoBehaviour
             return transform.localScale.x > hitBall.transform.localScale.x;
         else
             return transform.position.y < hitBall.transform.position.y;
+    }
+
+    private void CombineBalls(Collision collision, BallCombine hitBall)
+    {
+        Vector3 combinedScale = transform.localScale + hitBall.transform.localScale * yarnAttributesSO.scaleMultiplier;
+        float combinedMass = _rigidBody.mass + collision.rigidbody.mass * yarnAttributesSO.massMultiplier;
+
+
+        if (transform.localScale.x >= _scaleVectorCap.x * 0.99f)// || _rigidBody.mass >= _massCap)
+        {
+            return;
+        }
+
+        Destroy(collision.gameObject);
+
+        //Combine / absorb the mass
+        transform.localScale = Vector3.Min(combinedScale, _scaleVectorCap);
+        _rigidBody.mass = Mathf.Min(combinedMass, yarnAttributesSO.massCap);
+
+        if (transform.localScale == _scaleVectorCap)// || _rigidBody.mass == _massCap)
+        {
+            OnMaxSize.Invoke();
+        }
+
+        OnCombine.Invoke();
+
+        AkSoundEngine.PostEvent(YarnCombineSound, gameObject);
     }
 }

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 427063e7f5aa3fe40999755fdf9bc87b, type: 3}
-  m_Name: BlueBall
+  m_Name: DefaultYarnBall
   m_EditorClassIdentifier: 
-  color: {fileID: 11400000, guid: 29e19a1c4d33c8a4786ed45a18fdcf21, type: 2}
-  bounciness: 1
+  color: {fileID: 0}
+  bounciness: 0.98
   mass: 1
   damageMod: 0.5
   repairMod: 1
@@ -22,3 +22,4 @@ MonoBehaviour:
   scaleMultiplier: 1
   scaleCap: 5
   allowDamageCombine: 0
+  colorCombinationSO: {fileID: 0}

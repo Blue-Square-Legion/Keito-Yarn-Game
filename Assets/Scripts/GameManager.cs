@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private YarnAttributesSO[] _colorList;
     [SerializeField, Tooltip("The color that the cat will always be. Leave null for random cat color choice.")] private ColorSO _enforcedCatColor = null;
+    
+    public bool _challengeMode = false;
     public int NumberOfColors => _colorList.Length;
 
     public GameObject catGameObject;

@@ -8,9 +8,8 @@ public class NextColor
     [SerializeField, Tooltip("Number of yarn balls in queue")] private int _count = 3;
     [SerializeField] private GameManager _gameManager;
 
-    public Queue<ColorSO> NextColorQueue = new();
     public Queue<Color> NextColors = new();
-    public Queue<GameObject> NextYarns = new();
+    public Queue<YarnAttributesSO> NextYarnBall = new();
 
     public void Setup(GameManager gameManager)
     {
@@ -24,12 +23,12 @@ public class NextColor
 
     public ColorSO GetColorSO()
     {
-        return NextColorQueue.Peek();
+        return NextYarnBall.Peek().color;
     }
 
     public GameObject GetPrefab()
     {
-        return NextYarns.Peek();
+        return NextYarnBall.Peek().color.YarnPrefab;
     }
 
     public Color GetColor()
@@ -39,19 +38,16 @@ public class NextColor
 
     public void Remove()
     {
-        NextColorQueue.Dequeue();
-        NextYarns.Dequeue();
         NextColors.Dequeue();
+        NextYarnBall.Dequeue();
         Add();
     }
 
     private void Add()
     {
         YarnAttributesSO nextColor = GetRandomColorSO();
-        GameObject go = nextColor.color.YarnPrefab;
-        NextColorQueue.Enqueue(nextColor.color);
-        NextYarns.Enqueue(go);
         NextColors.Enqueue(nextColor.color.Color);
+        NextYarnBall.Enqueue(nextColor);
     }
 
     private YarnAttributesSO GetRandomColorSO()
