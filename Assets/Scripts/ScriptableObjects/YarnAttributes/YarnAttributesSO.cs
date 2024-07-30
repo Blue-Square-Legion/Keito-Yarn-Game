@@ -7,14 +7,14 @@ public class YarnAttributesSO : ScriptableObject
 {
     public ColorSO color;
     public float bounciness = 0.98f;
-    public float mass = 1f;
+    [Range(0.000001f, 10f)] public float mass = 1f;
 
     [Space(5)]
     public float damageMod = 0.5f;
     public float repairMod = 1f;
 
     [Space(5)]
-    public float massMultiplier = 1f;
+    [Range(0.000001f, 10f)] public float massMultiplier = 1f;
     public float massCap = 5f;
 
     [Space(5)]
