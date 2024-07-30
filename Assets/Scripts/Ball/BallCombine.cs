@@ -43,6 +43,9 @@ public class BallCombine : MonoBehaviour
         _renderer.material.color = color;
     }
 
+    /// <summary>
+    /// Initializes the yarn balls stats when it is spawned and when the ball merges with a ball that it can merge with.
+    /// </summary>
     public void InitializeYarnBall()
     {
         _scaleVectorCap = new Vector3(yarnAttributesSO.scaleCap, yarnAttributesSO.scaleCap, yarnAttributesSO.scaleCap);
@@ -73,15 +76,20 @@ public class BallCombine : MonoBehaviour
             CombineBalls(collision, hitBall);
         } else if(FindObjectOfType<GameManager>()._challengeMode && transform.localScale == hitBall.transform.localScale)
         {
+            // If the thrown ball can merge with the struck ball and both of their colors have not changed, merge both together and change
+            // the balls color.
             if (yarnAttributesSO.mergableBalls.Contains(hitBall.yarnAttributesSO) && !hitBall._colorAlreadyChanged && !_colorAlreadyChanged)
             {
                 foreach (ColorCombinationSO color in yarnAttributesSO.acceptableCombinations)
                 {
                     if (color.AcceptableCombination(yarnAttributesSO, hitBall.yarnAttributesSO))
                     {
+                        // Set this yarn ball to the color based on the acceptable combinations list
                         yarnAttributesSO = color.newYarnBall;
 
                         GetComponent<MeshRenderer>().material = yarnAttributesSO.color.YarnPrefab.GetComponent<MeshRenderer>().material;
+
+                        // Set the color for the yarn trail to the yarn attribute SO color
                         GetComponent<TrailRenderer>().startColor = yarnAttributesSO.color.Color;
 
                         InitializeYarnBall();
@@ -106,11 +114,15 @@ public class BallCombine : MonoBehaviour
             return transform.position.y < hitBall.transform.position.y;
     }
 
+    /// <summary>
+    /// Combines the two balls based on their scale
+    /// </summary>
+    /// <param name="collision">The collision of the struck ball.</param>
+    /// <param name="hitBall">The thrown ball that the player hit.</param>
     private void CombineBalls(Collision collision, BallCombine hitBall)
     {
         Vector3 combinedScale = transform.localScale + hitBall.transform.localScale * yarnAttributesSO.scaleMultiplier;
         float combinedMass = _rigidBody.mass + collision.rigidbody.mass * yarnAttributesSO.massMultiplier;
-
 
         if (transform.localScale.x >= _scaleVectorCap.x * 0.99f)// || _rigidBody.mass >= _massCap)
         {

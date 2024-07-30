@@ -24,9 +24,9 @@ public class YarnAttributesSO : ScriptableObject
     [Space(5)]
     public bool allowDamageCombine = false;
 
-    [Space(5)]
+    [Space(5), Tooltip("Balls that this one can merge with")]
     public List<YarnAttributesSO> mergableBalls = new();
 
-    [Space(5)]
+    [Space(5), Tooltip("What new colors the yarn ball can merge into if it was hit by the compatible yarn ball.")]
     public List<ColorCombinationSO> acceptableCombinations = new();
 }
