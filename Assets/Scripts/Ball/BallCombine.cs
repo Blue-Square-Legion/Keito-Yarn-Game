@@ -29,11 +29,12 @@ public class BallCombine : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody>();
         _renderer = GetComponent<Renderer>();
         _collider = GetComponent<SphereCollider>();
-
         _colorController = GetComponent<ColorController>();
 
         if (yarnAttributesSO)
         {
+            _colorController.YarnAttributes = yarnAttributesSO;
+
             InitializeYarnBall();
         }
     }
@@ -91,6 +92,8 @@ public class BallCombine : MonoBehaviour
 
                         // Set the color for the yarn trail to the yarn attribute SO color
                         GetComponent<TrailRenderer>().startColor = yarnAttributesSO.color.Color;
+
+                        _rigidBody.mass = yarnAttributesSO.mass;
 
                         InitializeYarnBall();
 
