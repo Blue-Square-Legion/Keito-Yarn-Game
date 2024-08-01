@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {fileID: 11400000, guid: 853307e61ecf1f34cbb7809ce9e09159, type: 2}
   bounciness: 0.5
-  mass: 5
+  mass: 2
   damageMod: 0.5
   repairMod: 1
   massMultiplier: 1
