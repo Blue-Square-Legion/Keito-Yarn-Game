@@ -7,30 +7,31 @@ using UnityEngine.TestTools;
 public class TimerTest
 {
     GameManager testManager = new GameObject().AddComponent<GameManager>();
+    BestTimeSO testSO = ScriptableObject.CreateInstance<BestTimeSO>();
 
     /// <summary>
-    /// Tests if the current time exceeds the best time and overrides it if it is
+    /// Tests if the current time is better/less than the best time and overrides it if it is
     /// </summary>
     [Test]
     public void BestTimeTest()
     {
         testManager.CurrentTime = 10;
-        testManager.BestTime = 0;
-        testManager.BestTime = testManager.CurrentTime;
+        testSO.SetBestTimeForCurrentScene(20);
+        testSO.SetBestTimeForCurrentScene(testManager.CurrentTime);
 
-        Assert.AreEqual(10, testManager.BestTime);
+        Assert.AreEqual(10, testSO.GetBestTimeForCurrentScene());
     }
 
     /// <summary>
-    /// Tests if the best time does not exceed the current time and does not override it if it is
+    /// Tests if the current time is not better/less than the best time and does not override it if it is
     /// </summary>
     [Test]
     public void CurrentTimeTest()
     {
-        testManager.CurrentTime = 1;
-        testManager.BestTime = 10;
-        testManager.BestTime = testManager.CurrentTime;
+        testManager.CurrentTime = 20;
+        testSO.SetBestTimeForCurrentScene(10);
+        testSO.SetBestTimeForCurrentScene(testManager.CurrentTime);
 
-        Assert.AreEqual(10, testManager.BestTime);
+        Assert.AreEqual(10, testSO.GetBestTimeForCurrentScene());
     }
 }

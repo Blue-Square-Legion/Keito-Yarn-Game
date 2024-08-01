@@ -7,7 +7,6 @@ public class PlayerPrefSO : ScriptableObject
 {
     public enum Key
     {
-        Best_Time,
         Master_Volume,
         Music_Volume,
         Sound_Volume,
