@@ -1174,6 +1174,10 @@ PrefabInstance:
       value: SlingShot
       objectReference: {fileID: 0}
     - target: {fileID: 8863162284197567729, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
+      propertyPath: _isToggle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863162284197567729, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
       propertyPath: _PrefabPicker._prefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1181,6 +1185,22 @@ PrefabInstance:
       propertyPath: _PrefabPicker._prefabs.Array.data[0]
       value: 
       objectReference: {fileID: 2025155149542869593, guid: b44bc3028160b4c6297273c41618fff4, type: 3}
+    - target: {fileID: 8863162284197567729, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
+      propertyPath: OnNextColorChange.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863162284197567729, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
+      propertyPath: OnNextColorChange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863162284197567729, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
+      propertyPath: OnNextColorChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: a711a5bde9252204f8afb0c8acba74b0, type: 3}
+    - target: {fileID: 8863162284197567729, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
+      propertyPath: OnNextColorChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8863162284197567731, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1686,13 +1706,25 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
-      propertyPath: _colorList.Array.size
+      propertyPath: _ColorChangeRand
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
+      propertyPath: _colorList.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
       propertyPath: _colorList.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: b40ea3a328c5556479e00cc115f57182, type: 2}
+    - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
+      propertyPath: _colorList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 853307e61ecf1f34cbb7809ce9e09159, type: 2}
+    - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
+      propertyPath: _colorList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 29e19a1c4d33c8a4786ed45a18fdcf21, type: 2}
     - target: {fileID: 3745909187391131162, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2400,6 +2432,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0a51a365a4a1e84ca0185be20254395, type: 3}
+--- !u!1 &1443898890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1443898892}
+  - component: {fileID: 1443898891}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1443898891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443898890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb273fdcf2fbbb64989bb1f0c72f8d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: afd7cff103867e641ba1138ef114bb77, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!4 &1443898892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443898890}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1587082188
 PrefabInstance:
   m_ObjectHideFlags: 0

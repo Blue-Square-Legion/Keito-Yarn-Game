@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TagSO _SpawnPoint;
 
     [SerializeField] public ScoreSystem _score;
-
+    [SerializeField] public bool _ColorChangeRand;
     [SerializeField] private YarnAttributesSO[] _colorList;
     [SerializeField, Tooltip("The color that the cat will always be. Leave null for random cat color choice.")] private ColorSO _enforcedCatColor = null;
     public int NumberOfColors => _colorList.Length;
