@@ -1763,13 +1763,25 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
+      propertyPath: _ColorChangeRand
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
       propertyPath: _colorList.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
       propertyPath: _colorList.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: b40ea3a328c5556479e00cc115f57182, type: 2}
+      objectReference: {fileID: 11400000, guid: 8e8ab487bc8dc234b898f2d5a1aa7c51, type: 2}
+    - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
+      propertyPath: _colorList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: fdee1be18ada1094bab3391314636695, type: 2}
+    - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
+      propertyPath: _colorList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 732d849bcf3de644680670cd466d4024, type: 2}
     - target: {fileID: 3745909187391131162, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2829,8 +2841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _windForce: 10
-  _right: 1
-  _forward: 0
+  fanDirection: {x: 1, y: 0, z: 0}
 --- !u!65 &1666228383
 BoxCollider:
   m_ObjectHideFlags: 0
