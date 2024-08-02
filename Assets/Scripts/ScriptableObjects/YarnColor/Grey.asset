@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a04513f5ff3eb04aa1d99f35d135005, type: 3}
   m_Name: Grey
   m_EditorClassIdentifier: 
-  Name: 5
+  Name: 6
   Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
   YarnPrefab: {fileID: 660840053069172341, guid: 5a11d48095977cd4c828dd3b840a6477, type: 3}
   YarnMaterial: {fileID: 2100000, guid: 5182674df5d22f444abc43b2b563a7b2, type: 2}

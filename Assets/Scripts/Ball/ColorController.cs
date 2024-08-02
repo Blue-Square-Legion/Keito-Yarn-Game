@@ -8,19 +8,13 @@ public class ColorController : MonoBehaviour, IDamageable, IRepairable
 
     private bool _isDamaged = false;
 
+    public YarnAttributesSO YarnAttributes { get { return yarnBallAttributes; } set { yarnBallAttributes = value; } }
     public ColorSO Color => yarnBallAttributes.color;
     private Renderer _render;
-    private SphereCollider _collider;
-    private Rigidbody _rigidbody;
 
     private void Start()
     {
         _render = gameObject.GetComponent<Renderer>();
-        _collider = GetComponent<SphereCollider>();
-        _rigidbody = GetComponent<Rigidbody>();
-
-        _collider.material.bounciness = yarnBallAttributes.bounciness;
-        _rigidbody.mass = yarnBallAttributes.mass;
     }
 
     private void SetColor(float modifier = 1f)

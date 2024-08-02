@@ -10,15 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 427063e7f5aa3fe40999755fdf9bc87b, type: 3}
-  m_Name: GreenBall
+  m_Name: PurpleBall
   m_EditorClassIdentifier: 
-  color: {fileID: 11400000, guid: b40ea3a328c5556479e00cc115f57182, type: 2}
-  bounciness: 0.5
-  mass: 0.0001
+  color: {fileID: 11400000, guid: 7f2e21435c134b44587c1195a89a95c3, type: 2}
+  bounciness: 0.98
+  mass: 1
   damageMod: 0.5
   repairMod: 1
-  massMultiplier: 0.0001
+  massMultiplier: 1
   massCap: 5
   scaleMultiplier: 1
   scaleCap: 5
   allowDamageCombine: 0
+  mergableBalls:
+  - {fileID: 11400000, guid: 732d849bcf3de644680670cd466d4024, type: 2}
+  acceptableCombinations: []
