@@ -56,7 +56,7 @@ public class NextColor
 
     private void Add()
     {
-        ColorSO nextColor = GetNextColors();
+        ColorSO nextColor = GetNextColors().color;
         GameObject go = nextColor.YarnPrefab;
         NextColorQueue.Enqueue(nextColor);
         NextYarns.Enqueue(go);
@@ -68,17 +68,13 @@ public class NextColor
         return _gameManager.GetRandomColorSO();
     }
 
-
-    private ColorSO GetRandomColorSO()
-    {
-        return _gameManager.GetRandomColorSO();
-    }
-
-    private ColorSO GetNextColors()
+    private YarnAttributesSO GetNextColors()
     {
    
         if( _gameManager._ColorChangeRand)
+        {
               return _gameManager.GetRandomColorSO();
+        }
         else
         {
             colorindex++;
