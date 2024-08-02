@@ -11,23 +11,29 @@ public class NextColor
     [SerializeField, Tooltip("Number of yarn balls in queue")] private int _count = 3;
     [SerializeField] private GameManager _gameManager;
 
+    public Queue<ColorSO> NextColorQueue = new();
     public Queue<Color> NextColors = new();
     public Queue<GameObject> NextYarns = new();
     int colorindex = 0;
-    bool _e;
+//     bool _e;
     public  ThreeColors script;
     public void Setup(GameManager gameManager)
     {
         _gameManager = gameManager;
-      UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
+        UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
         for (int i = 0; i < _count; i++)
         {
             Add();
         }
     }
-    void Start()
+//     void Start()
+//     {
+//       _e= script._rand;
+//     }
+
+    public ColorSO GetColorSO()
     {
-      _e= script._rand;
+        return NextColorQueue.Peek();
     }
 
     public GameObject GetPrefab()
@@ -42,6 +48,7 @@ public class NextColor
 
     public void Remove()
     {
+        NextColorQueue.Dequeue();
         NextYarns.Dequeue();
         NextColors.Dequeue();
         Add();
@@ -49,21 +56,16 @@ public class NextColor
 
     private void Add()
     {
-
-        
-
-        ColorSO nextColor = ThreeColors();
+        ColorSO nextColor = GetNextColors();
         GameObject go = nextColor.YarnPrefab;
-        colorindex++;
-       
-
+        NextColorQueue.Enqueue(nextColor);
         NextYarns.Enqueue(go);
-        NextColors.Enqueue(go.GetComponent<Renderer>().sharedMaterial.color);
+        NextColors.Enqueue(nextColor.Color);
     }
 
-    private GameObject GetRandomPrefab()
+    private YarnAttributesSO GetRandomColorSO()
     {
-        return _gameManager.GetRandomColorYarn();
+        return _gameManager.GetRandomColorSO();
     }
 
 
@@ -72,15 +74,18 @@ public class NextColor
         return _gameManager.GetRandomColorSO();
     }
 
-    private ColorSO ThreeColors()
+    private ColorSO GetNextColors()
     {
    
-        if( _gameManager._ColorChangeRand==true)
+        if( _gameManager._ColorChangeRand)
               return _gameManager.GetRandomColorSO();
         else
         {
-            if (colorindex == 3)
+            colorindex++;
+            if (colorindex >= _gameManager.NumberOfColors)
+            {
                 colorindex = 0;
+            }
             return _gameManager.GetIndexColorSO(colorindex);
         }
 

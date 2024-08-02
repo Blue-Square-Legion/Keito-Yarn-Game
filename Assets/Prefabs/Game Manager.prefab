@@ -64,14 +64,18 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   _colorList:
-  - {fileID: 11400000, guid: 29e19a1c4d33c8a4786ed45a18fdcf21, type: 2}
-  - {fileID: 11400000, guid: b40ea3a328c5556479e00cc115f57182, type: 2}
-  - {fileID: 11400000, guid: 853307e61ecf1f34cbb7809ce9e09159, type: 2}
+  - {fileID: 11400000, guid: 8e8ab487bc8dc234b898f2d5a1aa7c51, type: 2}
+  - {fileID: 11400000, guid: 732d849bcf3de644680670cd466d4024, type: 2}
+  - {fileID: 11400000, guid: fdee1be18ada1094bab3391314636695, type: 2}
+  _enforcedCatColor: {fileID: 0}
   catGameObject: {fileID: 4306071415022843939, guid: e236b0395904249168c1906d20806d06, type: 3}
   OnGameEnd:
     m_PersistentCalls:
       m_Calls: []
   OnCatSpawn:
+    m_PersistentCalls:
+      m_Calls: []
+  OnNewColor:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &6293817618361023912

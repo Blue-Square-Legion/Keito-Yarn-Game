@@ -10,6 +10,9 @@
 						<State Name="IngameState" ID="{AE3FB139-1538-47C7-8325-8451E6E562C0}"/>
 						<State Name="Pause_State" ID="{0CA38F66-44BF-4288-92F6-94543C2B555B}"/>
 						<State Name="Game_over" ID="{A0DCA826-7E6F-4462-87D3-15F4CCF6BFC5}"/>
+						<State Name="Childrens_State" ID="{9B0C0C8E-CFBD-44DF-97F6-247C7AD243BB}"/>
+						<State Name="Rock_State" ID="{595620FE-D61A-43D3-A76F-B7D27784784A}"/>
+						<State Name="Disco_State" ID="{E375BBCF-7334-495E-B404-64EA9CCC0B7C}"/>
 					</ChildrenList>
 				</StateGroup>
 				<StateGroup Name="PlayerState" ID="{4E95AF37-1545-4577-9C92-B1769A4D9B05}">

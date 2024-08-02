@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>F:\Poslovi\P1-OM\Keito\KeitoNew\Keito-Yarn-Game\Keito-Yarn-Game_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>F:\Poslovi\P1-OM\Keito\KeitoNew\Keito-Yarn-Game\Keito-Yarn-Game_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>F:\Poslovi\P1-OM\Keito\KeitoNew\Keito-Yarn-Game\Keito-Yarn-Game_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ProjectRoot>F:\Poslovi\P1-OM\Keito 2 - Music\Keito-Yarn-Game\Keito-Yarn-Game_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>F:\Poslovi\P1-OM\Keito 2 - Music\Keito-Yarn-Game\Keito-Yarn-Game_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>F:\Poslovi\P1-OM\Keito 2 - Music\Keito-Yarn-Game\Keito-Yarn-Game_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>F:\Poslovi\P1-OM\Keito\KeitoNew\Keito-Yarn-Game\Keito-Yarn-Game_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>F:\Poslovi\P1-OM\Keito 2 - Music\Keito-Yarn-Game\Keito-Yarn-Game_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -21,7 +21,7 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\MasterVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2641024368" Language="SFX" Hash="2431105026">
+		<SoundBank Id="2641024368" Language="SFX" Hash="2164562358">
 			<ObjectPath>\SoundBanks\Default Work Unit\SFX_SoundBank</ObjectPath>
 			<ShortName>SFX_SoundBank</ShortName>
 			<Path>SFX_SoundBank.bnk</Path>
@@ -534,7 +534,7 @@
 				<GameParameter Id="2801574179" Name="VolumeChange" ObjectPath="\Game Parameters\Default Work Unit\VolumeChange"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3589812408" Language="SFX" Hash="4093079579">
+		<SoundBank Id="3589812408" Language="SFX" Hash="2299710058">
 			<ObjectPath>\SoundBanks\Default Work Unit\Music_SoundBank</ObjectPath>
 			<ShortName>Music_SoundBank</ShortName>
 			<Path>Music_SoundBank.bnk</Path>
@@ -544,6 +544,10 @@
 						<File Id="33298597" Language="SFX">
 							<ShortName>JasminaCarevic_Keito_124bmp_4-4_Track1_Glock.wav</ShortName>
 							<Path>SFX\JasminaCarevic_Keito_124bmp_4-4_Track1_Glock_D79FB2B7.wem</Path>
+						</File>
+						<File Id="70731105" Language="SFX">
+							<ShortName>JasminaCarevic_Keito_Childrens_124bmp_4-4.wav</ShortName>
+							<Path>SFX\JasminaCarevic_Keito_Childrens_124bmp_4-4_D79FB2B7.wem</Path>
 						</File>
 						<File Id="143496161" Language="SFX">
 							<ShortName>JasminaCarevic_Keito_124bmp_4-4_Gameover.wav</ShortName>
@@ -568,6 +572,10 @@
 						<File Id="504052876" Language="SFX">
 							<ShortName>JasminaCarevic_Keito_124bmp_4-4_Track1_Marimba1.wav</ShortName>
 							<Path>SFX\JasminaCarevic_Keito_124bmp_4-4_Track1_Marimba1_D79FB2B7.wem</Path>
+						</File>
+						<File Id="542991959" Language="SFX">
+							<ShortName>JasminaCarevic_Keito_Disco_124bmp_4-4.wav</ShortName>
+							<Path>SFX\JasminaCarevic_Keito_Disco_124bmp_4-4_D79FB2B7.wem</Path>
 						</File>
 						<File Id="585377437" Language="SFX">
 							<ShortName>JasminaCarevic_Keito_124bmp_4-4_Track2_Marimba3.wav</ShortName>
@@ -604,6 +612,10 @@
 						<File Id="806706298" Language="SFX">
 							<ShortName>JasminaCarevic_Keito_124bmp_4-4_Track2_Whistler.wav</ShortName>
 							<Path>SFX\JasminaCarevic_Keito_124bmp_4-4_Track2_Whistler_D79FB2B7.wem</Path>
+						</File>
+						<File Id="912151954" Language="SFX">
+							<ShortName>JasminaCarevic_Keito_Rock_124bmp_4-4.wav</ShortName>
+							<Path>SFX\JasminaCarevic_Keito_Rock_124bmp_4-4_D79FB2B7.wem</Path>
 						</File>
 						<File Id="944208439" Language="SFX">
 							<ShortName>JasminaCarevic_Keito_124bmp_4-4_MainMenu_Melody.wav</ShortName>
@@ -665,6 +677,21 @@
 								<File Id="143496161"/>
 							</Media>
 						</SwitchContainer>
+						<SwitchContainer SwitchValue="{9B0C0C8E-CFBD-44DF-97F6-247C7AD243BB}">
+							<Media>
+								<File Id="70731105"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{E375BBCF-7334-495E-B404-64EA9CCC0B7C}">
+							<Media>
+								<File Id="542991959"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{595620FE-D61A-43D3-A76F-B7D27784784A}">
+							<Media>
+								<File Id="912151954"/>
+							</Media>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 			</IncludedEvents>
@@ -676,6 +703,9 @@
 						<State Id="3656907969" Name="IngameState" ObjectPath="\States\Default Work Unit\GameStates\IngameState" GUID="{AE3FB139-1538-47C7-8325-8451E6E562C0}"/>
 						<State Id="1944582999" Name="Pause_State" ObjectPath="\States\Default Work Unit\GameStates\Pause_State" GUID="{0CA38F66-44BF-4288-92F6-94543C2B555B}"/>
 						<State Id="1432716332" Name="Game_over" ObjectPath="\States\Default Work Unit\GameStates\Game_over" GUID="{A0DCA826-7E6F-4462-87D3-15F4CCF6BFC5}"/>
+						<State Id="822846821" Name="Childrens_State" ObjectPath="\States\Default Work Unit\GameStates\Childrens_State" GUID="{9B0C0C8E-CFBD-44DF-97F6-247C7AD243BB}"/>
+						<State Id="1665225948" Name="Rock_State" ObjectPath="\States\Default Work Unit\GameStates\Rock_State" GUID="{595620FE-D61A-43D3-A76F-B7D27784784A}"/>
+						<State Id="896387339" Name="Disco_State" ObjectPath="\States\Default Work Unit\GameStates\Disco_State" GUID="{E375BBCF-7334-495E-B404-64EA9CCC0B7C}"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="3285234865" Name="PlayerState" ObjectPath="\States\Default Work Unit\PlayerState" GUID="{4E95AF37-1545-4577-9C92-B1769A4D9B05}">
