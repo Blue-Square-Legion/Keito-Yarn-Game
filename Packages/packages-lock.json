@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.browar.editor-toolbox": {
+      "version": "0.12.12",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.editorcoroutines": "1.0.0"
+      },
+      "url": "https://package.openupm.com"
+    },
     "com.github.superunitybuild.buildactions": {
       "version": "4.0.1",
       "depth": 0,
@@ -19,6 +28,22 @@
     "com.handzlikchris.fastscriptreload": {
       "version": "1.6.1",
       "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.tdw.better.commons": {
+      "version": "0.0.32",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.tdw.better.internal.core": "0.0.2"
+      },
+      "url": "https://package.openupm.com"
+    },
+    "com.tdw.better.internal.core": {
+      "version": "0.0.2",
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
@@ -57,6 +82,13 @@
     "com.unity.collab-proxy": {
       "version": "2.4.4",
       "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.editorcoroutines": {
+      "version": "1.0.0",
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -244,6 +276,16 @@
         "com.unity.modules.xr": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.uurha.betterattributes": {
+      "version": "3.1.8",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.tdw.better.commons": "0.0.32",
+        "com.tdw.better.internal.core": "0.0.2"
+      },
+      "url": "https://package.openupm.com"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

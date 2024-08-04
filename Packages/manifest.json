@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.browar.editor-toolbox": "0.12.12",
     "com.github.superunitybuild.buildactions": "4.0.1",
     "com.github.superunitybuild.buildtool": "7.0.0",
     "com.handzlikchris.fastscriptreload": "1.6.1",
@@ -22,6 +23,7 @@
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.9.4",
     "com.unity.xr.legacyinputhelpers": "2.1.10",
+    "com.uurha.betterattributes": "3.1.8",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
