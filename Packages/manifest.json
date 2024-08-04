@@ -48,5 +48,21 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.github.superunitybuild.buildtool",
+        "com.github.superunitybuild.buildactions",
+        "com.browar.editor-toolbox",
+        "com.handzlikchris.fastscriptreload",
+        "com.studio23.ss2.settings.video",
+        "com.tdw.better.commons",
+        "com.tdw.better.internal.core",
+        "com.uurha.betterattributes"
+      ]
+    }
+  ]
 }
