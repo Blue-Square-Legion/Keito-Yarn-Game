@@ -26,7 +26,8 @@ public class SlingShot : MonoBehaviour
     [SerializeField] private bool _isToggle = false;
     [SerializeField] private AlignmentControl _horizontal;
     [SerializeField] private AlignmentControl _forceVertical;
-
+    
+    [SerializeField] public bool PowerShot;
     [SerializeField, Range(0, 1)] private float _startForceMulti = 0.5f;
     #endregion
 
@@ -102,9 +103,10 @@ public class SlingShot : MonoBehaviour
         }
         // Try having them outside the is held
         UpdateRotation();
-
-        _forceVector = _force * transform.forward;
-
+        if(PowerShot)
+        _forceVector = _force*6f * transform.forward;
+        else
+        _forceVector = _force  * transform.forward;
         DrawWithDrag(_forceVector);
 
         _currentBall.transform.position = StartOffset;

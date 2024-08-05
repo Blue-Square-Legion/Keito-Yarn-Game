@@ -46,7 +46,7 @@ public class Throw : MonoBehaviour
 
     private float timeRandomForce = 0f;
 
-    private float _force = 20f;
+    private float _force = 20000f;
     private Vector3 _forceVector;
     private bool _onCoolDown;
 
@@ -59,7 +59,7 @@ public class Throw : MonoBehaviour
 
     private void Start()
     {
-        _force = (_minForce + _maxForce) / 2;
+      //  _force = (_minForce + _maxForce) / 2;
 
         _nextPrefab = GetNextPrefab();
         _futurePrefab = GetNextPrefab();
@@ -102,8 +102,8 @@ public class Throw : MonoBehaviour
             UpdateForce();
             UpdateRotation();
 
-            _forceVector = _force * transform.forward;
-
+            _forceVector = _force*5000f * transform.forward;
+         
             DrawWithDrag(_forceVector);
             _indicator.transform.position = _lineRenderer.GetPosition(_lineRenderer.positionCount - 1);
 
@@ -127,11 +127,11 @@ public class Throw : MonoBehaviour
     private void UpdateRotation()
     {
         Vector2 mouseDelta = Mouse.current.delta.ReadValue();
-        _currentRotation.y += mouseDelta.x * Time.deltaTime * _rotationSpeed;
-        _currentRotation.x += -mouseDelta.y * Time.deltaTime * _rotationSpeed;
+       _currentRotation.y += mouseDelta.x * Time.deltaTime * _rotationSpeed;
+       _currentRotation.x += -mouseDelta.y * Time.deltaTime * _rotationSpeed;
 
-        _currentRotation.x = Mathf.Clamp(_currentRotation.x, -_clampVertical, _clampVertical);
-        _currentRotation.y = Mathf.Clamp(_currentRotation.y, -_clampHorizontal, _clampHorizontal);
+       _currentRotation.x = Mathf.Clamp(_currentRotation.x, -_clampVertical, _clampVertical);
+       _currentRotation.y = Mathf.Clamp(_currentRotation.y, -_clampHorizontal, _clampHorizontal);
 
         transform.localRotation = Quaternion.Euler(_currentRotation.x, _currentRotation.y, 0);
     }
@@ -229,8 +229,8 @@ public class Throw : MonoBehaviour
 
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-
-        rb.AddForce(_forceVector, ForceMode.Impulse);
+     
+       rb.AddForce(_forceVector, ForceMode.Impulse);
     }
 
     private void EnableThrownObject(GameObject go)
@@ -271,7 +271,7 @@ public class Throw : MonoBehaviour
 
         return false;
     }
-
+  
     /// <summary>
     /// Helper function to calc Vector3 directional offsets
     /// </summary>
