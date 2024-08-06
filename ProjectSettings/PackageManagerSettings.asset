@@ -38,6 +38,7 @@ MonoBehaviour:
     - com.tdw.better.commons
     - com.tdw.better.internal.core
     - com.uurha.betterattributes
+    - com.brunomikoski.animationsequencer
     m_IsDefault: 0
     m_Capabilities: 0
     m_ConfigSource: 4

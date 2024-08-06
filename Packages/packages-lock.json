@@ -9,6 +9,13 @@
       },
       "url": "https://package.openupm.com"
     },
+    "com.brunomikoski.animationsequencer": {
+      "version": "0.5.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.github.superunitybuild.buildactions": {
       "version": "4.0.1",
       "depth": 0,
