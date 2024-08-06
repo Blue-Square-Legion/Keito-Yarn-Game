@@ -70,7 +70,9 @@
         "com.tdw.better.commons",
         "com.tdw.better.internal.core",
         "com.uurha.betterattributes",
-        "com.brunomikoski.animationsequencer"
+        "com.brunomikoski.animationsequencer",
+        "com.needle.compilation-visualizer",
+        "com.bgtools.playerprefseditor"
       ]
     }
   ]
