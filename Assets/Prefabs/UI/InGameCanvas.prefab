@@ -1422,6 +1422,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1499,6 +1500,7 @@ MonoBehaviour:
   endStarsText: {fileID: 6580677674694041835}
   bestStarsText: {fileID: 4282711041930610615}
   _scoreController: {fileID: 8549648149600542606}
+  unlimitedTime: 0
   OnPauseMenuOpen:
     m_PersistentCalls:
       m_Calls: []
