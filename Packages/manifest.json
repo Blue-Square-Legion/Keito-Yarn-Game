@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.bgtools.playerprefseditor": "1.2.2",
     "com.browar.editor-toolbox": "0.12.12",
     "com.brunomikoski.animationsequencer": "0.5.4",
     "com.github.superunitybuild.buildactions": "4.0.1",
