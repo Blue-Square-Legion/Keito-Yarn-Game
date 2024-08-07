@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6907512071139a47a3418b91cc07670, type: 3}
   m_Name: MouseSensitivityPlayerPref
   m_EditorClassIdentifier: 
-  currKey: 0
+  currKey: 4

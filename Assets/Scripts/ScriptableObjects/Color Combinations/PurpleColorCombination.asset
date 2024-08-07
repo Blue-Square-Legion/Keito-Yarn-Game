@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3136f895e89234a9ac8d43e30190cd, type: 3}
+  m_Name: PurpleColorCombination
+  m_EditorClassIdentifier: 
+  colorA: {fileID: 11400000, guid: 8e8ab487bc8dc234b898f2d5a1aa7c51, type: 2}
+  colorB: {fileID: 11400000, guid: fdee1be18ada1094bab3391314636695, type: 2}
+  newYarnBall: {fileID: 11400000, guid: 1fbbd453f4c2ed248affce5738101134, type: 2}
