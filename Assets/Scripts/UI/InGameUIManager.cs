@@ -17,11 +17,15 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField] GameObject _confirmationUI;
     [SerializeField] GameObject _gameOverUI;
     [SerializeField] OffScreenIndicator _indicator;
-    [SerializeField] PlayerPrefSO masterSO, musicSO, soundSO, _BestTimePlayerPref;
-    [SerializeField] private TextMeshProUGUI endTimeText, bestTimeText, currTimeText;
+    [SerializeField] Button _tryAgainButton;
+    [SerializeField] PlayerPrefSO masterSO, musicSO, soundSO, mouseSO;
+    [SerializeField] BestTimeSO bestTimeSO;
+    [SerializeField] private TextMeshProUGUI tryAgainButtonText, gameOverText, endTimeText, bestTimeText, currTimeText, ballsLeftText;
+    [SerializeField] private TextMeshProUGUI endStarsText, bestStarsText;
     [SerializeField] private ScoreProgressController _scoreController;
     
-
+    private bool countdownStarted = false;
+    private int countdownEnd;
     public UnityEvent OnPauseMenuOpen, OnPauseMenuClose, OnGameEnd;
 
     
@@ -43,6 +47,7 @@ public class InGameUIManager : MonoBehaviour
         {
             Debug.LogWarning("Missing UI Reference: Timer");
         }
+        bestTimeSO.LoadHighScores();
     }
 
     private void OnEnable()
@@ -102,6 +107,96 @@ public class InGameUIManager : MonoBehaviour
         OnPauseGame();
     }
 
+    private void UpdateEndGameUI()
+    {
+        _tryAgainButton.onClick.RemoveListener(OnResetGame);
+        _tryAgainButton.onClick.RemoveListener(OnLevelChange);
+        _tryAgainButton.onClick.RemoveListener(OnBackToMainMenu);
+
+        if (_gameManager.Score < _gameManager.TargetScore) {
+            gameOverText.text = "Game Over!";
+            tryAgainButtonText.text = "Play Again";
+            _tryAgainButton.onClick.AddListener(OnResetGame);
+        } else {
+            gameOverText.text = "Level Complete!";
+            int sceneCount = SceneManager.sceneCountInBuildSettings;
+            int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            if(nextLevelIndex < sceneCount) {
+                tryAgainButtonText.text = "Next Level";
+                _tryAgainButton.onClick.AddListener(OnLevelChange);
+            } else {
+                tryAgainButtonText.text = "Back to Main Menu";
+                _tryAgainButton.onClick.AddListener(OnBackToMainMenu);
+            }
+        }
+        UpdateStarUI();
+    }
+
+    private int StarInterval() {
+        int currLevel = SceneManager.GetActiveScene().buildIndex;
+        if(currLevel == 1) {
+            return 40;
+        } else if(currLevel == 2) {
+            return 50;
+        } else if(currLevel == 3){
+            return 60;
+        }
+        return 60;
+    }
+
+    private int StarRating(int completionTime) {
+        if(completionTime < 1) {
+            return 0;
+        }
+        int starInterval = StarInterval();
+        if(completionTime < starInterval) {
+            return 3;
+        }
+        if(completionTime < starInterval * 2) {
+            return 2;
+        }
+        if(completionTime < starInterval * 4) {
+            return 1;
+        }
+        return 0;
+    }
+
+    private void UpdateStarUI() {
+        int i = 0;
+        endStarsText.text = "";
+        bestStarsText.text = "";
+        if(_gameManager.Score < _gameManager.TargetScore) {
+            endStarsText.text = "☆☆☆";
+        } else {
+            while(i < StarRating(_gameManager.CurrentTime)) {
+                endStarsText.text += "★";
+                i++;
+            }
+            while(i < 3) {
+                endStarsText.text += "☆";
+                i++;
+            }
+        }
+        i = 0;
+        while(i < StarRating(bestTimeSO.GetBestTimeForCurrentScene())) {
+            bestStarsText.text += "★";
+            i++;
+        }
+        while(i < 3) {
+            bestStarsText.text += "☆";
+            i++;
+        }
+    }
+
+    public void UpdateBallsLeft(int balls) {
+        if(balls > 0) {
+            ballsLeftText.text = "Balls Left: " + balls;
+        } else {
+            countdownStarted = true;
+            countdownEnd = _gameManager.CurrentTime + 5;
+        }
+    }
+
     public void OnPauseGame()
     {
         OnPauseMenuOpen.Invoke();
@@ -131,6 +226,13 @@ public class InGameUIManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    private void OnLevelChange()
+    {
+        int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        _gameManager.ResumeGame();
+        AkSoundEngine.StopAll();
+        SceneManager.LoadScene(nextLevelIndex);
+    }
 
     public void OnResumeGame()
     {
@@ -176,6 +278,8 @@ public class InGameUIManager : MonoBehaviour
         _gameManager.PauseGame();
         _gameOverUI.SetActive(true);
         
+        UpdateEndGameUI();
+        
         AkSoundEngine.SetState("GameStates", "Game_over");
         OnGameEnd.Invoke();
     }
@@ -185,6 +289,7 @@ public class InGameUIManager : MonoBehaviour
         PlayerPrefs.DeleteKey(masterSO.currKey.ToString());
         PlayerPrefs.DeleteKey(musicSO.currKey.ToString());
         PlayerPrefs.DeleteKey(soundSO.currKey.ToString());
+        PlayerPrefs.DeleteKey(mouseSO.currKey.ToString());
     }
 
 
@@ -203,18 +308,32 @@ public class InGameUIManager : MonoBehaviour
 
         if (_gameManager.Score >= _gameManager.TargetScore)
         {
-            _gameManager.BestTime = _gameManager.CurrentTime;
+            bestTimeSO.SetBestTimeForCurrentScene(_gameManager.CurrentTime);
 
-            PlayerPrefs.SetInt(_BestTimePlayerPref.currKey.ToString(), _gameManager.BestTime);
-            PlayerPrefs.Save();
-
-            CancelInvoke("Timer");
-
-            endTimeText.text = string.Format("Final Time: {0}", ConvertTime(_gameManager.CurrentTime));
-            bestTimeText.text = string.Format("Best Time: {0}", ConvertTime(_gameManager.BestTime));
-
-            _gameManager.OnGameEnd.Invoke();
+            endTimeText.text = string.Format("Final Time: {0} ", ConvertTime(_gameManager.CurrentTime));
+            StopTimer();
         }
+
+        if (countdownStarted) {
+            int secondsRemaining = countdownEnd - _gameManager.CurrentTime;
+            ballsLeftText.text = "Countdown: " + secondsRemaining;
+            if(secondsRemaining <= 0) {
+                endTimeText.text = "Final Time: -:-- ";
+                StopTimer();
+            }
+        }
+    }
+
+    private void StopTimer()
+    {
+        CancelInvoke("Timer");
+        int bestTimeForCurrentLevel = bestTimeSO.GetBestTimeForCurrentScene();
+        if(bestTimeForCurrentLevel > 0) {
+            bestTimeText.text = string.Format("Best Time: {0} ", ConvertTime(bestTimeForCurrentLevel));
+        } else {
+            bestTimeText.text = "Best Time: -:-- ";
+        }
+        _gameManager.OnGameEnd.Invoke();
     }
 
     public void ChangeProgressBar()

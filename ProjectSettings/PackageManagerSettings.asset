@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EnablePreReleasePackages: 0
-  m_EnablePackageDependencies: 0
+  m_EnablePackageDependencies: 1
   m_AdvancedSettingsExpanded: 1
   m_ScopedRegistriesSettingsExpanded: 1
   m_SeeAllPackageVersions: 0
@@ -26,11 +26,29 @@ MonoBehaviour:
     m_IsDefault: 1
     m_Capabilities: 7
     m_ConfigSource: 0
-  m_UserSelectedRegistryName: 
+  - m_Id: scoped:project:package.openupm.com
+    m_Name: package.openupm.com
+    m_Url: https://package.openupm.com
+    m_Scopes:
+    - com.github.superunitybuild.buildtool
+    - com.github.superunitybuild.buildactions
+    - com.browar.editor-toolbox
+    - com.handzlikchris.fastscriptreload
+    - com.studio23.ss2.settings.video
+    - com.tdw.better.commons
+    - com.tdw.better.internal.core
+    - com.uurha.betterattributes
+    - com.brunomikoski.animationsequencer
+    - com.needle.compilation-visualizer
+    - com.bgtools.playerprefseditor
+    m_IsDefault: 0
+    m_Capabilities: 0
+    m_ConfigSource: 4
+  m_UserSelectedRegistryName: package.openupm.com
   m_UserAddingNewScopedRegistry: 0
   m_RegistryInfoDraft:
     m_Modified: 0
     m_ErrorMessage: 
-    m_UserModificationsInstanceId: -826
-    m_OriginalInstanceId: -828
+    m_UserModificationsInstanceId: -822
+    m_OriginalInstanceId: -824
   m_LoadAssets: 0

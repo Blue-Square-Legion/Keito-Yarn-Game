@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class ColorController : MonoBehaviour, IDamageable, IRepairable
 {
-    [SerializeField] private ColorSO _color;
-    [SerializeField] private float _damageMod = 0.5f;
-    [SerializeField] private float _repairMod = 1f;
-    
+    [SerializeField] private YarnAttributesSO yarnBallAttributes;
+
     private bool _isDamaged = false;
 
-    public ColorSO Color => _color;
+    public YarnAttributesSO YarnAttributes { get { return yarnBallAttributes; } set { yarnBallAttributes = value; } }
+    public ColorSO Color => yarnBallAttributes.color;
     private Renderer _render;
 
     private void Start()
@@ -20,7 +19,7 @@ public class ColorController : MonoBehaviour, IDamageable, IRepairable
 
     private void SetColor(float modifier = 1f)
     {
-        _render.material.color = _color.Color * modifier;
+        _render.material.color = yarnBallAttributes.color.Color * modifier;
     }
 
     public void Damage()
