@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _catFactPrefab: {fileID: 8401522277341119241, guid: fb54818e2088a124abf8188fc5b06724, type: 3}
+  _catfactSeparation: {fileID: 4994812645353667970}
 --- !u!114 &4994812645353667970
 MonoBehaviour:
   m_ObjectHideFlags: 0

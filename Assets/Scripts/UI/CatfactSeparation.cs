@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CatfactSeperation : MonoBehaviour
+public class CatfactSeparation : MonoBehaviour
 {
     /*
      * Summary: This script allows the cat facts to spawn when another is up

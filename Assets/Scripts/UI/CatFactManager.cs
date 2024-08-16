@@ -5,7 +5,7 @@ using UnityEngine;
 public class CatFactManager : MonoBehaviour
 {
     [SerializeField] private GameObject _catFactPrefab;
-    public CatfactSeperation CatfactSeperation;
+    public CatfactSeparation _catfactSeparation;
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class CatFactManager : MonoBehaviour
         CatFactToast toast = go.GetComponent<CatFactToast>();
         toast.SetUp(data);
         //updateUI goes here, in order to put the catfact image/gameobject in a list and move them when needed.
-        CatfactSeperation.updateUI(go);
+        _catfactSeparation.updateUI(go);
     }
 
     public void SpawnCatFact(CollectableSO data)
