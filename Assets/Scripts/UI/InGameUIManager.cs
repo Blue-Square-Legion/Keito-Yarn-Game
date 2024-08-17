@@ -24,6 +24,9 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI endStarsText, bestStarsText;
     [SerializeField] private ScoreProgressController _scoreController;
     
+    [Header("Bi-directional Timer")]
+    [Tooltip("Enable for count up/Disable for count down")]
+    public bool unlimitedTime;
     private bool countdownStarted = false;
     private int countdownEnd;
     public UnityEvent OnPauseMenuOpen, OnPauseMenuClose, OnGameEnd;
@@ -42,6 +45,11 @@ public class InGameUIManager : MonoBehaviour
         if (currTimeText)
         {
             InvokeRepeating("Timer", 1f, _gameManager.TimePerSecond);
+            if(unlimitedTime) {
+                currTimeText.text = ConvertTime(0);
+            } else {
+                currTimeText.text = ConvertTime(StarInterval() * 4);
+            }
         }
         else
         {
@@ -304,7 +312,16 @@ public class InGameUIManager : MonoBehaviour
     public void Timer()
     {
         _gameManager.CurrentTime++;
-        currTimeText.text = ConvertTime(_gameManager.CurrentTime);
+        if(unlimitedTime) {
+            currTimeText.text = ConvertTime(_gameManager.CurrentTime);
+        } else {
+            int timeRemaining = StarInterval() * 4 - _gameManager.CurrentTime;
+            currTimeText.text = ConvertTime(timeRemaining);
+            if(timeRemaining <= 0) {
+                endTimeText.text = "Final Time: -:-- ";
+                StopTimer();
+            }
+        }
 
         if (_gameManager.Score >= _gameManager.TargetScore)
         {
