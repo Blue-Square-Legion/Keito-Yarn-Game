@@ -7,14 +7,14 @@ public class YarnAttributesSO : ScriptableObject
 {
     public ColorSO color;
     public float bounciness = 0.98f;
-    public float mass = 1f;
+    [Range(0.01f, 10f)] public float mass = 1f;
 
     [Space(5)]
     public float damageMod = 0.5f;
     public float repairMod = 1f;
 
     [Space(5)]
-    public float massMultiplier = 1f;
+    [Range(0.01f, 10f)] public float massMultiplier = 1f;
     public float massCap = 5f;
 
     [Space(5)]
@@ -23,4 +23,10 @@ public class YarnAttributesSO : ScriptableObject
 
     [Space(5)]
     public bool allowDamageCombine = false;
+
+    [Space(5), Tooltip("Balls that this one can merge with")]
+    public List<YarnAttributesSO> mergableBalls = new();
+
+    [Space(5), Tooltip("What new colors the yarn ball can merge into if it was hit by the compatible yarn ball.")]
+    public List<ColorCombinationSO> acceptableCombinations = new();
 }

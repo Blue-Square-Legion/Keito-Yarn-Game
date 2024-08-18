@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 427063e7f5aa3fe40999755fdf9bc87b, type: 3}
-  m_Name: RedBall
+  m_Name: BlueBall
   m_EditorClassIdentifier: 
-  color: {fileID: 11400000, guid: 853307e61ecf1f34cbb7809ce9e09159, type: 2}
-  bounciness: 0.5
-  mass: 5
+  color: {fileID: 11400000, guid: 29e19a1c4d33c8a4786ed45a18fdcf21, type: 2}
+  bounciness: 1
+  mass: 1
   damageMod: 0.5
   repairMod: 1
   massMultiplier: 1
@@ -22,3 +22,7 @@ MonoBehaviour:
   scaleMultiplier: 1
   scaleCap: 5
   allowDamageCombine: 0
+  mergableBalls:
+  - {fileID: 11400000, guid: 8e8ab487bc8dc234b898f2d5a1aa7c51, type: 2}
+  acceptableCombinations:
+  - {fileID: 11400000, guid: bb36fd81bee07384b8522fdeb631e4f6, type: 2}

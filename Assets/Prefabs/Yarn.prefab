@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acbd4f71046444448622b623871a91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yarnAttributesSO: {fileID: 11400000, guid: 5e366cc6fa2e4ad49a75b6073d44f340, type: 2}
+  yarnAttributesSO: {fileID: 0}
   OnCombine:
     m_PersistentCalls:
       m_Calls:
@@ -286,6 +286,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   YarnCombineSound: Play_Yarn_Combine
+  _colorAlreadyChanged: 0
 --- !u!114 &-1940726632899412579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61a3d5b8155e6a4dbd5526cd415ce63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yarnBallAttributes: {fileID: 11400000, guid: 5e366cc6fa2e4ad49a75b6073d44f340, type: 2}
+  yarnBallAttributes: {fileID: 0}
 --- !u!114 &-6499248760467099502
 MonoBehaviour:
   m_ObjectHideFlags: 0

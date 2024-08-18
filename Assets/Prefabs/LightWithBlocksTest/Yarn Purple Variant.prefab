@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: _color
       value: 
       objectReference: {fileID: 11400000, guid: 7f2e21435c134b44587c1195a89a95c3, type: 2}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: yarnAttributesSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 1fbbd453f4c2ed248affce5738101134, type: 2}
     - target: {fileID: -4293314133452894743, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 1
@@ -82,6 +86,6 @@ PrefabInstance:
     - target: {fileID: 9057076750298138539, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 21f38cc05e7d1464db1ff6607220799e, type: 2}
+      objectReference: {fileID: 2100000, guid: f2049d10814a4974c9bfbee48787576e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
