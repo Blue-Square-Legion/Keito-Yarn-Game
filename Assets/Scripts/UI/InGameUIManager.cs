@@ -207,6 +207,10 @@ public class InGameUIManager : MonoBehaviour
 
     public void OnPauseGame()
     {
+        if(_gameOverUI.activeSelf) {
+            return;
+        }
+        
         OnPauseMenuOpen.Invoke();
         _pauseUI.SetActive(true);
         _gameManager.PauseGame();
