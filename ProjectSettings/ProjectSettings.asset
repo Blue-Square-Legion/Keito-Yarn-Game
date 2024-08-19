@@ -139,7 +139,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0
+  bundleVersion: v0.1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -162,11 +162,11 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.Blue-Square-Legion.Keito
   buildNumber:
-    Standalone: 0
-    iPhone: 0
+    Standalone: 17
+    iPhone: 17
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 0
-  AndroidBundleVersionCode: 1
+  overrideDefaultApplicationIdentifier: 1
+  AndroidBundleVersionCode: 18
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -785,7 +785,7 @@ PlayerSettings:
     PS4: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
     PS5: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
     Stadia: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
-    Standalone: UNITY_PIPELINE_URP;UNITY_POST_PROCESSING_STACK_V2;DOTWEEN;DOTWEEN_ENABLED
+    Standalone: BUILD_TYPE_RELEASE;BUILD_PLATFORM_MACOS;BUILD_ARCH_MACOS;BUILD_BACKEND_MONO;BUILD_DIST_MACOS_UNIVERSAL;UNITY_PIPELINE_URP;UNITY_POST_PROCESSING_STACK_V2;DOTWEEN;DOTWEEN_ENABLED
     WebGL: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
     Windows Store Apps: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
     XboxOne: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
@@ -793,7 +793,8 @@ PlayerSettings:
     tvOS: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
   additionalCompilerArguments: {}
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Standalone: 0
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
