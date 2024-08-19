@@ -8,7 +8,6 @@ namespace SuperUnityBuild.Generated
     {
         None,
         Release,
-        Prototyping,
     }
 
     public enum Platform
@@ -34,17 +33,19 @@ namespace SuperUnityBuild.Generated
     public enum Distribution
     {
         None,
+        windows_x64,
+        macos_universal,
     }
 
     public static class BuildConstants
     {
-        public static readonly DateTime buildDate = new DateTime(638595897315147560);
-        public const string version = "v0.2";
+        public static readonly DateTime buildDate = new DateTime(638596044702178280);
+        public const string version = "v0.1";
         public const ReleaseType releaseType = ReleaseType.Release;
         public const Platform platform = Platform.macOS;
         public const ScriptingBackend scriptingBackend = ScriptingBackend.Mono;
         public const Architecture architecture = Architecture.macOS;
-        public const Distribution distribution = Distribution.None;
+        public const Distribution distribution = Distribution.macos_universal;
     }
 }
 

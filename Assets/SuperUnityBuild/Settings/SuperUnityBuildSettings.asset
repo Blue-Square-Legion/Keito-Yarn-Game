@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6706168606254285045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d88f7d353534a4fbdeb11196057db7, type: 3}
+  m_Name: UploadItch
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: UploadItch
+  note: 
+  actionEnabled: 0
+  configureEditor: 0
+  filter:
+    condition: 0
+    clauses: []
+  pathToButlerExe: /Users/secondary/Applications/Shell/butler-darwin-amd64/butler
+  nameOfItchUser: sam325
+  nameOfItchGame: keito-game
+  useGeneratedBuildVersion: 1
+  channelName: $PLATFORM-$ARCHITECTURE
+  showUploadProgress: 1
+  itchChannelOverride: 
 --- !u!114 &-5072664549582472715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21,8 +48,8 @@ MonoBehaviour:
     condition: 0
     clauses: []
   pathToButlerExe: 
-  nameOfItchUser: 
-  nameOfItchGame: 
+  nameOfItchUser: sam325
+  nameOfItchGame: keito-game
   useGeneratedBuildVersion: 1
   channelName: $PLATFORM-$ARCHITECTURE
   showUploadProgress: 1
@@ -50,29 +77,6 @@ MonoBehaviour:
   inputPath: $BUILDPATH/$PRODUCT_NAME_BurstDebugInformation_DoNotShip
   outputPath: $BASEPATH/DoNotShip/$VERSION-$ARCHITECTURE-BurstDebugInformation
   operation: 0
---- !u!114 &-827903316222987588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de0f7a04940394844a505e73c3eb8cec, type: 3}
-  m_Name: ZipFileOperation
-  m_EditorClassIdentifier: 
-  actionType: 1
-  actionName: ZipFileOperation
-  note: Zip build files
-  actionEnabled: 0
-  configureEditor: 0
-  filter:
-    condition: 0
-    clauses: []
-  inputPath: $BUILDPATH
-  outputPath: $BASEPATH
-  outputFileName: $PRODUCT_NAME-$PLATFORM-$VERSION.zip
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,7 +96,7 @@ MonoBehaviour:
     constantsFileLocation: Assets/SuperUnityBuild
   _productParameters:
     buildCounter: 0
-    buildVersion: v0.2
+    buildVersion: v0.1
     versionTemplate: v0.$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -122,24 +126,37 @@ MonoBehaviour:
     - {fileID: 741060016363233176}
   _projectConfigurations:
     configSet:
-      _Buckets: 010000000300000006000000ffffffffffffffff0200000005000000
-      _HashCodes: f7e46342878a7279510e9f59d03dcd4dceee4e3995803a142d6dfd48
-      _Next: ffffffffffffffffffffffffffffffffffffffff0400000000000000
-      _Count: 7
-      _Version: 7
+      _Buckets: ffffffff06000000ffffffff08000000ffffffffffffffffffffffff0500000004000000ffffffffffffffff01000000ffffffffffffffffffffffff07000000ffffffff
+      _HashCodes: c683c44ef7e46342878a7279510e9f5956fc3370d03dcd4dceee4e3995803a142d6dfd480000000000000000000000000000000000000000000000000000000000000000
+      _Next: ffffffffffffffffffffffffffffffff00000000ffffffffffffffff02000000030000000000000000000000000000000000000000000000000000000000000000000000
+      _Count: 9
+      _Version: 9
       _FreeList: -1
       _FreeCount: 0
       _Keys:
+      - Release/PC/Windows x64 (App)/Mono/windows-x64
       - Release/PC/Windows x64 (App)/Mono
       - Release/PC/Windows x64 (App)
       - Release/PC
+      - Release/macOS/macOS (Universal,App)/Mono/macos-universal
       - Release/macOS/macOS (Universal,App)/Mono
       - Release/macOS/macOS (Universal,App)
       - Release/macOS
       - Release
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       _Values:
       - enabled: 1
         childKeys: []
+      - enabled: 1
+        childKeys:
+        - Release/PC/Windows x64 (App)/Mono/windows-x64
       - enabled: 1
         childKeys:
         - Release/PC/Windows x64 (App)/Mono
@@ -150,6 +167,9 @@ MonoBehaviour:
         childKeys: []
       - enabled: 1
         childKeys:
+        - Release/macOS/macOS (Universal,App)/Mono/macos-universal
+      - enabled: 1
+        childKeys:
         - Release/macOS/macOS (Universal,App)/Mono
       - enabled: 1
         childKeys:
@@ -158,19 +178,35 @@ MonoBehaviour:
         childKeys:
         - Release/PC
         - Release/macOS
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
     showViewOptions: 0
     showConfigs: 0
     showBuildInfo: 0
     hideDisabled: 0
     treeView: 0
-    selectedKeyChain: Release/macOS/macOS (Universal,App)/Mono
+    selectedKeyChain: Release/macOS/macOS (Universal,App)/Mono/macos-universal
   _preBuildActions:
     buildActions: []
   _postBuildActions:
     buildActions:
     - {fileID: -3613426804341958447}
-    - {fileID: -827903316222987588}
-    - {fileID: -5072664549582472715}
+    - {fileID: 3638567506685254133}
+    - {fileID: -6706168606254285045}
 --- !u!114 &741060016363233176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +221,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enabled: 1
   distributionList:
-    distributions: []
+    distributions:
+    - distributionName: macos-universal
+      enabled: 1
   architectures:
   - target: 2
     name: macOS
@@ -214,6 +252,29 @@ MonoBehaviour:
     enabled: 0
   platformName: macOS
   targetGroup: 1
+--- !u!114 &3638567506685254133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7f7586f72aa4eaeadcc71412569451, type: 3}
+  m_Name: BetterZipFileOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: BetterZipFileOperation
+  note: Zip files for backup
+  actionEnabled: 1
+  configureEditor: 0
+  filter:
+    condition: 0
+    clauses: []
+  inputPath: $BUILDPATH
+  outputPath: $BASEPATH
+  outputFileName: $PRODUCT_NAME-$PLATFORM.zip
 --- !u!114 &5018678257089528286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +289,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enabled: 1
   distributionList:
-    distributions: []
+    distributions:
+    - distributionName: windows-x64
+      enabled: 1
   architectures:
   - target: 5
     name: Windows x86
