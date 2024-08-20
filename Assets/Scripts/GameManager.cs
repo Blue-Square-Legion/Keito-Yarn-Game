@@ -94,10 +94,14 @@ public class GameManager : MonoBehaviour
         set { _numOfYarn = value; }
     }
 
+    void Awake()
+    {
+        SetUpChallengeMode();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        SetUpChallengeMode();
         SetUpCat();
 
         Collectable[] list = FindObjectsOfType<Collectable>();

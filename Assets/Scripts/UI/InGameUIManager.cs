@@ -44,16 +44,12 @@ public class InGameUIManager : MonoBehaviour
 
         if (currTimeText)
         {
-            InvokeRepeating("Timer", 1f, _gameManager.TimePerSecond);
             if(unlimitedTime) {
                 currTimeText.text = ConvertTime(0);
             } else {
-                if(timeLimit == 0) {
-                    currTimeText.text = ConvertTime(StarInterval() * 4);
-                } else {
-                    currTimeText.text = ConvertTime(timeLimit);
-                }
+                currTimeText.text = ConvertTime(GetTimeLimit());
             }
+            InvokeRepeating("Timer", 1f, _gameManager.TimePerSecond);
         }
         else
         {
