@@ -7,7 +7,7 @@ using Manager.Score;
 
 public class GameManager : MonoBehaviour
 {
-    private int numOfYarn, currTime = 0;
+    private int currTime = 0;
     private int _currentLocationIndex, _sameSpawnCount = 0;
 
     [SerializeField, Tooltip("Max # times cat can stay in same spot before force move")]
@@ -27,7 +27,22 @@ public class GameManager : MonoBehaviour
     [SerializeField] private YarnAttributesSO[] _colorList;
     [SerializeField, Tooltip("The color that the cat will always be. Leave null for random cat color choice.")] private ColorSO _enforcedCatColor = null;
     
+    [Header("Challenge Mode")]
+    [Tooltip("Enable challenge mode to see addtional options")]
     public bool _challengeMode = false;
+
+    [ConditionalHide(new string[] { "_challengeMode" }, new bool[] { false })]
+    [Tooltip("Bi-directional Timer: Enable for count up/Disable for count down")]
+    public bool _unlimitedTime = true;
+
+    [ConditionalHide(new string[] { "_challengeMode", "_unlimitedTime" }, new bool[] { false, true })]
+    public int _timeLimit = 300;
+
+    [ConditionalHide(new string[] { "_challengeMode" }, new bool[] { false })]
+    public bool _unlimitedYarn = true;
+
+    [ConditionalHide(new string[] { "_challengeMode", "_unlimitedYarn" }, new bool[] { false, true })]
+    public int _numOfYarn = 30;
     public int NumberOfColors => _colorList.Length;
 
     public GameObject catGameObject;
@@ -75,13 +90,14 @@ public class GameManager : MonoBehaviour
 
     public int NumOfYarn
     {
-        get { return numOfYarn; }
-        set { numOfYarn = value; }
+        get { return _numOfYarn; }
+        set { _numOfYarn = value; }
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        SetUpChallengeMode();
         SetUpCat();
 
         Collectable[] list = FindObjectsOfType<Collectable>();
@@ -89,6 +105,24 @@ public class GameManager : MonoBehaviour
         foreach (Collectable item in list)
         {
             item.OnCollect.AddListener(UpdateScoreCollectable);
+        }
+    }
+
+    private void SetUpChallengeMode()
+    {
+        var gameUIManager = FindObjectOfType<InGameUIManager>();
+        var slingshot = FindObjectOfType<SlingShot>();
+
+        if(_challengeMode) {
+            gameUIManager.SetUnlimitedTime(_unlimitedTime);
+            gameUIManager.SetTimeLimit(_timeLimit);
+            slingshot.SetUnlimitedYarn(_unlimitedYarn);
+            gameUIManager.SetUnlimitedBalls(_unlimitedYarn);
+            slingshot.SetRemainingYarn(_numOfYarn);
+        } else {
+            gameUIManager.SetUnlimitedTime(true);    
+            slingshot.SetUnlimitedYarn(true);
+            gameUIManager.SetUnlimitedBalls(true);
         }
     }
 

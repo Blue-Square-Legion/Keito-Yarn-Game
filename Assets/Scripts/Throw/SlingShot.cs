@@ -29,8 +29,10 @@ public class SlingShot : MonoBehaviour
 
     [SerializeField, Range(0, 1)] private float _startForceMulti = 0.5f;
 
-    [SerializeField] private int _remainingYarn = 30;
     #endregion
+
+    private bool _unlimitedYarn = true;
+    private int _remainingYarn = 30;
 
     #region Events
     //Events:
@@ -135,7 +137,7 @@ public class SlingShot : MonoBehaviour
         {
             return;
         }
-        if (_remainingYarn <= 0)
+        if (_remainingYarn <= 0 && !_unlimitedYarn)
         {
             return;
         }
@@ -199,9 +201,11 @@ public class SlingShot : MonoBehaviour
         StartCoroutine(RunCoolDown(_afterFireCD));
         OnThrow.Invoke();
 
-        _remainingYarn--;
-        var gameUIManager = FindObjectOfType<InGameUIManager>();
-        gameUIManager.UpdateBallsLeft(_remainingYarn);
+        if(!_unlimitedYarn) {
+            _remainingYarn--;
+            var gameUIManager = FindObjectOfType<InGameUIManager>();
+            gameUIManager.UpdateBallsLeft(_remainingYarn);
+        }
     }
 
     private void SetupFirstShot()
@@ -336,5 +340,14 @@ public class SlingShot : MonoBehaviour
     public Queue<Color> GetNextColors()
     {
         return _PrefabPicker.NextColors;
+    }
+
+    public void SetUnlimitedYarn(bool unlimited) {
+        _unlimitedYarn = unlimited;
+    }
+
+    public void SetRemainingYarn(int numYarn)
+    {
+        _remainingYarn = numYarn;
     }
 }
