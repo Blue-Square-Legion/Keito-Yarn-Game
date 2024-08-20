@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RedBall
   m_EditorClassIdentifier: 
   color: {fileID: 11400000, guid: 853307e61ecf1f34cbb7809ce9e09159, type: 2}
-  bounciness: 0.5
-  mass: 2
+  bounciness: 0.98
+  mass: 1
   damageMod: 0.5
   repairMod: 1
   massMultiplier: 1
