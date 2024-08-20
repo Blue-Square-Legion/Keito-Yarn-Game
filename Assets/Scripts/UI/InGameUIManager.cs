@@ -24,9 +24,9 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI endStarsText, bestStarsText;
     [SerializeField] private ScoreProgressController _scoreController;
     
-    [Header("Bi-directional Timer")]
-    [Tooltip("Enable for count up/Disable for count down")]
-    public bool unlimitedTime;
+    private bool unlimitedTime = true;
+    private int timeLimit = 0;
+    private bool unlimitedBalls = true;
     private bool countdownStarted = false;
     private int countdownEnd;
     public UnityEvent OnPauseMenuOpen, OnPauseMenuClose, OnGameEnd;
@@ -44,12 +44,12 @@ public class InGameUIManager : MonoBehaviour
 
         if (currTimeText)
         {
-            InvokeRepeating("Timer", 1f, _gameManager.TimePerSecond);
             if(unlimitedTime) {
                 currTimeText.text = ConvertTime(0);
             } else {
-                currTimeText.text = ConvertTime(StarInterval() * 4);
+                currTimeText.text = ConvertTime(GetTimeLimit());
             }
+            InvokeRepeating("Timer", 1f, _gameManager.TimePerSecond);
         }
         else
         {
@@ -197,6 +197,10 @@ public class InGameUIManager : MonoBehaviour
     }
 
     public void UpdateBallsLeft(int balls) {
+        if(unlimitedBalls) {
+            ballsLeftText.text = "";
+            return;
+        }
         if(balls > 0) {
             ballsLeftText.text = "Balls Left: " + balls;
         } else {
@@ -319,7 +323,7 @@ public class InGameUIManager : MonoBehaviour
         if(unlimitedTime) {
             currTimeText.text = ConvertTime(_gameManager.CurrentTime);
         } else {
-            int timeRemaining = StarInterval() * 4 - _gameManager.CurrentTime;
+            int timeRemaining = GetTimeLimit() - _gameManager.CurrentTime;
             currTimeText.text = ConvertTime(timeRemaining);
             if(timeRemaining <= 0) {
                 endTimeText.text = "Final Time: -:-- ";
@@ -360,5 +364,24 @@ public class InGameUIManager : MonoBehaviour
     public void ChangeProgressBar()
     {
         _scoreController.SetScore((int)_gameManager.Score);
+    }
+
+    public void SetUnlimitedTime(bool unlimited) {
+        unlimitedTime = unlimited;
+    }
+
+    public void SetTimeLimit(int seconds) {
+        timeLimit = seconds;
+    }
+
+    private int GetTimeLimit() {
+        if(timeLimit <= 0) {
+            return StarInterval() * 4;
+        }
+        return timeLimit;
+    }
+
+    public void SetUnlimitedBalls(bool unlimited) {
+        unlimitedBalls = unlimited;
     }
 }

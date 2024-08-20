@@ -977,7 +977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0:00
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8fa2ed7838f9f4362ae19387a95c7ec8, type: 2}
   m_sharedMaterial: {fileID: -2949289493946278995, guid: 8fa2ed7838f9f4362ae19387a95c7ec8, type: 2}
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1500,7 +1500,6 @@ MonoBehaviour:
   endStarsText: {fileID: 6580677674694041835}
   bestStarsText: {fileID: 4282711041930610615}
   _scoreController: {fileID: 8549648149600542606}
-  unlimitedTime: 0
   OnPauseMenuOpen:
     m_PersistentCalls:
       m_Calls: []
@@ -2705,7 +2704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7508277982025292376, guid: 30466d99d76f9ba4c90e9a2828af6437, type: 3}
       propertyPath: m_text
-      value: 'Balls Left: 30'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7508277982025292376, guid: 30466d99d76f9ba4c90e9a2828af6437, type: 3}
       propertyPath: m_fontSize
@@ -3156,7 +3155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4827656868466795039, guid: 2f9e0a750292f4f4cb7a72197628ba42, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5303741235575849386, guid: 2f9e0a750292f4f4cb7a72197628ba42, type: 3}
       propertyPath: m_AnchorMax.x
