@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BlueBall
   m_EditorClassIdentifier: 
   color: {fileID: 11400000, guid: 29e19a1c4d33c8a4786ed45a18fdcf21, type: 2}
-  bounciness: 1
+  bounciness: 0.98
   mass: 1
   damageMod: 0.5
   repairMod: 1
