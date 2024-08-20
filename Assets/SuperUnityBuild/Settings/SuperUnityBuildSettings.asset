@@ -1,0 +1,319 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6706168606254285045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d88f7d353534a4fbdeb11196057db7, type: 3}
+  m_Name: UploadItch
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: UploadItch
+  note: 
+  actionEnabled: 0
+  configureEditor: 0
+  filter:
+    condition: 0
+    clauses: []
+  pathToButlerExe: /Users/secondary/Applications/Shell/butler-darwin-amd64/butler
+  nameOfItchUser: sam325
+  nameOfItchGame: keito-game
+  useGeneratedBuildVersion: 1
+  channelName: $PLATFORM-$ARCHITECTURE
+  showUploadProgress: 1
+  itchChannelOverride: 
+--- !u!114 &-5072664549582472715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d88f7d353534a4fbdeb11196057db7, type: 3}
+  m_Name: UploadItch
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: UploadItch
+  note: 
+  actionEnabled: 0
+  configureEditor: 0
+  filter:
+    condition: 0
+    clauses: []
+  pathToButlerExe: 
+  nameOfItchUser: sam325
+  nameOfItchGame: keito-game
+  useGeneratedBuildVersion: 1
+  channelName: $PLATFORM-$ARCHITECTURE
+  showUploadProgress: 1
+  itchChannelOverride: 
+--- !u!114 &-3613426804341958447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54626104f6c7de94f9976e1672abc45b, type: 3}
+  m_Name: FolderOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: FolderOperation
+  note: Separate BurstDebugInformation
+  actionEnabled: 1
+  configureEditor: 0
+  filter:
+    condition: 0
+    clauses: []
+  inputPath: $BUILDPATH/$PRODUCT_NAME_BurstDebugInformation_DoNotShip
+  outputPath: $BASEPATH/DoNotShip/$VERSION-$ARCHITECTURE-BurstDebugInformation
+  operation: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5886119a5c7b34d8872ab527ca3e1b, type: 3}
+  m_Name: SuperUnityBuildSettings
+  m_EditorClassIdentifier: 
+  _basicSettings:
+    baseBuildFolder: Builds
+    buildPath: $VERSION/$ARCHITECTURE-$SCRIPTING_BACKEND
+    openFolderPostBuild: 1
+    constantsFileLocation: Assets/SuperUnityBuild
+  _productParameters:
+    buildCounter: 0
+    buildVersion: v0.1
+    versionTemplate: v0.$BUILD
+    autoGenerate: 1
+    syncWithPlayerSettings: 0
+  _releaseTypeList:
+    releaseTypes:
+    - typeName: Release
+      bundleIdentifier: com.Blue-Square-Legion.Keito
+      companyName: Blue Square Legion
+      productName: Keito
+      syncAppNameWithProduct: 1
+      appBuildName: Keito
+      buildOptions: 524288
+      customDefines: 
+      sceneList:
+        releaseScenes:
+        - fileGUID: 2c261f7e4eb37425f8b0ed8d30c02c01
+          sceneActive: 1
+        - fileGUID: be72b19073b614747a83a0477359223e
+          sceneActive: 1
+        - fileGUID: 8c9cfa26abfee488c85f1582747f6a02
+          sceneActive: 1
+        - fileGUID: a2cb2ea7e674c40d5965af2ab84c4168
+          sceneActive: 1
+  _platformList:
+    platforms:
+    - {fileID: 5018678257089528286}
+    - {fileID: 741060016363233176}
+  _projectConfigurations:
+    configSet:
+      _Buckets: ffffffff06000000ffffffff08000000ffffffffffffffffffffffff0500000004000000ffffffffffffffff01000000ffffffffffffffffffffffff07000000ffffffff
+      _HashCodes: c683c44ef7e46342878a7279510e9f5956fc3370d03dcd4dceee4e3995803a142d6dfd480000000000000000000000000000000000000000000000000000000000000000
+      _Next: ffffffffffffffffffffffffffffffff00000000ffffffffffffffff02000000030000000000000000000000000000000000000000000000000000000000000000000000
+      _Count: 9
+      _Version: 9
+      _FreeList: -1
+      _FreeCount: 0
+      _Keys:
+      - Release/PC/Windows x64 (App)/Mono/windows-x64
+      - Release/PC/Windows x64 (App)/Mono
+      - Release/PC/Windows x64 (App)
+      - Release/PC
+      - Release/macOS/macOS (Universal,App)/Mono/macos-universal
+      - Release/macOS/macOS (Universal,App)/Mono
+      - Release/macOS/macOS (Universal,App)
+      - Release/macOS
+      - Release
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      _Values:
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Release/PC/Windows x64 (App)/Mono/windows-x64
+      - enabled: 1
+        childKeys:
+        - Release/PC/Windows x64 (App)/Mono
+      - enabled: 1
+        childKeys:
+        - Release/PC/Windows x64 (App)
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Release/macOS/macOS (Universal,App)/Mono/macos-universal
+      - enabled: 1
+        childKeys:
+        - Release/macOS/macOS (Universal,App)/Mono
+      - enabled: 1
+        childKeys:
+        - Release/macOS/macOS (Universal,App)
+      - enabled: 1
+        childKeys:
+        - Release/PC
+        - Release/macOS
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+    showViewOptions: 0
+    showConfigs: 0
+    showBuildInfo: 0
+    hideDisabled: 0
+    treeView: 0
+    selectedKeyChain: Release/macOS/macOS (Universal,App)/Mono/macos-universal
+  _preBuildActions:
+    buildActions: []
+  _postBuildActions:
+    buildActions:
+    - {fileID: -3613426804341958447}
+    - {fileID: 3638567506685254133}
+    - {fileID: -6706168606254285045}
+--- !u!114 &741060016363233176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d962d142a259c394da2bdb301b72eeb5, type: 3}
+  m_Name: macOS
+  m_EditorClassIdentifier: 
+  enabled: 1
+  distributionList:
+    distributions:
+    - distributionName: macos-universal
+      enabled: 1
+  architectures:
+  - target: 2
+    name: macOS
+    enabled: 1
+    binaryNameFormat: '{0}.app'
+  variants:
+  - variantName: macOS Architecture
+    selectedIndex: 2
+    values:
+    - Intelx64
+    - Apple Silicon
+    - Universal
+    isFlag: 0
+  - variantName: Build Output
+    selectedIndex: 0
+    values:
+    - App
+    - Xcode Project
+    isFlag: 0
+  scriptingBackends:
+  - scriptingImplementation: 0
+    name: Mono
+    enabled: 1
+  - scriptingImplementation: 1
+    name: IL2CPP
+    enabled: 0
+  platformName: macOS
+  targetGroup: 1
+--- !u!114 &3638567506685254133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7f7586f72aa4eaeadcc71412569451, type: 3}
+  m_Name: BetterZipFileOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: BetterZipFileOperation
+  note: Zip files for backup
+  actionEnabled: 1
+  configureEditor: 0
+  filter:
+    condition: 0
+    clauses: []
+  inputPath: $BUILDPATH
+  outputPath: $BASEPATH
+  outputFileName: $PRODUCT_NAME-$PLATFORM.zip
+--- !u!114 &5018678257089528286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2786f6b2301a94f4288672ff5305244c, type: 3}
+  m_Name: PC
+  m_EditorClassIdentifier: 
+  enabled: 1
+  distributionList:
+    distributions:
+    - distributionName: windows-x64
+      enabled: 1
+  architectures:
+  - target: 5
+    name: Windows x86
+    enabled: 0
+    binaryNameFormat: '{0}.exe'
+  - target: 19
+    name: Windows x64
+    enabled: 1
+    binaryNameFormat: '{0}.exe'
+  variants:
+  - variantName: Build Output
+    selectedIndex: 0
+    values:
+    - App
+    - Visual Studio Solution
+    isFlag: 0
+  scriptingBackends:
+  - scriptingImplementation: 0
+    name: Mono
+    enabled: 1
+  - scriptingImplementation: 1
+    name: IL2CPP
+    enabled: 0
+  platformName: PC
+  targetGroup: 1
