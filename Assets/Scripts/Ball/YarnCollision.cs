@@ -103,13 +103,13 @@ public class YarnCollision : MonoBehaviour
         
         if (thisBallColor == ColorSO.BallColor.Red)
         {
-            ExcessiveForceEffect xfEffect = new ExcessiveForceEffect();
+            ExcessiveForceEffect xfEffect = new ExcessiveForceEffect(other.gameObject);
             xfEffect.ApplyEffect();
         }
         else if (thisBallColor == ColorSO.BallColor.Green)
         {
-            StickyEffect stEffect = new StickyEffect(transform, other.transform);
-            stEffect.ApplyEffect();
+            //StickyEffect stEffect = new StickyEffect(transform, other.transform);
+            //stEffect.ApplyEffect();
         }
     }
 

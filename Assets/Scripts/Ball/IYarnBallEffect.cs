@@ -11,6 +11,14 @@ public interface IYarnBallEffect
 
 public class ExcessiveForceEffect : IYarnBallEffect
 {
+    private GameObject _redBall, _otherBall;
+    private Rigidbody _otherBallRB;
+    private Vector3 _redExtraForce = new Vector3(30f, 0, 30f);
+    public ExcessiveForceEffect(GameObject ballHit) 
+    {
+        _otherBall = ballHit;
+        _otherBallRB = _otherBall.GetComponent<Rigidbody>();
+    }
     public void CreateEffect()
     {
         
@@ -18,7 +26,8 @@ public class ExcessiveForceEffect : IYarnBallEffect
 
     public void ApplyEffect()
     {
-        Debug.Log("Applying Excessive Force Effect");
+        _otherBallRB.AddForce(_otherBallRB.velocity + _redExtraForce, ForceMode.Impulse);
+        Debug.Log("Adding Red Force");
     }
 }
 
