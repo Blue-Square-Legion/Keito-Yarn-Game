@@ -24,13 +24,13 @@ public class ExcessiveForceEffect : IYarnBallEffect
 
 public class StickyEffect : IYarnBallEffect
 {
-    private Transform ball1;
-    private Transform ball2;
+    private Transform stickyBall;
+    private Transform otherBall;
 
-    public StickyEffect(Transform ball1, Transform ball2)
+    public StickyEffect(Transform stickyBall, Transform otherBall)
     {
-        this.ball1 = ball1;
-        this.ball2 = ball2;
+        this.stickyBall = stickyBall;
+        this.otherBall = otherBall;
     }
 
     public void CreateEffect()
@@ -42,14 +42,14 @@ public class StickyEffect : IYarnBallEffect
     {
         Debug.Log("Applying Sticky Effect");
 
-        Rigidbody rb1 = ball1.GetComponent<Rigidbody>();
-        Rigidbody rb2 = ball2.GetComponent<Rigidbody>();
+        Rigidbody rb1 = stickyBall.GetComponent<Rigidbody>();
+        Rigidbody rb2 = otherBall.GetComponent<Rigidbody>();
 
         if (rb1 != null && rb2 != null)
         {
-            FixedJoint joint = ball1.gameObject.AddComponent<FixedJoint>();
+            FixedJoint joint = stickyBall.gameObject.AddComponent<FixedJoint>();
             joint.connectedBody = rb2;
-            joint.breakForce = float.PositiveInfinity;
+            joint.breakForce = 1000.0f;
         }
     }
 }
