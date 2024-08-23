@@ -15,7 +15,7 @@ public class YarnCollision : MonoBehaviour
     public string fanEvent = "Play_Fan";
     public string stopFanEvent = "Stop_Fan";
     bool isFanOn = false;
-
+    public bool isThrown = false;
 
     /// <summary>
     /// When yarn first collides with another object
@@ -99,17 +99,18 @@ public class YarnCollision : MonoBehaviour
     private void ApplyEffectBasedOnColor(Collision other)
     {
         ColorSO.BallColor thisBallColor = GetThisBallColor();
-        Debug.Log(thisBallColor);
-        
-        if (thisBallColor == ColorSO.BallColor.Red)
+        //Debug.Log(thisBallColor);
+
+        if (thisBallColor == ColorSO.BallColor.Red && isThrown)
         {
             ExcessiveForceEffect xfEffect = new ExcessiveForceEffect(other.gameObject);
             xfEffect.ApplyEffect();
         }
         else if (thisBallColor == ColorSO.BallColor.Green)
         {
-            //StickyEffect stEffect = new StickyEffect(transform, other.transform);
-            //stEffect.ApplyEffect();
+            Debug.Log("will apply sticky effect");
+            StickyEffect stEffect = new StickyEffect(transform, other.transform);
+            stEffect.ApplyEffect();
         }
     }
 

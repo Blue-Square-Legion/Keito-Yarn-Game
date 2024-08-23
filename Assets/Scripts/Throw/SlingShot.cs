@@ -260,6 +260,8 @@ public class SlingShot : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
 
         rb.AddForce(_forceVector, ForceMode.Impulse);
+        go.GetComponent<YarnCollision>().isThrown = true;
+        Debug.Log(go.GetComponent<YarnCollision>().isThrown);
     }
 
     private void EnableThrownObject(GameObject go)
