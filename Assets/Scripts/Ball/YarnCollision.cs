@@ -18,19 +18,6 @@ public class YarnCollision : MonoBehaviour
     public bool isThrown = false;
 
     /// <summary>
-    ///  Just doing some testing with the red ball
-    ///  </summary>
-
-    private void Update()
-    {
-        print("hi");
-        if (isThrown)
-        {
-            Debug.Log(gameObject.GetComponent<Rigidbody>().velocity.magnitude);
-        }
-    }
-
-    /// <summary>
     /// When yarn first collides with another object
     /// </summary>
     /// <param name="other">The other object</param>
