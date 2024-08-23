@@ -24,8 +24,6 @@ public class YarnCollision : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         bool isYarn = other.gameObject.CompareTag(YARN_TAG);
-        // TODO: Same color yarn collision
-        bool isOtherSameColor = false;
         // TODO: Find cat component/tag
         bool isCat = other.gameObject.CompareTag(CAT_TAG);
         /*bool isCat = false;*/
@@ -33,15 +31,15 @@ public class YarnCollision : MonoBehaviour
         // If yarn collides with another yarn
         if (isYarn)
         {
-            if (isOtherSameColor)
+            if (IsOtherSameColor(other))
             {
                 // TODO: Yarn combining SFX
-                PostYarnMergeCollisionEvent();
-
+                // PostYarnMergeCollisionEvent();
             }
             else
             {
                 // TODO: Yarn-yarn collision SFX
+                ApplyEffectBasedOnColor(other);
             }
         }
         // If collided with cat
@@ -60,6 +58,58 @@ public class YarnCollision : MonoBehaviour
         else
         {
             
+        }
+    }
+
+    private bool IsOtherSameColor(Collision other) {
+        if(GetThisBallColor() == GetOtherBallColor(other)) {
+            return true;
+        }
+        return false;
+    }
+
+    private ColorSO.BallColor GetThisBallColor() {
+        Renderer thisRenderer = GetComponent<Renderer>();
+        Color thisColor = thisRenderer.material.color;
+        return GetBallColor(thisColor);
+    }
+
+    private ColorSO.BallColor GetOtherBallColor(Collision other) {
+        if (other.gameObject.TryGetComponent(out Renderer otherRenderer))
+        {
+            Color otherColor = otherRenderer.material.color;
+            return GetBallColor(otherColor);
+        }
+        Debug.LogError("other color not found");
+        return ColorSO.BallColor.Default;
+    }
+
+    private ColorSO.BallColor GetBallColor(Color color) {
+        if (color.r > .9 && color.g < .4 && color.b < .4) {
+            return ColorSO.BallColor.Red;
+        } else if (color.b > .9 && color.r < .4 && color.g < .4) {
+            return ColorSO.BallColor.Blue;
+        } else if (color.g > .9 && color.r < .4 && color.b < .4) {
+            return ColorSO.BallColor.Green;
+        }
+        Debug.LogError("Couldn't identify Ball Color");
+        return ColorSO.BallColor.Default;
+    }
+
+    private void ApplyEffectBasedOnColor(Collision other)
+    {
+        ColorSO.BallColor thisBallColor = GetThisBallColor();
+        Debug.Log(thisBallColor);
+        
+        if (thisBallColor == ColorSO.BallColor.Red)
+        {
+            ExcessiveForceEffect xfEffect = new ExcessiveForceEffect();
+            xfEffect.ApplyEffect();
+        }
+        else if (thisBallColor == ColorSO.BallColor.Green)
+        {
+            StickyEffect stEffect = new StickyEffect(transform, other.transform);
+            stEffect.ApplyEffect();
         }
     }
 
