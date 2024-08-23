@@ -55,10 +55,13 @@ public class MouseSettings : MonoBehaviour
 
     private void AdjustSensitivity(float value)
     {
-        if (SlingShot.Instance)
+        var slingshot = FindObjectOfType<SlingShot>();
+        if (slingshot != null)
         {
-            SlingShot.Instance.mouseX = (value / mouseSensitivitySlider.maxValue) * Mathf.Sqrt(mouseSensitivitySlider.maxValue);
-            SlingShot.Instance.mouseY = (value / mouseSensitivitySlider.maxValue) * Mathf.Sqrt(mouseSensitivitySlider.maxValue);
+            slingshot.mouseX = (value / mouseSensitivitySlider.maxValue) * Mathf.Sqrt(mouseSensitivitySlider.maxValue);
+            slingshot.mouseY = (value / mouseSensitivitySlider.maxValue) * Mathf.Sqrt(mouseSensitivitySlider.maxValue);
+        } else {
+            Debug.LogError("no SlingShot found");
         }
     }
 }
