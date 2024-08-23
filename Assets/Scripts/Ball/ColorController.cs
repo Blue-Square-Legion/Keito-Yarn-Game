@@ -17,6 +17,22 @@ public class ColorController : MonoBehaviour, IDamageable, IRepairable
         _render = gameObject.GetComponent<Renderer>();
     }
 
+    /// <summary>
+    ///  Just doing some testing with the red ball
+    ///  </summary>
+    private void Update()
+    {
+        if (gameObject == null)
+            return;
+        if (gameObject.GetComponent<YarnCollision>().isThrown && gameObject.GetComponent<Rigidbody>().velocity.magnitude != 0)
+        {
+            if (gameObject.GetComponent<Rigidbody>().velocity.magnitude < 0.05f)
+            {
+                print(gameObject.GetComponent<Rigidbody>().velocity.magnitude);
+                gameObject.GetComponent<YarnCollision>().isThrown = false;
+            }
+        }
+    }
     private void SetColor(float modifier = 1f)
     {
         _render.material.color = yarnBallAttributes.color.Color * modifier;
