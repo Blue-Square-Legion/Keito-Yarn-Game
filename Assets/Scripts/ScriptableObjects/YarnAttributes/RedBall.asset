@@ -26,3 +26,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fdee1be18ada1094bab3391314636695, type: 2}
   acceptableCombinations:
   - {fileID: 11400000, guid: bb36fd81bee07384b8522fdeb631e4f6, type: 2}
+  collisionEffects: []
+  generalEffects: []

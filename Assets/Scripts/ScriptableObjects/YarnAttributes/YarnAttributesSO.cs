@@ -29,4 +29,10 @@ public class YarnAttributesSO : ScriptableObject
 
     [Space(5), Tooltip("What new colors the yarn ball can merge into if it was hit by the compatible yarn ball.")]
     public List<ColorCombinationSO> acceptableCombinations = new();
+
+     [Space(5), Tooltip("Effects to apply on collision")]
+    public List<YarnBallEffectSO> collisionEffects = new();
+
+    [Space(5), Tooltip("General effects that could apply on update or other triggers")]
+    public List<YarnBallEffectSO> generalEffects = new();
 }
