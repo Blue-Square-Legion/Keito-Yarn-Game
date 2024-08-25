@@ -25,3 +25,6 @@ MonoBehaviour:
   mergableBalls:
   - {fileID: 11400000, guid: 1fbbd453f4c2ed248affce5738101134, type: 2}
   acceptableCombinations: []
+  collisionEffects:
+  - {fileID: 11400000, guid: 7edcddbeaf45cea46af20bf717756152, type: 2}
+  generalEffects: []

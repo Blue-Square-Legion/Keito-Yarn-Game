@@ -17,6 +17,14 @@ public class YarnCollision : MonoBehaviour
     bool isFanOn = false;
     public bool isThrown = false;
 
+    [SerializeField] private YarnAttributesSO yarnAttributes;
+    private Rigidbody ballRigidbody;
+
+    private void Awake()
+    {
+        ballRigidbody = GetComponent<Rigidbody>();
+    }
+
     /// <summary>
     /// When yarn first collides with another object
     /// </summary>
@@ -24,9 +32,7 @@ public class YarnCollision : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         bool isYarn = other.gameObject.CompareTag(YARN_TAG);
-        // TODO: Find cat component/tag
         bool isCat = other.gameObject.CompareTag(CAT_TAG);
-        /*bool isCat = false;*/
         PostYarnCollisionEvent();
         // If yarn collides with another yarn
         if (isYarn)
@@ -39,7 +45,7 @@ public class YarnCollision : MonoBehaviour
             else
             {
                 // TODO: Yarn-yarn collision SFX
-                ApplyEffectBasedOnColor(other);
+                ApplyCollisionEffects(other);
             }
         }
         // If collided with cat
@@ -96,21 +102,21 @@ public class YarnCollision : MonoBehaviour
         return ColorSO.BallColor.Default;
     }
 
-    private void ApplyEffectBasedOnColor(Collision other)
+    private void ApplyCollisionEffects(Collision collision)
     {
-        ColorSO.BallColor thisBallColor = GetThisBallColor();
-        //Debug.Log(thisBallColor);
+        if (yarnAttributes == null || yarnAttributes.collisionEffects == null) return;
 
-        if (thisBallColor == ColorSO.BallColor.Red && isThrown)
+        Rigidbody ballRigidbody = GetComponent<Rigidbody>();
+        Rigidbody otherRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+
+        foreach (var effect in yarnAttributes.collisionEffects)
         {
-            ExcessiveForceEffect xfEffect = new ExcessiveForceEffect(other.gameObject);
-            xfEffect.ApplyEffect();
-        }
-        else if (thisBallColor == ColorSO.BallColor.Green)
-        {
-            Debug.Log("will apply sticky effect");
-            StickyEffect stEffect = new StickyEffect(transform, other.transform);
-            stEffect.ApplyEffect();
+            effect.CreateEffect(gameObject, collision.transform);
+
+            if (effect.ShouldApplyOnCollision())
+            {
+                effect.ApplyEffect(gameObject, ballRigidbody, otherRigidbody);
+            }
         }
     }
 
