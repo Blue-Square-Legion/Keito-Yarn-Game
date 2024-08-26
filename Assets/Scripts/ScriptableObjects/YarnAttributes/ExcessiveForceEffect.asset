@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4816125b40e79a24983a4d912a6e7740, type: 3}
   m_Name: ExcessiveForceEffect
   m_EditorClassIdentifier: 
-  forceMultiplier: 100
+  forceMultiplier: 5
+  velocityThreshold: 5
