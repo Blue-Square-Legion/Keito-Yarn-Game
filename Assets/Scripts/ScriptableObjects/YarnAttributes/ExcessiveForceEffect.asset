@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ExcessiveForceEffect
   m_EditorClassIdentifier: 
   forceMultiplier: 5
-  velocityThreshold: 5
+  velocityThreshold: 3
