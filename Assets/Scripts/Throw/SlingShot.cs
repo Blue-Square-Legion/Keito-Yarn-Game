@@ -128,7 +128,6 @@ public class SlingShot : MonoBehaviour
         transform.localRotation = Quaternion.Euler(_currentRotation.x, _currentRotation.y, 0);
     }
 
-
     #region Input events for start / end click
     //Start hold
     private void Fire_performed(InputAction.CallbackContext obj)
@@ -206,6 +205,7 @@ public class SlingShot : MonoBehaviour
             var gameUIManager = FindObjectOfType<InGameUIManager>();
             gameUIManager.UpdateBallsLeft(_remainingYarn);
         }
+
     }
 
     private void SetupFirstShot()

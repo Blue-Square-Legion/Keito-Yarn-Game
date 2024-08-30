@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 828419280}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1909,6 +1908,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8444411769683418908, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444411769683418908, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444411769683418908, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444411769683418908, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444411769683418908, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444411769683418908, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8633541399101366899, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -3190,11 +3213,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2197808507226551863, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000030713224
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2197808507226551863, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000009070724
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2197808507325120805, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3206,11 +3229,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2197808507325120805, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016587457
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2197808507325120805, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000045733968
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2197808507627161892, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3218,17 +3241,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2197808507627161892, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3006394
+      value: 0.30063936
       objectReference: {fileID: 0}
     - target: {fileID: 2197808507627161892, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016410377
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2197808507627161892, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000005172915
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5824580461148599614, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
+      propertyPath: XYAxis
+      value: 
+      objectReference: {fileID: -1680190386980627800, guid: 6b8baf6633c7d8c4ab79716791cdc010, type: 3}
+    m_RemovedComponents:
+    - {fileID: 2446366833174192646, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
 --- !u!1 &811179735
 GameObject:
