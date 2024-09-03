@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: _color
       value: 
       objectReference: {fileID: 11400000, guid: cc17bdc11ea7fbe48ba9964ed68543a6, type: 2}
+    - target: {fileID: -7796720557547338020, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: yarnBallAttributes
+      value: 
+      objectReference: {fileID: 11400000, guid: e17d1c430e969e941ae27ce31bdbb38b, type: 2}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: yarnAttributesSO
+      value: 
+      objectReference: {fileID: 11400000, guid: e17d1c430e969e941ae27ce31bdbb38b, type: 2}
     - target: {fileID: -4293314133452894743, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 1
@@ -31,6 +39,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2495046777849088545, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: yarnAttributes
+      value: 
+      objectReference: {fileID: 11400000, guid: e17d1c430e969e941ae27ce31bdbb38b, type: 2}
     - target: {fileID: 5146000436537263095, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: m_RootOrder
       value: 0
