@@ -376,7 +376,7 @@ public class InGameUIManager : MonoBehaviour
 
     private int GetTimeLimit() {
         if(timeLimit <= 0) {
-            return StarInterval() * 4;
+            return 300;
         }
         return timeLimit;
     }

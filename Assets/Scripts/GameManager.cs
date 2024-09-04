@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using Manager.Score;
 
 public class GameManager : MonoBehaviour
@@ -55,6 +56,14 @@ public class GameManager : MonoBehaviour
     public UnityEvent<ScoreData> OnCatScored => _score.OnCatScored;
     public UnityEvent<GameObject> OnCatSpawn = new();
     public UnityEvent<ColorSO> OnNewColor = new();
+
+    public enum LevelMode
+    {
+        Normal,
+        Challenge,
+        Puzzle,
+        Other
+    }
 
     public float Score
     {
@@ -128,6 +137,22 @@ public class GameManager : MonoBehaviour
             slingshot.SetUnlimitedYarn(true);
             gameUIManager.SetUnlimitedBalls(true);
         }
+    }
+
+    public LevelMode GetLevelMode() {
+        string sceneName = SceneManager.GetActiveScene().name;
+        sceneName = sceneName.ToLower();
+        if(sceneName.Contains("normal")) {
+            return LevelMode.Normal;
+        }
+        if(sceneName.Contains("challenge")) {
+            return LevelMode.Challenge;
+        }
+        if(sceneName.Contains("puzzle")) {
+            return LevelMode.Puzzle;
+        }
+        Debug.Log("Couldn't identify level mode");
+        return LevelMode.Other;
     }
 
     private void SetUpCat()
