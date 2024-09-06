@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b260778ef88ba840b4379102d4dd981, type: 3}
   m_Name: StickyEffect
   m_EditorClassIdentifier: 
+  jointBreakForce: 1000
+  massReductionFactor: 0.5
