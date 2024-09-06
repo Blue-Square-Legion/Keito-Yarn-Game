@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36f5540e9c019cb4e9d2db1f0876a723, type: 3}
-  m_Name: MangetEffect
+  m_Name: MagnetEffect
   m_EditorClassIdentifier: 
-  _magballRadius: 10
+  _magballRadius: 3
   _pullForce: 10
-  _pushForce: 10
+  _pushForce: 1
+  _effectDuration: 5
   layerMask:
     serializedVersion: 2
     m_Bits: 256

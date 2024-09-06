@@ -25,5 +25,5 @@ MonoBehaviour:
   mergableBalls: []
   acceptableCombinations: []
   collisionEffects: []
-  generalEffects:
+  launchEffects:
   - {fileID: 11400000, guid: 740fd7ca7456187459bf1031a034b5ec, type: 2}
