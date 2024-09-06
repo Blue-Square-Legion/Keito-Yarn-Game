@@ -120,6 +120,19 @@ public class YarnCollision : MonoBehaviour
         }
     }
 
+    public void CreateLaunchEffects()
+    {
+        if (yarnAttributes == null || yarnAttributes.launchEffects == null) return;
+
+        Rigidbody ballRigidbody = GetComponent<Rigidbody>();
+
+        foreach (var effect in yarnAttributes.launchEffects)
+        {
+            Debug.Log("Creating Launch Effect");
+            effect.CreateEffect(gameObject);
+        }
+    }
+
     public void OnMaxSize()
     {
         //TODO - Add max size sound
