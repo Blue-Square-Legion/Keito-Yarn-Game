@@ -9,7 +9,8 @@ public class MagnetEffect : MonoBehaviour
     [SerializeField] private float _magballRadius;
     [SerializeField] private float _pullForce, _pushForce;
     public LayerMask layerMask;
-
+    private Renderer _myRenderer;
+    [SerializeField] private bool _launched;
     public MagnetEffect(float magRadius, float pullForce, float pushForce) 
     {
         _magballRadius = magRadius;
@@ -19,49 +20,62 @@ public class MagnetEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine("CreateMagnetField");
+        _myRenderer = gameObject.GetComponent<Renderer>();
     }
 
+    private void Update()
+    {
+        if (!_launched)
+            if (Input.GetButtonDown("Fire1"))
+                _launched = true;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*yarnInRadius.Clear();
-        hits = Physics.SphereCastAll(gameObject.transform.position, _magballRadius, Vector3.forward, 1f, layerMask);
-        foreach (RaycastHit yarnHit in hits)
-        {
-            if (yarnHit.transform.gameObject != gameObject) 
+        if (_launched) {
+            hits = Physics.SphereCastAll(gameObject.transform.position, _magballRadius, Vector3.forward, 1f, layerMask);
+            yarnInRadius.Clear();
+            foreach (RaycastHit yarnHit in hits)
             {
-                yarnInRadius.Add(yarnHit.transform.gameObject);
-                if (yarnHit.transform.gameObject.TryGetComponent<ColorController>(out ColorController hitYarnColor))
+                if (yarnHit.transform.gameObject != gameObject)
                 {
-                    Rigidbody yarnBallHitRB = yarnHit.transform.gameObject.GetComponent<Rigidbody>();
-                    Vector3 direction = yarnHit.transform.position - gameObject.transform.position;
-                    direction = direction.normalized;
-                    if (hitYarnColor.Color.Equals("Yellow"))
+                    yarnInRadius.Add(yarnHit.transform.gameObject);
+                    //if (yarnHit.transform.gameObject.TryGetComponent<ColorController>(out ColorController hitYarnColor))
+                    if (yarnHit.transform.gameObject.TryGetComponent<Renderer>(out Renderer hitYarnColor))
                     {
-                        Debug.Log("Color is yellow. Pushing Ball");
-                        yarnBallHitRB.velocity = direction * _pushForce;
-                        
+                        Rigidbody yarnBallHitRB = yarnHit.transform.gameObject.GetComponent<Rigidbody>();
+                        Vector3 direction = yarnHit.transform.position - gameObject.transform.position;
+                        direction = direction.normalized;
+                        Debug.Log($"{hitYarnColor.material.GetColor("Yellow")}");
+                        if (hitYarnColor.material.color.Equals(_myRenderer.material.color))
+                        {
+                            Debug.Log("Color is yellow. Pushing Ball");
+                            yarnBallHitRB.velocity = direction * _pushForce;
+
+                        }
+                        else
+                        {
+                            if (Vector3.Distance(gameObject.transform.position, yarnHit.transform.position) > 1.5f)
+                            {
+                                Debug.Log("Color is not yellow. Pulling ball");
+                                //yarnBallHitRB.AddForce(direction + Vector3.back * _pullForce);
+                                yarnBallHitRB.velocity = -direction * _pullForce;
+                            }
+                        }
                     }
                     else
                     {
-                        Debug.Log("Color is not yellow. Pulling ball");
-                        //yarnBallHitRB.AddForce(direction + Vector3.back * _pullForce);
-                        yarnBallHitRB.velocity = -direction * _pullForce;
+                        Debug.Log($"{yarnHit.transform.gameObject} does not have a controller");
                     }
                 }
-                else 
-                {
-                    Debug.Log($"{yarnHit.transform.gameObject} does not have a controller");
-                }
-            }
-        }*/
+            } 
+        }
     }
 
     public IEnumerator CreateMagnetField() 
     {
-        Debug.Log("Coroutine started");
-        yarnInRadius.Clear();
+        //Debug.Log("Coroutine started");
+        /*yarnInRadius.Clear();
         hits = Physics.SphereCastAll(gameObject.transform.position, _magballRadius, Vector3.forward, 1f, layerMask);
         foreach (RaycastHit yarnHit in hits)
         {
@@ -90,13 +104,21 @@ public class MagnetEffect : MonoBehaviour
                     Debug.Log($"{yarnHit.transform.gameObject} does not have a controller");
                 }
             }
-        }
+        }*/
         yield return null;
     }
 
     public void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(gameObject.transform.position, _magballRadius);
+        if (_launched)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(gameObject.transform.position, _magballRadius);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        yarnInRadius.Remove(collision.gameObject);
     }
 }

@@ -11,10 +11,14 @@ PrefabInstance:
       propertyPath: _color
       value: 
       objectReference: {fileID: 11400000, guid: 4b7cb8f701bce7a4db90f7371d627147, type: 2}
+    - target: {fileID: -7796720557547338020, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: yarnBallAttributes
+      value: 
+      objectReference: {fileID: 11400000, guid: 9cbcd1d1b3825134680017bd4d4274fa, type: 2}
     - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: yarnAttributesSO
       value: 
-      objectReference: {fileID: 11400000, guid: 60c274263f6b3584f916e4a9c4ac4618, type: 2}
+      objectReference: {fileID: 11400000, guid: 9cbcd1d1b3825134680017bd4d4274fa, type: 2}
     - target: {fileID: -4293314133452894743, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 0
@@ -89,3 +93,27 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 126f444b8fac2704aa3e799e79fa06e7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+--- !u!1 &660840053069172341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1998775315433358910, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+  m_PrefabInstance: {fileID: 1339492177556817995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2601025674521836106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660840053069172341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488176926bd0b014e8eea74efa1623ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yarnInRadius: []
+  _magballRadius: 3
+  _pullForce: 5
+  _pushForce: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
