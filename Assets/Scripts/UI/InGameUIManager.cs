@@ -252,6 +252,8 @@ public class InGameUIManager : MonoBehaviour
 
     public void OnResumeGame()
     {
+        if(!_pauseUI.activeSelf) return;
+
         OnPauseMenuClose.Invoke();
         _gameManager.ResumeGame();
       //  AkSoundEngine.SetState("GameStates", "IngameState");
