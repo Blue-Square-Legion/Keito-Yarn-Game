@@ -34,5 +34,5 @@ public class YarnAttributesSO : ScriptableObject
     public List<YarnBallEffectSO> collisionEffects = new();
 
     [Space(5), Tooltip("General effects that could apply on update or other triggers")]
-    public List<YarnBallEffectSO> generalEffects = new();
+    public List<YarnBallEffectSO> launchEffects = new();
 }
