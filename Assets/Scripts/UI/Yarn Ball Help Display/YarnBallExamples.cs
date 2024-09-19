@@ -10,6 +10,7 @@ public class YarnBallExamples : MonoBehaviour
     public Button wildcard;
     public Button change;
     public Button yellow;
+    public Button back;
     public GameObject redImage;
     public GameObject greenImage;
     public GameObject wildcardImage;
@@ -28,6 +29,8 @@ public class YarnBallExamples : MonoBehaviour
         btnChange.onClick.AddListener(changeHelp);
         Button btnYellow = yellow.GetComponent<Button>();
         btnYellow.onClick.AddListener(yellowHelp);
+        Button btnBack = back.GetComponent<Button>();
+        btnBack.onClick.AddListener(BackMenu);
     }
     void redHelp()
     {
@@ -49,10 +52,22 @@ public class YarnBallExamples : MonoBehaviour
     {
         yarnMenu(5);
     }
+    void BackMenu()
+    {
+        yarnMenu(0);
+    }
     private void yarnMenu(int select)
     {
         switch(select)
         {
+            case 0:
+                Debug.Log("Back selected");
+                redImage.SetActive(false);
+                greenImage.SetActive(false);
+                wildcardImage.SetActive(false);
+                changeImage.SetActive(false);
+                yellowImage.SetActive(false);
+                break;
             case 1:
                 Debug.Log("Red ball selected");
                 redImage.SetActive(true);

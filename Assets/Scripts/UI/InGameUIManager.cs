@@ -15,6 +15,7 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField] GameObject _pauseUI;
     [SerializeField] GameObject _settingsUI;
     [SerializeField] GameObject _confirmationUI;
+    [SerializeField] GameObject _yarnBallViewer;
     [SerializeField] GameObject _gameOverUI;
     [SerializeField] OffScreenIndicator _indicator;
     [SerializeField] Button _tryAgainButton;
@@ -38,6 +39,7 @@ public class InGameUIManager : MonoBehaviour
         _pauseUI.SetActive(false);
         _settingsUI.SetActive(false);
         _confirmationUI.SetActive(false);
+        _yarnBallViewer.SetActive(false);
         _gameOverUI.SetActive(false);
 
         _scoreController.Total = _gameManager.TargetScore;
@@ -256,7 +258,8 @@ public class InGameUIManager : MonoBehaviour
 
         OnPauseMenuClose.Invoke();
         _gameManager.ResumeGame();
-      //  AkSoundEngine.SetState("GameStates", "IngameState");
+        //  AkSoundEngine.SetState("GameStates", "IngameState");
+        _yarnBallViewer.SetActive(false);
         _pauseUI.SetActive(false);
     }
 
