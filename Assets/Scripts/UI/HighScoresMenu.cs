@@ -2,16 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
-public static class LevelIndexes
-{
-    public static int NormalLivingRoom = 2;
-    public static int NormalKitchen = NormalLivingRoom + 1;
-    public static int ChallengeLivingRoom = NormalLivingRoom + 2;
-    public static int ChallengeKitchen = NormalLivingRoom + 3;
-    public static int PuzzleLivingRoom = NormalLivingRoom + 4;
-    public static int PuzzleKitchen = NormalLivingRoom + 5;
-}
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class HighScoresMenu : MonoBehaviour
 {
@@ -66,23 +61,61 @@ public class HighScoresMenu : MonoBehaviour
         return stars;
     }
 
-    private void UpdateStarsUI() {
-        int bestTimeNormalLivingRoom = bestTimeSO.highScores.Find(score => score.sceneIndex == LevelIndexes.NormalLivingRoom)?.bestTime ?? -1;
-        starsNormalLivingRoom.text = GetStarDisplay(bestTimeNormalLivingRoom != -1 ? StarRating(bestTimeNormalLivingRoom, LevelIndexes.NormalLivingRoom) : 0);
+    public static int GetSceneIndex(string sceneName)
+    {
+#if UNITY_EDITOR
+        for (int i = 0; i < EditorBuildSettings.scenes.Length; i++)
+        {
+            var scene = EditorBuildSettings.scenes[i];
+            if (scene.path.EndsWith(sceneName + ".unity"))
+            {
+                return i;
+            }
+        }
+#else
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+        {
+            string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+            string name = System.IO.Path.GetFileNameWithoutExtension(scenePath);
 
-        int bestTimeNormalKitchen = bestTimeSO.highScores.Find(score => score.sceneIndex == LevelIndexes.NormalKitchen)?.bestTime ?? -1;
-        starsNormalKitchen.text = GetStarDisplay(bestTimeNormalKitchen != -1 ? StarRating(bestTimeNormalKitchen, LevelIndexes.NormalKitchen) : 0);
+            if (name == sceneName)
+            {
+                return i;
+            }
+        }
+#endif
 
-        int bestTimeChallengeLivingRoom = bestTimeSO.highScores.Find(score => score.sceneIndex == LevelIndexes.ChallengeLivingRoom)?.bestTime ?? -1;
-        starsChallengeLivingRoom.text = GetStarDisplay(bestTimeChallengeLivingRoom != -1 ? StarRating(bestTimeChallengeLivingRoom, LevelIndexes.ChallengeLivingRoom) : 0);
+        Debug.LogError($"Scene '{sceneName}' does not exist in the build settings.");
+        return -1;
+    }
 
-        int bestTimeChallengeKitchen = bestTimeSO.highScores.Find(score => score.sceneIndex == LevelIndexes.ChallengeKitchen)?.bestTime ?? -1;
-        starsChallengeKitchen.text = GetStarDisplay(bestTimeChallengeKitchen != -1 ? StarRating(bestTimeChallengeKitchen, LevelIndexes.ChallengeKitchen) : 0);
+    private void UpdateStarsUI()
+    {
+        int sceneIndex;
+        int bestTime;
 
-        int bestTimePuzzleLivingRoom = bestTimeSO.highScores.Find(score => score.sceneIndex == LevelIndexes.PuzzleLivingRoom)?.bestTime ?? -1;
-        starsPuzzleLivingRoom.text = GetStarDisplay(bestTimePuzzleLivingRoom != -1 ? StarRating(bestTimePuzzleLivingRoom, LevelIndexes.PuzzleLivingRoom) : 0);
+        sceneIndex = GetSceneIndex("NormalLivingRoomLevel");
+        bestTime = bestTimeSO.highScores.Find(score => score.sceneIndex == sceneIndex)?.bestTime ?? -1;
+        starsNormalLivingRoom.text = GetStarDisplay(bestTime != -1 ? StarRating(bestTime, sceneIndex) : 0);
 
-        int bestTimePuzzleKitchen = bestTimeSO.highScores.Find(score => score.sceneIndex == LevelIndexes.PuzzleKitchen)?.bestTime ?? -1;
-        starsPuzzleKitchen.text = GetStarDisplay(bestTimePuzzleKitchen != -1 ? StarRating(bestTimePuzzleKitchen, LevelIndexes.PuzzleKitchen) : 0);
+        sceneIndex = GetSceneIndex("NormalKitchenLevel");
+        bestTime = bestTimeSO.highScores.Find(score => score.sceneIndex == sceneIndex)?.bestTime ?? -1;
+        starsNormalKitchen.text = GetStarDisplay(bestTime != -1 ? StarRating(bestTime, sceneIndex) : 0);
+
+        sceneIndex = GetSceneIndex("ChallengeLivingRoomLevel");
+        bestTime = bestTimeSO.highScores.Find(score => score.sceneIndex == sceneIndex)?.bestTime ?? -1;
+        starsChallengeLivingRoom.text = GetStarDisplay(bestTime != -1 ? StarRating(bestTime, sceneIndex) : 0);
+
+        sceneIndex = GetSceneIndex("ChallengeKitchenLevel");
+        bestTime = bestTimeSO.highScores.Find(score => score.sceneIndex == sceneIndex)?.bestTime ?? -1;
+        starsChallengeKitchen.text = GetStarDisplay(bestTime != -1 ? StarRating(bestTime, sceneIndex) : 0);
+
+        sceneIndex = GetSceneIndex("PuzzleLivingRoomLevel");
+        bestTime = bestTimeSO.highScores.Find(score => score.sceneIndex == sceneIndex)?.bestTime ?? -1;
+        starsPuzzleLivingRoom.text = GetStarDisplay(bestTime != -1 ? StarRating(bestTime, sceneIndex) : 0);
+
+        sceneIndex = GetSceneIndex("PuzzleKitchenLevel");
+        bestTime = bestTimeSO.highScores.Find(score => score.sceneIndex == sceneIndex)?.bestTime ?? -1;
+        starsPuzzleKitchen.text = GetStarDisplay(bestTime != -1 ? StarRating(bestTime, sceneIndex) : 0);
     }
 }
