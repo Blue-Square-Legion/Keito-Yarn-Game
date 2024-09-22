@@ -119,6 +119,8 @@ public class GameManager : MonoBehaviour
         {
             item.OnCollect.AddListener(UpdateScoreCollectable);
         }
+
+        ResumeGame();
     }
 
     private void SetUpChallengeMode()
