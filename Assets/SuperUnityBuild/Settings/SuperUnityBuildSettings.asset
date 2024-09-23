@@ -54,6 +54,35 @@ MonoBehaviour:
   channelName: $PLATFORM-$ARCHITECTURE
   showUploadProgress: 1
   itchChannelOverride: 
+--- !u!114 &-5021917646613972519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c77aee0f6c24945800cc39ae032e00, type: 3}
+  m_Name: BetterUploadItch
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: BetterUploadItch
+  note: 
+  actionEnabled: 1
+  configureEditor: 0
+  filter:
+    condition: 0
+    clauses: []
+  pathToButlerExe: Assets/Utility/Butler/butler-windows-amd64/butler.exe
+  pathToButlerApp: Assets/Utility/Butler/butler-darwin-amd64/butler
+  willPublishToItch: 1
+  nameOfItchUser: sam325
+  nameOfItchGame: keito-game
+  useGeneratedBuildVersion: 1
+  channelName: $PLATFORM-$ARCHITECTURE
+  showUploadProgress: 1
+  itchChannelOverride: 
 --- !u!114 &-3613426804341958447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,9 +124,9 @@ MonoBehaviour:
     openFolderPostBuild: 1
     constantsFileLocation: Assets/SuperUnityBuild
   _productParameters:
-    buildCounter: 0
-    buildVersion: v0.1
-    versionTemplate: v0.$BUILD
+    buildCounter: 1
+    buildVersion: 2024-09-22-5056
+    versionTemplate: $YEAR-$MONTH-$DAY-$SECONDS
     autoGenerate: 1
     syncWithPlayerSettings: 0
   _releaseTypeList:
@@ -207,6 +236,7 @@ MonoBehaviour:
     - {fileID: -3613426804341958447}
     - {fileID: 3638567506685254133}
     - {fileID: -6706168606254285045}
+    - {fileID: -5021917646613972519}
 --- !u!114 &741060016363233176
 MonoBehaviour:
   m_ObjectHideFlags: 0
