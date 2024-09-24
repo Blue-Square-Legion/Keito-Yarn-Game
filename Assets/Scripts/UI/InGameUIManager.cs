@@ -20,7 +20,7 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField] Button _tryAgainButton;
     [SerializeField] PlayerPrefSO masterSO, musicSO, soundSO, mouseSO;
     [SerializeField] BestTimeSO bestTimeSO;
-    [SerializeField] private TextMeshProUGUI tryAgainButtonText, gameOverText, endTimeText, bestTimeText, currTimeText, ballsLeftText;
+    [SerializeField] private TextMeshProUGUI tryAgainButtonText, gameOverText, endTimeText, bestTimeText, currTimeText, ballsLeftText, levelModeText;
     [SerializeField] private TextMeshProUGUI endStarsText, bestStarsText;
     [SerializeField] private ScoreProgressController _scoreController;
     
@@ -41,6 +41,8 @@ public class InGameUIManager : MonoBehaviour
         _gameOverUI.SetActive(false);
 
         _scoreController.Total = _gameManager.TargetScore;
+
+        UpdateLevelModeText();
 
         if (currTimeText)
         {
@@ -206,6 +208,18 @@ public class InGameUIManager : MonoBehaviour
         } else {
             countdownStarted = true;
             countdownEnd = _gameManager.CurrentTime + 5;
+        }
+    }
+
+    private void UpdateLevelModeText()
+    {
+        GameManager.LevelMode mode = _gameManager.GetLevelMode();
+        if(mode == GameManager.LevelMode.Normal) {
+            levelModeText.text = "Normal Mode";
+        } else if(mode == GameManager.LevelMode.Challenge) {
+            levelModeText.text = "Challenge Mode";
+        } else if(mode == GameManager.LevelMode.Puzzle) {
+            levelModeText.text = "Puzzle Mode";
         }
     }
 

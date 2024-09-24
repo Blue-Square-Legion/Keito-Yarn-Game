@@ -77,6 +77,9 @@ public class SlingShot : MonoBehaviour
         transform.SetParent(Camera.main.transform, true);
         gameSetupPhase = true;
         SetupFirstShot();
+
+        var gameUIManager = FindObjectOfType<InGameUIManager>();
+        gameUIManager.UpdateBallsLeft(_remainingYarn);
     }
 
     private void OnEnable()
