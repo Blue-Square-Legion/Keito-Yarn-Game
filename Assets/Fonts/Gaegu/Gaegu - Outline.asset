@@ -57,11 +57,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Gaegu-Regular SDF
+  m_Name: Gaegu - Outline
   m_EditorClassIdentifier: 
-  hashCode: 834186199
+  hashCode: 423384604
   material: {fileID: 3182887998236978296}
-  materialHashCode: 359883671
+  materialHashCode: 1327554364
   m_Version: 1.1.0
   m_SourceFontFileGUID: 41bffc8cc94bc4445a8b5d524f86c96c
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 41bffc8cc94bc4445a8b5d524f86c96c, type: 3}
@@ -2318,7 +2318,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.1
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
