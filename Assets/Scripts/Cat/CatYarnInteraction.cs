@@ -26,9 +26,11 @@ public class CatYarnInteraction : MonoBehaviour
 
     public UnityEvent<float, bool> OnCatScored;
     public UnityEvent<RejectType> OnReject;
+    //public UnityEvent<RejectType, ColorSO, ColorController> OnRejectColor;
     public UnityEvent<ColorSO> OnFavoriteColor;
 
     private ColorSO _favoriteColor;
+    private ColorSO _lastYarnColor;
     public ColorSO FavoriteColor => _favoriteColor;
 
     public void SetFavoriteColor(ColorSO color)
@@ -49,7 +51,7 @@ public class CatYarnInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag(_yarnTag.Tag))
         {
             ColorController colorHit = collision.gameObject.GetComponent<ColorController>();
-
+            _lastYarnColor = colorHit.Color;
             if(_rejectOffColor && colorHit.Color != FavoriteColor)
             {
                 OnReject.Invoke(RejectType.Color);
@@ -88,5 +90,10 @@ public class CatYarnInteraction : MonoBehaviour
 
         OnCatScored.Invoke(collision.transform.localScale.x, isFavorite);
         Destroy(collision.gameObject);
+    }
+
+    public ColorSO GetLastYarnHit()
+    {
+        return _lastYarnColor;
     }
 }

@@ -17,12 +17,15 @@ public class SignPostNotification : MonoBehaviour
     private static string OPEN = "Open";
     private static string CLOSE = "Close";
 
+    private NonMatch setSpriteColors;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _spriteImage = GetComponent<Image>();
 
         _animator.speed = 1 / AnimationTime;
+        setSpriteColors = GetComponent<NonMatch>();
     }
 
     public void SetSprite(Sprite Image)
@@ -33,6 +36,12 @@ public class SignPostNotification : MonoBehaviour
     public void Open(Sprite Image)
     {
         SetSprite(Image);
+        Open();
+    }
+    public void Open(Sprite Image, ColorSO catColor, ColorSO yarnColor)
+    {
+        SetSprite(Image);
+        setSpriteColors.SetColors(catColor, yarnColor);
         Open();
     }
 

@@ -10,6 +10,7 @@ public enum SignPostTypes
     BlueYarn,
     GreenYarn,
     RedYarn,
+    Hollow
 }
 
 
@@ -26,6 +27,7 @@ public class SignManager : MonoBehaviour
     [SerializeField] private Sprite _redYarn;
     [SerializeField] private Sprite _greenYarn;
     [SerializeField] private Sprite _blueYarn;
+    [SerializeField] private Sprite _hollow;
 
     private SignPostNotification _previous;
 
@@ -48,6 +50,11 @@ public class SignManager : MonoBehaviour
         }
     }
 
+    public void Open(SignPostTypes type, ColorSO catColor, ColorSO yarncolor) 
+    {
+        Open(_hollow, catColor, yarncolor);
+    }
+
     public void Open(Sprite sprite)
     {
         if(_previous != null)
@@ -58,11 +65,30 @@ public class SignManager : MonoBehaviour
         _previous = CreateSign(sprite);
     }
 
+    public void Open(Sprite sprite, ColorSO catColor, ColorSO yarnColor)
+    {
+        if (_previous != null)
+        {
+            _previous?.Close();
+        }
+
+        _previous = CreateSign(sprite, catColor, yarnColor);
+    }
+
     private SignPostNotification CreateSign(Sprite sprite)
     {
         GameObject go = Instantiate(_signPrefab, transform);
         SignPostNotification sign = go.GetComponent<SignPostNotification>();
         sign.Open(sprite);
+
+        return sign;
+    }
+
+    private SignPostNotification CreateSign(Sprite sprite, ColorSO catColor, ColorSO yarnColor)
+    {
+        GameObject go = Instantiate(_signPrefab, transform);
+        SignPostNotification sign = go.GetComponent<SignPostNotification>();
+        sign.Open(sprite, catColor, yarnColor);
 
         return sign;
     }
