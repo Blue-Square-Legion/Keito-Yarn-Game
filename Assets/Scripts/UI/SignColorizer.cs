@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NonMatch : MonoBehaviour
+public class SignColorizer : MonoBehaviour
 {
     [SerializeField] private GameObject catSprite;
     [SerializeField] private GameObject yarnSprite;

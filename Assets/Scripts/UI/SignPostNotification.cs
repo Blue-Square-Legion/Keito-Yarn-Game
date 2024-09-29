@@ -17,7 +17,7 @@ public class SignPostNotification : MonoBehaviour
     private static string OPEN = "Open";
     private static string CLOSE = "Close";
 
-    private NonMatch setSpriteColors;
+    private SignColorizer setSpriteColors;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class SignPostNotification : MonoBehaviour
         _spriteImage = GetComponent<Image>();
 
         _animator.speed = 1 / AnimationTime;
-        setSpriteColors = GetComponent<NonMatch>();
+        setSpriteColors = GetComponent<SignColorizer>();
     }
 
     public void SetSprite(Sprite Image)

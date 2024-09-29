@@ -26,7 +26,6 @@ public class CatYarnInteraction : MonoBehaviour
 
     public UnityEvent<float, bool> OnCatScored;
     public UnityEvent<RejectType> OnReject;
-    //public UnityEvent<RejectType, ColorSO, ColorController> OnRejectColor;
     public UnityEvent<ColorSO> OnFavoriteColor;
 
     private ColorSO _favoriteColor;

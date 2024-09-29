@@ -11,7 +11,6 @@ public class AutoConnectSign : MonoBehaviour
     {
         _signs = FindAnyObjectByType<SignManager>();
         _interact = GetComponent<CatYarnInteraction>();
-
     }
 
     public void Open(SignPostTypes type)
@@ -40,8 +39,8 @@ public class AutoConnectSign : MonoBehaviour
     {
         switch (type)
         {
-            case RejectType.Color: _signs?.Open(SignPostTypes.AngryCat, _interact.FavoriteColor, _interact.GetLastYarnHit()); break;
-            case RejectType.Size: Debug.Log("What it does"); break;
+            case RejectType.Color: _signs?.Open(SignPostTypes.WrongColor, _interact.FavoriteColor, _interact.GetLastYarnHit()); break;
+            case RejectType.Size: _signs?.Open(SignPostTypes.AngryCat); break;
             case RejectType.Damage: _signs?.Open(SignPostTypes.AngryCat); break;
             case RejectType.Force: _signs?.Open(SignPostTypes.AngryCat); break;
 

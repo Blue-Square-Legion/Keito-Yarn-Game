@@ -10,7 +10,8 @@ public enum SignPostTypes
     BlueYarn,
     GreenYarn,
     RedYarn,
-    Hollow
+    WrongColor,
+    TooSmall
 }
 
 
@@ -27,7 +28,7 @@ public class SignManager : MonoBehaviour
     [SerializeField] private Sprite _redYarn;
     [SerializeField] private Sprite _greenYarn;
     [SerializeField] private Sprite _blueYarn;
-    [SerializeField] private Sprite _hollow;
+    [SerializeField] private Sprite _wrongColor;
 
     private SignPostNotification _previous;
 
@@ -52,7 +53,7 @@ public class SignManager : MonoBehaviour
 
     public void Open(SignPostTypes type, ColorSO catColor, ColorSO yarncolor) 
     {
-        Open(_hollow, catColor, yarncolor);
+        Open(_wrongColor, catColor, yarncolor);
     }
 
     public void Open(Sprite sprite)
