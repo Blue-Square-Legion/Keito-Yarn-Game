@@ -75,28 +75,27 @@ public class YarnCollision : MonoBehaviour
     }
 
     private ColorSO.BallColor GetThisBallColor() {
-        Renderer thisRenderer = GetComponent<Renderer>();
-        Color thisColor = thisRenderer.material.color;
-        return GetBallColor(thisColor);
+        return GetBallColor(yarnAttributes);
     }
 
     private ColorSO.BallColor GetOtherBallColor(Collision other) {
-        if (other.gameObject.TryGetComponent(out Renderer otherRenderer))
+        if (other.gameObject.TryGetComponent(out YarnCollision otherYarnCollision))
         {
-            Color otherColor = otherRenderer.material.color;
-            return GetBallColor(otherColor);
+            YarnAttributesSO otherYarnAttributes = otherYarnCollision.yarnAttributes;
+            return GetBallColor(otherYarnAttributes);
         }
-        Debug.LogError("other color not found");
+        Debug.LogError("other yarn attributes not initialized");
         return ColorSO.BallColor.Default;
     }
 
-    private ColorSO.BallColor GetBallColor(Color color) {
-        if (color.r > .9 && color.g < .4 && color.b < .4) {
-            return ColorSO.BallColor.Red;
-        } else if (color.b > .9 && color.r < .4 && color.g < .4) {
-            return ColorSO.BallColor.Blue;
-        } else if (color.g > .9 && color.r < .4 && color.b < .4) {
-            return ColorSO.BallColor.Green;
+    private ColorSO.BallColor GetBallColor(YarnAttributesSO attr) {
+        if(attr == null) {
+            Debug.LogError("Yarn Attributes not initialized");
+            return ColorSO.BallColor.Default;
+        }
+        ColorSO clr = attr.color;
+        if(clr != null) {
+            return clr.Name;
         }
         Debug.LogError("Couldn't identify Ball Color");
         return ColorSO.BallColor.Default;
@@ -117,6 +116,19 @@ public class YarnCollision : MonoBehaviour
             {
                 effect.ApplyEffect(gameObject, ballRigidbody, otherRigidbody);
             }
+        }
+    }
+
+    public void CreateLaunchEffects()
+    {
+        if (yarnAttributes == null || yarnAttributes.launchEffects == null) return;
+
+        Rigidbody ballRigidbody = GetComponent<Rigidbody>();
+
+        foreach (var effect in yarnAttributes.launchEffects)
+        {
+            Debug.Log("Creating Launch Effect");
+            effect.CreateEffect(gameObject);
         }
     }
 

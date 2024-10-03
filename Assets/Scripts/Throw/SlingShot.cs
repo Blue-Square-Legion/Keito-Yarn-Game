@@ -77,6 +77,9 @@ public class SlingShot : MonoBehaviour
         transform.SetParent(Camera.main.transform, true);
         gameSetupPhase = true;
         SetupFirstShot();
+
+        var gameUIManager = FindObjectOfType<InGameUIManager>();
+        gameUIManager.UpdateBallsLeft(_remainingYarn);
     }
 
     private void OnEnable()
@@ -260,8 +263,13 @@ public class SlingShot : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
 
         rb.AddForce(_forceVector, ForceMode.Impulse);
-        go.GetComponent<YarnCollision>().isThrown = true;
-        Debug.Log(go.GetComponent<YarnCollision>().isThrown);
+        
+        YarnCollision yarnCollision = go.GetComponent<YarnCollision>();
+        if (yarnCollision != null)
+        {
+            yarnCollision.isThrown = true;
+            yarnCollision.CreateLaunchEffects();
+        }
     }
 
     private void EnableThrownObject(GameObject go)
