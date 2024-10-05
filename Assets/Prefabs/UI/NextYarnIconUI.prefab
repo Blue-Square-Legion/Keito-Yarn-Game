@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8625727535760580800}
   - component: {fileID: 8625727535760580803}
   - component: {fileID: 3336678713005163206}
+  - component: {fileID: 2972148256642998809}
   m_Layer: 5
   m_Name: NextYarnIconUI
   m_TagString: Untagged
@@ -95,3 +96,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!225 &2972148256642998809
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8625727535760580805}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
