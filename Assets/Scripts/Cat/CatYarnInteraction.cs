@@ -29,6 +29,7 @@ public class CatYarnInteraction : MonoBehaviour
     public UnityEvent<ColorSO> OnFavoriteColor;
 
     private ColorSO _favoriteColor;
+    private ColorSO _lastYarnColor;
     public ColorSO FavoriteColor => _favoriteColor;
 
     public void SetFavoriteColor(ColorSO color)
@@ -49,7 +50,7 @@ public class CatYarnInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag(_yarnTag.Tag))
         {
             ColorController colorHit = collision.gameObject.GetComponent<ColorController>();
-
+            _lastYarnColor = colorHit.Color;
             if(_rejectOffColor && colorHit.Color != FavoriteColor)
             {
                 OnReject.Invoke(RejectType.Color);
@@ -59,6 +60,7 @@ public class CatYarnInteraction : MonoBehaviour
             if (_rejectDamagedBall && colorHit.isDamaged())
             {
                 OnReject.Invoke(RejectType.Damage);
+                Debug.Log("Damaged");
                 return;
             }
 
@@ -66,11 +68,14 @@ public class CatYarnInteraction : MonoBehaviour
             {
                 if (collision.relativeVelocity.sqrMagnitude >= _minSqrVelocityRejection)
                 {
-                    OnReject.Invoke(RejectType.Force);
+                    //OnReject.Invoke(RejectType.Force);
+                    OnReject.Invoke(RejectType.Size);
+                    Debug.Log("Force");
                 }
                 else
                 {
                     OnReject.Invoke(RejectType.Size);
+                    Debug.Log("Size");
                 }                    
             }
             else
@@ -88,5 +93,10 @@ public class CatYarnInteraction : MonoBehaviour
 
         OnCatScored.Invoke(collision.transform.localScale.x, isFavorite);
         Destroy(collision.gameObject);
+    }
+
+    public ColorSO GetLastYarnHit()
+    {
+        return _lastYarnColor;
     }
 }

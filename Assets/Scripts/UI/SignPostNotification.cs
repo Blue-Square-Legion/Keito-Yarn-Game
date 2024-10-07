@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static ColorSO;
 
 
 [RequireComponent(typeof(Animator),typeof(Image))]
@@ -17,12 +18,15 @@ public class SignPostNotification : MonoBehaviour
     private static string OPEN = "Open";
     private static string CLOSE = "Close";
 
+    private SignColorizer setSpriteColors;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _spriteImage = GetComponent<Image>();
 
         _animator.speed = 1 / AnimationTime;
+        setSpriteColors = GetComponent<SignColorizer>();
     }
 
     public void SetSprite(Sprite Image)
@@ -33,6 +37,12 @@ public class SignPostNotification : MonoBehaviour
     public void Open(Sprite Image)
     {
         SetSprite(Image);
+        Open();
+    }
+    public void Open(Sprite Image, RejectType reason, ColorSO yarnColor)
+    {
+        SetSprite(Image);
+        setSpriteColors.SetSign(reason, yarnColor);
         Open();
     }
 
