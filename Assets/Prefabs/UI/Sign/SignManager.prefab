@@ -57,3 +57,4 @@ MonoBehaviour:
   _redYarn: {fileID: 21300000, guid: 80967001393c141e8981fc309f8d6dd5, type: 3}
   _greenYarn: {fileID: 21300000, guid: 83d3440dffe954b878c0053773f19498, type: 3}
   _blueYarn: {fileID: 21300000, guid: fffba4979a388458eb6362236c44b1d2, type: 3}
+  _wrongColor: {fileID: 21300000, guid: 401cbbccfeaafed4a92b796f64959c2d, type: 3}

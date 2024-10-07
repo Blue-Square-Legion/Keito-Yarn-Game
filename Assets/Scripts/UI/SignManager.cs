@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static ColorSO;
 
 
 public enum SignPostTypes
@@ -10,6 +11,8 @@ public enum SignPostTypes
     BlueYarn,
     GreenYarn,
     RedYarn,
+    WrongColor,
+    TooSmall
 }
 
 
@@ -26,6 +29,7 @@ public class SignManager : MonoBehaviour
     [SerializeField] private Sprite _redYarn;
     [SerializeField] private Sprite _greenYarn;
     [SerializeField] private Sprite _blueYarn;
+    [SerializeField] private Sprite _blankSign;
 
     private SignPostNotification _previous;
 
@@ -58,11 +62,35 @@ public class SignManager : MonoBehaviour
         _previous = CreateSign(sprite);
     }
 
+    public void Open(Sprite sprite, RejectType reason, ColorSO yarnColor)
+    {
+        if (_previous != null)
+        {
+            _previous?.Close();
+        }
+
+        _previous = CreateSign(sprite, reason, yarnColor);
+    }
+
+    public void Open(RejectType reason, ColorSO yarncolor)
+    {
+        Open(_blankSign, reason, yarncolor);
+    }
+
     private SignPostNotification CreateSign(Sprite sprite)
     {
         GameObject go = Instantiate(_signPrefab, transform);
         SignPostNotification sign = go.GetComponent<SignPostNotification>();
         sign.Open(sprite);
+
+        return sign;
+    }
+
+    private SignPostNotification CreateSign(Sprite sprite, RejectType reason, ColorSO yarnColor)
+    {
+        GameObject go = Instantiate(_signPrefab, transform);
+        SignPostNotification sign = go.GetComponent<SignPostNotification>();
+        sign.Open(sprite, reason, yarnColor);
 
         return sign;
     }
