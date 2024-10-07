@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static ColorSO;
 
 
 [RequireComponent(typeof(Animator),typeof(Image))]
@@ -38,10 +39,10 @@ public class SignPostNotification : MonoBehaviour
         SetSprite(Image);
         Open();
     }
-    public void Open(Sprite Image, ColorSO catColor, ColorSO yarnColor)
+    public void Open(Sprite Image, RejectType reason, ColorSO yarnColor)
     {
         SetSprite(Image);
-        setSpriteColors.SetColors(catColor, yarnColor);
+        setSpriteColors.SetSign(reason, yarnColor);
         Open();
     }
 

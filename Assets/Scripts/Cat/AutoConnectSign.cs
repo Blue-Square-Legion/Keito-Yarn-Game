@@ -30,17 +30,12 @@ public class AutoConnectSign : MonoBehaviour
         }
     }
 
-    /*public void SignAngry()
-    {
-        _signs?.Open(SignPostTypes.AngryCat);
-    }*/
-
     public void SignAngry(RejectType type) 
     {
         switch (type)
         {
-            case RejectType.Color: _signs?.Open(SignPostTypes.WrongColor, _interact.FavoriteColor, _interact.GetLastYarnHit()); break;
-            case RejectType.Size: _signs?.Open(SignPostTypes.AngryCat); break;
+            case RejectType.Color: _signs?.Open(RejectType.Color, _interact.GetLastYarnHit()); break;
+            case RejectType.Size: _signs?.Open(RejectType.Size, _interact.GetLastYarnHit()); break;
             case RejectType.Damage: _signs?.Open(SignPostTypes.AngryCat); break;
             case RejectType.Force: _signs?.Open(SignPostTypes.AngryCat); break;
 

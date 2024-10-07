@@ -60,6 +60,7 @@ public class CatYarnInteraction : MonoBehaviour
             if (_rejectDamagedBall && colorHit.isDamaged())
             {
                 OnReject.Invoke(RejectType.Damage);
+                Debug.Log("Damaged");
                 return;
             }
 
@@ -67,11 +68,14 @@ public class CatYarnInteraction : MonoBehaviour
             {
                 if (collision.relativeVelocity.sqrMagnitude >= _minSqrVelocityRejection)
                 {
-                    OnReject.Invoke(RejectType.Force);
+                    //OnReject.Invoke(RejectType.Force);
+                    OnReject.Invoke(RejectType.Size);
+                    Debug.Log("Force");
                 }
                 else
                 {
                     OnReject.Invoke(RejectType.Size);
+                    Debug.Log("Size");
                 }                    
             }
             else

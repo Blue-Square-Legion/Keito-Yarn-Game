@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static ColorSO;
 
 
 public enum SignPostTypes
@@ -28,7 +29,7 @@ public class SignManager : MonoBehaviour
     [SerializeField] private Sprite _redYarn;
     [SerializeField] private Sprite _greenYarn;
     [SerializeField] private Sprite _blueYarn;
-    [SerializeField] private Sprite _wrongColor;
+    [SerializeField] private Sprite _blankSign;
 
     private SignPostNotification _previous;
 
@@ -51,11 +52,6 @@ public class SignManager : MonoBehaviour
         }
     }
 
-    public void Open(SignPostTypes type, ColorSO catColor, ColorSO yarncolor) 
-    {
-        Open(_wrongColor, catColor, yarncolor);
-    }
-
     public void Open(Sprite sprite)
     {
         if(_previous != null)
@@ -66,14 +62,19 @@ public class SignManager : MonoBehaviour
         _previous = CreateSign(sprite);
     }
 
-    public void Open(Sprite sprite, ColorSO catColor, ColorSO yarnColor)
+    public void Open(Sprite sprite, RejectType reason, ColorSO yarnColor)
     {
         if (_previous != null)
         {
             _previous?.Close();
         }
 
-        _previous = CreateSign(sprite, catColor, yarnColor);
+        _previous = CreateSign(sprite, reason, yarnColor);
+    }
+
+    public void Open(RejectType reason, ColorSO yarncolor)
+    {
+        Open(_blankSign, reason, yarncolor);
     }
 
     private SignPostNotification CreateSign(Sprite sprite)
@@ -85,11 +86,11 @@ public class SignManager : MonoBehaviour
         return sign;
     }
 
-    private SignPostNotification CreateSign(Sprite sprite, ColorSO catColor, ColorSO yarnColor)
+    private SignPostNotification CreateSign(Sprite sprite, RejectType reason, ColorSO yarnColor)
     {
         GameObject go = Instantiate(_signPrefab, transform);
         SignPostNotification sign = go.GetComponent<SignPostNotification>();
-        sign.Open(sprite, catColor, yarnColor);
+        sign.Open(sprite, reason, yarnColor);
 
         return sign;
     }
