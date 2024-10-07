@@ -3378,6 +3378,14 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1038539266}
+    - target: {fileID: 2197808506666852185, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
+      propertyPath: m_Orbits.Array.data[1].m_Height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2197808506666852185, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
+      propertyPath: m_Orbits.Array.data[2].m_Height
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2197808506666852186, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_Name
       value: CM FreeLook
