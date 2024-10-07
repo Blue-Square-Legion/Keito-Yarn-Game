@@ -310,13 +310,13 @@ public class SlingShot : MonoBehaviour
     /// Draws by calc trajectory w/drag & stops on 1st collision or time travelled
     /// </summary>
     /// <param name="ForceVector"></param>
-    private bool DrawWithDrag(Vector3 forceVector)
+    private bool DrawWithDrag(Vector3 ForceVector)
     {
         _lineRenderer.positionCount = _linePoints;
         float time = _totalTime / _linePoints;
 
         Vector3 currentPos = StartOffset;
-        Vector3 currentVelocity = forceVector / _mass;
+        Vector3 currentVelocity = ForceVector / _mass;
 
         Camera cam = Camera.main;
 
@@ -327,9 +327,11 @@ public class SlingShot : MonoBehaviour
             currentVelocity += Physics.gravity * time;
             currentVelocity *= (1 - _drag * time);
 
+            //Sphere Cast to get accurate hit. Ray didn't account for radius.
             Vector3 delta = currentVelocity * time;
             if (Physics.SphereCast(currentPos, _radius, delta.normalized, out RaycastHit hit, delta.magnitude, _layerMask))
             {
+                //Get accurate center hit position. 'hit.point' snaped center to point.
                 _lineRenderer.SetPosition(i, currentPos + hit.distance * delta.normalized);
                 _lineRenderer.positionCount = i + 1;
                 return true;
