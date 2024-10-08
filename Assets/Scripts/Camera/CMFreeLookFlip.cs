@@ -17,11 +17,6 @@ public class CMFreeLookFlip : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            FlipCamera();
-        }
-
         if (freeLookCamera != null && originalLookAt != null)
         {
             UpdateCameraDirection();
@@ -68,5 +63,24 @@ public class CMFreeLookFlip : MonoBehaviour
 
         freeLookCamera.m_XAxis.Value += horizontalInput;
         freeLookCamera.m_YAxis.Value += verticalInput;
+    }
+
+    private void OnEnable()
+    {
+        InputManager.Input.Player.Enable();
+
+        InputManager.Input.Player.Focus.performed += Focus_performed;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.Input.Player.Disable();
+
+        InputManager.Input.Player.Focus.performed -= Focus_performed;
+    }
+
+    private void Focus_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        FlipCamera();
     }
 }

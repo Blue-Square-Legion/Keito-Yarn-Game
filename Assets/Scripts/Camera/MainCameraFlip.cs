@@ -20,11 +20,6 @@ public class MainCameraFlip : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            FlipCamera();
-        }
-
         if (cinemachineBrain != null)
         {
             cinemachineBrain.ManualUpdate();
@@ -38,5 +33,24 @@ public class MainCameraFlip : MonoBehaviour
         Vector3 currentRotation = mainCamera.transform.eulerAngles;
         float newYRotation = currentRotation.y + 180f;
         mainCamera.transform.rotation = Quaternion.Euler(currentRotation.x, newYRotation, currentRotation.z);
+    }
+
+    private void OnEnable()
+    {
+        InputManager.Input.Player.Enable();
+
+        InputManager.Input.Player.Focus.performed += Focus_performed;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.Input.Player.Disable();
+
+        InputManager.Input.Player.Focus.performed -= Focus_performed;
+    }
+
+    private void Focus_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        FlipCamera();
     }
 }
