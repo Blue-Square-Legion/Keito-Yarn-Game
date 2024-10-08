@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 4257227216184471550}
   - component: {fileID: 2226851214973421619}
   - component: {fileID: 2254498824658036599}
-  - component: {fileID: 5070311583792201990}
+  - component: {fileID: 2487985757293088033}
   m_Layer: 5
   m_Name: SignPostNotification
   m_TagString: Untagged
@@ -382,7 +382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationTime: 0.5
   DisplayTime: 2
---- !u!114 &5070311583792201990
+--- !u!225 &2487985757293088033
+CanvasGroup:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -390,6 +391,10 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7454302467891201102}
   m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a8a21b02035aad4096a401fcb764bce, type: 3}
   m_Name: 

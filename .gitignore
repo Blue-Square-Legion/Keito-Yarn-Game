@@ -79,3 +79,4 @@ crashlytics-build.properties
 
 # from https://www.audiokinetic.com/library/edge/?source=Unity&id=unity__troubleshooting.html
 /[Aa]ssets/Wwise/Editor/ProjectData/AkWwiseProjectData*.asset*
+/.idea
