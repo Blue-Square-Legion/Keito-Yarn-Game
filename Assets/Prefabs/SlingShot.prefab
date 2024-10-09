@@ -132,18 +132,17 @@ MonoBehaviour:
   _indicator: {fileID: 3551509928798142177}
   _PrefabPicker:
     _count: 3
-    _prefabs:
-    - {fileID: 3154276696338372515, guid: 2630d7eda4b5643cab9f5ec813539c8e, type: 3}
-    - {fileID: 2025155149542869593, guid: b44bc3028160b4c6297273c41618fff4, type: 3}
-    - {fileID: 660840053069172341, guid: b47f1a3820f32416d859f089a75473e1, type: 3}
+    _gameManager: {fileID: 0}
+    script: {fileID: 0}
   _postionOffset: {x: 1, y: -0.5, z: 0.5}
   _rotationOffset: {x: -20, y: 0}
-  _coolDownLength: 0.7
+  _afterFireCD: 0.4
   _linePoints: 25
   _totalTime: 2
   _layerMask:
     serializedVersion: 2
     m_Bits: 2147483647
+  _isToggle: 0
   _horizontal:
     Speed: 5
     Invert: 0
@@ -155,6 +154,10 @@ MonoBehaviour:
     Min: 5
     Max: 40
   _startForceMulti: 0.4
+  _timerHUD: {fileID: 0}
+  _timerHUDCanvasGroup: {fileID: 0}
+  raycaster: {fileID: 0}
+  eventSystem: {fileID: 0}
   OnPowerChange:
     m_PersistentCalls:
       m_Calls: []
@@ -164,6 +167,12 @@ MonoBehaviour:
   OnStartThrow:
     m_PersistentCalls:
       m_Calls: []
+  OnNextColorChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnNewThrowingColorChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!120 &8863162284197567730
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -171,7 +180,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8863162284197567728}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
