@@ -6,6 +6,8 @@ public class CMFreeLookFlip : MonoBehaviour
     public CinemachineFreeLook freeLookCamera;
     private Transform originalLookAt;
     private bool isFlipped = false;
+    private float _cameraSens = 1.0f;
+    public float cameraSens { get { return _cameraSens; } set { _cameraSens = value; } }
 
     void Start()
     {
@@ -55,14 +57,17 @@ public class CMFreeLookFlip : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
+        float horizontalSensitivity = 1f * _cameraSens;
+        float verticalSensitivity = 0.03f * _cameraSens;
+
         if (!isFlipped)
         {
             horizontalInput = -horizontalInput;
             verticalInput = -verticalInput;
         }
 
-        freeLookCamera.m_XAxis.Value += horizontalInput;
-        freeLookCamera.m_YAxis.Value += verticalInput;
+        freeLookCamera.m_XAxis.Value += horizontalInput * horizontalSensitivity;
+        freeLookCamera.m_YAxis.Value += verticalInput * verticalSensitivity;
     }
 
     private void OnEnable()
