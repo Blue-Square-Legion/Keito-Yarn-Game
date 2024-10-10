@@ -929,6 +929,14 @@ PrefabInstance:
       value: SlingShot
       objectReference: {fileID: 0}
     - target: {fileID: 8863162284197567729, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
+      propertyPath: raycaster
+      value: 
+      objectReference: {fileID: 1090252290}
+    - target: {fileID: 8863162284197567729, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 884975832}
+    - target: {fileID: 8863162284197567729, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
       propertyPath: OnNextColorChange.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -3956,6 +3964,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073678930}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1090252290 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7781372501394609663, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+  m_PrefabInstance: {fileID: 1451109968}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1123264546
 PrefabInstance:
   m_ObjectHideFlags: 0
