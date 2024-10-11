@@ -33,11 +33,10 @@ public class SlingShot : MonoBehaviour
 
     [SerializeField, Range(0, 1)] private float _startForceMulti = 0.5f;
     
-    [SerializeField] private RectTransform _timerHUD;
-    [SerializeField] private CanvasGroup _timerHUDCanvasGroup; // Optional, for easier transparency control
-
-    public GraphicRaycaster raycaster;  // Attach your canvas's GraphicRaycaster
-    public EventSystem eventSystem;     // The EventSystem in your scene
+    [SerializeField]
+    private GraphicRaycaster raycaster;  // Attach your canvas's GraphicRaycaster
+    [SerializeField]
+    private EventSystem eventSystem;     // The EventSystem in your scene
     
     #endregion
     private List<GameObject> obstructingUIElements = new List<GameObject>();
@@ -73,12 +72,6 @@ public class SlingShot : MonoBehaviour
     public float mouseY { get { return _forceVertical.Speed; } set { _forceVertical.Speed = value; } }
 
     public static SlingShot Instance;
-    private Camera _camera;
-
-    private void Awake()
-    {
-        _camera = Camera.main;
-    }
 
     private void Start()
     {
@@ -363,7 +356,6 @@ public class SlingShot : MonoBehaviour
         foreach (RaycastResult result in results)
         {
             GameObject uiElement = result.gameObject;
-            Debug.Log("Obstructing element: " + uiElement.name);
             var canvasGroup = uiElement.GetComponent<CanvasGroup>();
         
             if (canvasGroup != null)
@@ -384,27 +376,12 @@ public class SlingShot : MonoBehaviour
 
             if (canvasGroup != null  && !results.Exists(r => r.gameObject == element))
             {
-                Debug.Log("Restoring transparency for: " + element.name);
                 canvasGroup.DOFade(1f, 0.5f).SetEase(Ease.OutQuad);
                 obstructingUIElements.RemoveAt(i); // Remove from obstructing list
             }
         }
     }
     
-    private IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float startAlpha, float targetAlpha, float duration)
-    {
-        float elapsedTime = 0f;
-
-        while (elapsedTime < duration)
-        {
-            elapsedTime += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / duration);
-            yield return null;
-        }
-
-        canvasGroup.alpha = targetAlpha;  // Ensure it ends exactly at targetAlpha
-        Debug.Log("Alpha transition completed for: " + canvasGroup.gameObject.name + " to " + targetAlpha);
-    }
     
     /// <summary>
     /// Helper function to calc Vector3 directional offsets

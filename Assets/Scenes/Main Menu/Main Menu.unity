@@ -554,7 +554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1508543919831471527, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1522304422224340214, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_AnchorMax.y
@@ -662,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1872440054495081971, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1940453026333480401, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_fontSize
@@ -670,7 +670,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1996256974358285960, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996256974358285960, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Tutorial Room Scene
       objectReference: {fileID: 0}
     - target: {fileID: 2163392399125312730, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_AnchorMax.y
@@ -710,7 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2425028746734948326, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2557914015379715487, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -1118,7 +1122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7371806287639985262, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7611796826187132490, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_AnchorMax.y

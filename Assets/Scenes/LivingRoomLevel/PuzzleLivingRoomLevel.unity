@@ -2288,6 +2288,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade68463521c147e0885b968917c7f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &495899595 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7781372501394609663, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+  m_PrefabInstance: {fileID: 325238071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &499684134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6892,6 +6903,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlingShot
       objectReference: {fileID: 0}
+    - target: {fileID: 8863162284197567729, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
+      propertyPath: raycaster
+      value: 
+      objectReference: {fileID: 495899595}
+    - target: {fileID: 8863162284197567729, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 1269153145}
     - target: {fileID: 8863162284197567729, guid: fe5b652869545104cb7c87fcfab96402, type: 3}
       propertyPath: OnNextColorChange.m_PersistentCalls.m_Calls.Array.size
       value: 0
