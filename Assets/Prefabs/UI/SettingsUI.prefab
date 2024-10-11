@@ -380,10 +380,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 7340835231956273468}
   m_HandleRect: {fileID: 4479219996808494086}
   m_Direction: 0
-  m_MinValue: 0.5
-  m_MaxValue: 2
+  m_MinValue: 0.1
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 1.25
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -655,7 +655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.25
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfe631acefbb3984a8ad61d5f41c9259, type: 2}
   m_sharedMaterial: {fileID: 3182887998236978296, guid: dfe631acefbb3984a8ad61d5f41c9259, type: 2}

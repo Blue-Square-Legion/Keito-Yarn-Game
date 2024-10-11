@@ -9,7 +9,7 @@ public class CameraSettings : MonoBehaviour
     public Slider cameraSensitivitySlider;
     public TextMeshProUGUI cameraSensitivityText;
     public PlayerPrefSO cameraSO;
-    private float cameraSensitivity = 1.25f;
+    private float cameraSensitivity = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,9 @@ public class CameraSettings : MonoBehaviour
             cameraSensitivityText.text = PlayerPrefs.GetFloat(cameraSO.currKey.ToString()).ToString();
 
             AdjustSensitivity(cameraSensitivitySlider.value);
+        } else
+        {
+            Debug.LogError("camera settings not found");
         }
     }
 

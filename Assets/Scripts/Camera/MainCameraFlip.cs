@@ -1,11 +1,13 @@
 using UnityEngine;
 using Cinemachine;
+using System.Collections;
 
 public class MainCameraFlip : MonoBehaviour
 {
     private Camera mainCamera;
     private bool isFlipped = false;
     private CinemachineBrain cinemachineBrain;
+    private bool isFlipping = false;
 
     void Start()
     {
@@ -26,13 +28,19 @@ public class MainCameraFlip : MonoBehaviour
         }
     }
 
-    void FlipCamera()
+    private IEnumerator FlipCamera()
     {
+        if (isFlipping) yield return null;
+        isFlipping = true;
+
         isFlipped = !isFlipped;
 
         Vector3 currentRotation = mainCamera.transform.eulerAngles;
         float newYRotation = currentRotation.y + 180f;
         mainCamera.transform.rotation = Quaternion.Euler(currentRotation.x, newYRotation, currentRotation.z);
+
+        isFlipping = false;
+        yield return null;
     }
 
     private void OnEnable()
@@ -51,6 +59,6 @@ public class MainCameraFlip : MonoBehaviour
 
     private void Focus_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        FlipCamera();
+        StartCoroutine(FlipCamera());
     }
 }
