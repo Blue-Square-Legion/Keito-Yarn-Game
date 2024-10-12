@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using DG.Tweening;
+
 
 public class SlingShot : MonoBehaviour
 {
@@ -28,9 +32,14 @@ public class SlingShot : MonoBehaviour
     [SerializeField] private AlignmentControl _forceVertical;
 
     [SerializeField, Range(0, 1)] private float _startForceMulti = 0.5f;
-
+    
+    [SerializeField]
+    private GraphicRaycaster raycaster;  // Attach your canvas's GraphicRaycaster
+    [SerializeField]
+    private EventSystem eventSystem;     // The EventSystem in your scene
+    
     #endregion
-
+    private List<GameObject> obstructingUIElements = new List<GameObject>();
     private bool _unlimitedYarn = true;
     private int _remainingYarn = 30;
 
@@ -113,7 +122,6 @@ public class SlingShot : MonoBehaviour
         _forceVector = _force * transform.forward;
 
         DrawWithDrag(_forceVector);
-
         _currentBall.transform.position = StartOffset;
 
         _indicator.transform.position = _lineRenderer.GetPosition(_lineRenderer.positionCount - 1);
@@ -303,6 +311,8 @@ public class SlingShot : MonoBehaviour
         Vector3 currentPos = StartOffset;
         Vector3 currentVelocity = ForceVector / _mass;
 
+        Camera cam = Camera.main;
+
         for (int i = 0; i < _linePoints; i++)
         {
             _lineRenderer.SetPosition(i, currentPos);
@@ -321,12 +331,58 @@ public class SlingShot : MonoBehaviour
             }
 
             currentPos += delta;
+
+            // Convert current world position to screen point
+            Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(cam, currentPos);
+
+            // Check which UI elements are obstructing the screen point
+            CheckForUIObstruction(screenPoint);
         }
 
         return false;
     }
 
     #endregion
+    private void CheckForUIObstruction(Vector2 screenPoint)
+    {
+        PointerEventData pointerData = new PointerEventData(eventSystem);
+        pointerData.position = screenPoint;
+
+        // Perform a raycast using the GraphicRaycaster
+        List<RaycastResult> results = new List<RaycastResult>();
+        raycaster.Raycast(pointerData, results);
+
+        // Reduce transparency of newly obstructing UI elements
+        foreach (RaycastResult result in results)
+        {
+            GameObject uiElement = result.gameObject;
+            var canvasGroup = uiElement.GetComponent<CanvasGroup>();
+        
+            if (canvasGroup != null)
+            {
+                // If the UI element is not already in the obstructing list, make it transparent
+                if (!obstructingUIElements.Contains(uiElement))
+                {
+                    canvasGroup.DOFade(0.1f, 0.5f).SetEase(Ease.OutQuad);
+                    obstructingUIElements.Add(uiElement); // Add to obstructing list
+                }
+            }
+        }
+        
+        for (int i = obstructingUIElements.Count - 1; i >= 0; i--)
+        {
+            GameObject element = obstructingUIElements[i];
+            var canvasGroup = element.GetComponent<CanvasGroup>();
+
+            if (canvasGroup != null  && !results.Exists(r => r.gameObject == element))
+            {
+                canvasGroup.DOFade(1f, 0.5f).SetEase(Ease.OutQuad);
+                obstructingUIElements.RemoveAt(i); // Remove from obstructing list
+            }
+        }
+    }
+    
+    
     /// <summary>
     /// Helper function to calc Vector3 directional offsets
     /// </summary>

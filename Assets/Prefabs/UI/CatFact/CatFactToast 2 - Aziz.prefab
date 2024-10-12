@@ -536,6 +536,7 @@ GameObject:
   - component: {fileID: 4371162546285226279}
   - component: {fileID: 5155119371067739158}
   - component: {fileID: 5820539181642025985}
+  - component: {fileID: 5523528618503400921}
   m_Layer: 5
   m_Name: CatFactToast 2 - Aziz
   m_TagString: Untagged
@@ -623,3 +624,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!225 &5523528618503400921
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8401522277341119241}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
