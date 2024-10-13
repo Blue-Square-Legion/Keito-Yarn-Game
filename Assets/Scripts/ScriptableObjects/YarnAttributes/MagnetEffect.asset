@@ -19,4 +19,4 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  particles: {fileID: 1687378155740214210, guid: 4be09963d6647ad4381e0fd7d867cabf, type: 3}
+  particlesPrefab: {fileID: 1687378155740214210, guid: 4be09963d6647ad4381e0fd7d867cabf, type: 3}

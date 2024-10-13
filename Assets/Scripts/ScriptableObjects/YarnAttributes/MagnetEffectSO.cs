@@ -8,7 +8,6 @@ public class MagnetEffectSO : YarnBallEffectSO
     [SerializeField] private float _effectDuration = 5f; // Duration for which the effect is active
     public LayerMask layerMask;
     [SerializeField] private GameObject particlesPrefab;
-    private GameObject particlesObj;
 
 
     public override void CreateEffect(GameObject ball, Transform target = null)
@@ -23,9 +22,7 @@ public class MagnetEffectSO : YarnBallEffectSO
         }
 
         Renderer ballRenderer = ball.GetComponent<Renderer>();
-        handler.Initialize(_magballRadius, _pullForce, _pushForce, _effectDuration, layerMask, ballRenderer);
-        particlesObj = Instantiate(particlesPrefab, ball.transform);
-        particlesObj.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        handler.Initialize(_magballRadius, _pullForce, _pushForce, _effectDuration, layerMask, ballRenderer, particlesPrefab);
     }
 
     public override void ApplyEffect(GameObject ball, Rigidbody ballRigidbody, Rigidbody targetRigidbody = null)

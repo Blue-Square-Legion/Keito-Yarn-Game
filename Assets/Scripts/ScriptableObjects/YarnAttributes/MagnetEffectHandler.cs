@@ -5,19 +5,20 @@ public class MagnetEffectHandler : MonoBehaviour
 {
     private Coroutine magnetEffectCoroutine;
 
-    public void Initialize(float radius, float pullForce, float pushForce, float duration, LayerMask layerMask, Renderer ballRenderer)
+    public void Initialize(float radius, float pullForce, float pushForce, float duration, LayerMask layerMask, Renderer ballRenderer, GameObject particlePrefab)
     {
         if (magnetEffectCoroutine != null)
         {
             StopCoroutine(magnetEffectCoroutine);
         }
-        magnetEffectCoroutine = StartCoroutine(ApplyMagnetEffect(radius, pullForce, pushForce, duration, layerMask, ballRenderer));
+        magnetEffectCoroutine = StartCoroutine(ApplyMagnetEffect(radius, pullForce, pushForce, duration, layerMask, ballRenderer, particlePrefab));
     }
 
-    private IEnumerator ApplyMagnetEffect(float radius, float pullForce, float pushForce, float duration, LayerMask layerMask, Renderer ballRenderer)
+    private IEnumerator ApplyMagnetEffect(float radius, float pullForce, float pushForce, float duration, LayerMask layerMask, Renderer ballRenderer, GameObject particlePrefab)
     {
         float elapsedTime = 0f;
-
+        GameObject particleObj = Instantiate(particlePrefab, transform);
+        particleObj.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);//hard coded but may be able to adjust size later
         while (elapsedTime < duration)
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, radius, layerMask);
@@ -45,7 +46,7 @@ public class MagnetEffectHandler : MonoBehaviour
             elapsedTime += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
-
+        Destroy(particleObj);//Gets rid of the particles after duration
         Debug.Log("Magnet Effect Ended");
     }
 }
