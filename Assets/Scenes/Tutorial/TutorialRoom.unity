@@ -3066,7 +3066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154588514510545310, guid: a0d0d423053018245b802fff8ff48a03, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1154588514510545310, guid: a0d0d423053018245b802fff8ff48a03, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4254,15 +4254,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2197808506666852185, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_Orbits.Array.data[0].m_Radius
-      value: 10
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2197808506666852185, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
+      propertyPath: m_Orbits.Array.data[1].m_Height
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2197808506666852185, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_Orbits.Array.data[1].m_Radius
-      value: 8
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2197808506666852185, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
+      propertyPath: m_Orbits.Array.data[2].m_Height
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2197808506666852185, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_Orbits.Array.data[2].m_Radius
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2197808506666852186, guid: 8db859489f5b4b845b6f0af8654c85b3, type: 3}
       propertyPath: m_Name

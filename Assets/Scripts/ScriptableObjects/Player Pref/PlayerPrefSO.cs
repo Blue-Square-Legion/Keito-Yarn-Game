@@ -10,7 +10,8 @@ public class PlayerPrefSO : ScriptableObject
         Master_Volume,
         Music_Volume,
         Sound_Volume,
-        Mouse_Sensitivity
+        Mouse_Sensitivity,
+        Camera_Sensitivity
     }
 
     public Key currKey;
