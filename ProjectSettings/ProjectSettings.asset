@@ -139,7 +139,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 2024-09-22-5113
+  bundleVersion: 2024-10-09-3089
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -162,11 +162,11 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.Blue-Square-Legion.Keito
   buildNumber:
-    Standalone: 20
-    iPhone: 20
+    Standalone: 22
+    iPhone: 22
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 21
+  AndroidBundleVersionCode: 23
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
