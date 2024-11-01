@@ -1,21 +1,32 @@
+using System.Collections;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ColorChangeEffect", menuName = "Effects/ColorChangeEffect")]
 public class ColorChangeEffectSO : YarnBallEffectSO
 {
     [SerializeField] private GameObject newBallPrefab;
+    [SerializeField] private float _effectDuration = 5f; // Duration for which the effect is active
+    private ColorChangeEffectHandler _handler;
+    
     public override void CreateEffect(GameObject ball, Transform target = null) 
     {
-    }
+        Debug.Log("Color Change Effect Created");
 
+        _handler = ball.GetComponent<ColorChangeEffectHandler>();
+        if (_handler == null)
+        {
+            _handler = ball.AddComponent<ColorChangeEffectHandler>();
+            _handler.Initialize(_effectDuration);
+        }
+    }
     public override bool ShouldApplyOnCollision()
     {
-        return true;
+        return _handler._isEffectActive;
     }
-
+    
     public override void ApplyEffect(GameObject ball, Rigidbody ballRigidbody, Rigidbody targetRigidbody)
     {
-        if (ballRigidbody != null && targetRigidbody != null)
+        if (_handler._isEffectActive && ballRigidbody != null && targetRigidbody != null)
         {
             GameObject targetObject = targetRigidbody.gameObject;
 
