@@ -5,9 +5,6 @@ using UnityEngine.Events;
 
 public class BlockMerge : MonoBehaviour
 {
-    /// <summary>
-    /// TO DO: Cat is not spawned until after this script is created, so find a way to delay the creation of this script
-    /// </summary>
     [SerializeField] private List<ColorController> balls = new();
     public CatYarnInteraction interaction;
     public bool stopMerger, allowMerger;
@@ -34,10 +31,7 @@ public class BlockMerge : MonoBehaviour
 
     private void OnEnable()
     {
-        if(cat == null) 
-        {
-            cat = GameObject.FindGameObjectWithTag("Cat");
-        }
+        CheckForCat();
         interaction = cat.GetComponent<CatYarnInteraction>();
         interaction.OnReject.AddListener(CatYarnRejection);
     }
@@ -57,6 +51,15 @@ public class BlockMerge : MonoBehaviour
         stopMerger = false;
     }
 
+    private void CheckForCat() 
+    {
+        if (cat == null)
+        {
+            Debug.Log("Looking for cat");
+            cat = GameObject.FindGameObjectWithTag("Cat");
+        }
+    }
+
     private IEnumerator AllowYarnMerger() //Re-Enables yarn merger by repairing each existing ball using the Color Controller
     {
         foreach (ColorController yarn in balls)
@@ -68,9 +71,10 @@ public class BlockMerge : MonoBehaviour
     private void CatYarnRejection(RejectType type) 
     {
         if (type.Equals(RejectType.Damage))//The intention is that the yarn balls will not be able to merge until the cat has rejected a ball for being too small
-            //but because the balls start off damaged, they will be rejected for being damaged first. Effectively the same at the moment
+                                           //but because the balls start off damaged, they will be rejected for being damaged first. Effectively the same at the moment
         {
             allowMerger = true;
+            RevisedWalkthrough.RW.NextSlide();
         }
     }
 }

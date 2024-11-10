@@ -16,6 +16,7 @@ public class CheckForMovement : MonoBehaviour
     private Vector3 _cameraLastPos;
 
     private int _checkList, _whichF;
+    [SerializeField] private GameObject mouseUiElement;
 
     // Start is called before the first frame update
     void Start()
@@ -124,6 +125,7 @@ public class CheckForMovement : MonoBehaviour
     private void OnDisable()
     {
         InputManager.Input.Player.Focus.performed -= Focus_performed;
+        mouseUiElement.SetActive(true);
     }
 
     private void Focus_performed(InputAction.CallbackContext obj)
