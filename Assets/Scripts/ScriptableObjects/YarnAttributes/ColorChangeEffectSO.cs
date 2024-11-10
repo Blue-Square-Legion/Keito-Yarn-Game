@@ -7,16 +7,19 @@ public class ColorChangeEffectSO : YarnBallEffectSO
     [SerializeField] private GameObject newBallPrefab;
     [SerializeField] private float _effectDuration = 5f; // Duration for which the effect is active
     private ColorChangeEffectHandler _handler;
+    [SerializeField] private GameObject particleSystemPrefab;
+    private GameObject particleSystemObj;
     
     public override void CreateEffect(GameObject ball, Transform target = null) 
     {
         Debug.Log("Color Change Effect Created");
+        particleSystemObj = Instantiate(particleSystemPrefab, ball.transform);
 
         _handler = ball.GetComponent<ColorChangeEffectHandler>();
         if (_handler == null)
         {
             _handler = ball.AddComponent<ColorChangeEffectHandler>();
-            _handler.Initialize(_effectDuration);
+            _handler.Initialize(_effectDuration, particleSystemPrefab);
         }
     }
     public override bool ShouldApplyOnCollision()
@@ -37,6 +40,7 @@ public class ColorChangeEffectSO : YarnBallEffectSO
 
             Vector3 targetPosition = targetObject.transform.position;
             Quaternion targetRotation = targetObject.transform.rotation;
+
 
             Destroy(targetObject);
 

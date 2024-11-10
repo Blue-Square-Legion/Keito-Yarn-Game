@@ -6,11 +6,12 @@ public class ColorChangeEffectHandler : MonoBehaviour
 {
     private Coroutine _colorChangeEffectCouroutine;
     public bool _isEffectActive;
-
-    public void Initialize(float duration)
+    private GameObject particleSystemObj;
+    public void Initialize(float duration, GameObject partSystObj)
     {
         if (_colorChangeEffectCouroutine == null)
         {
+            //particleSystemObj = Instantiate(partSystObj, gameObject.transform);
             _colorChangeEffectCouroutine = StartCoroutine(ActivateEffectForDuration(duration));
         }
     }
@@ -21,6 +22,7 @@ public class ColorChangeEffectHandler : MonoBehaviour
         yield return new WaitForSeconds(_effectDuration);
         _isEffectActive = false;
         Debug.Log("ColorChange effect duration ended");
+        Destroy(particleSystemObj);
     }
 
 }
