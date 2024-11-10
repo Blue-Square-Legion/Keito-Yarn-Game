@@ -127,7 +127,7 @@ public class YarnCollision : MonoBehaviour
 
         foreach (var effect in yarnAttributes.launchEffects)
         {
-            Debug.Log("Creating Launch Effect");
+            Debug.Log("Creating Launch Effect", gameObject);
             effect.CreateEffect(gameObject);
         }
     }

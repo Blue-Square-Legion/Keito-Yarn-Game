@@ -131,7 +131,6 @@ public class BallCombine : MonoBehaviour
         {
             return;
         }
-
         //temp
         bool tmp = false;
         if(collision.gameObject.GetComponent<ColorChangeEffectHandler>()._isEffectActive == true)
@@ -153,8 +152,7 @@ public class BallCombine : MonoBehaviour
         OnCombine.Invoke();
         if (tmp)
         {
-            Debug.Log("has color change effect");
-            hitBall.GetComponent<YarnCollision>().CreateLaunchEffects();
+            gameObject.GetComponent<YarnCollision>().CreateLaunchEffects();
         }
         AkSoundEngine.PostEvent(YarnCombineSound, gameObject);
     }

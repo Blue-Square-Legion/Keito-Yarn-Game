@@ -20,13 +20,13 @@ public class ColorChangeEffectHandler : MonoBehaviour
         //    StopCoroutine(_colorChangeEffectCouroutine);
 
         //}
-
         if(_colorChangeEffectCouroutine != null)
         {
             Debug.Log("couroutine already in effect. will end it", gameObject);
             StopCoroutine(_colorChangeEffectCouroutine);
             CleanUp();
         }
+
         if (particleSystemObj != null)
         {
             Debug.Log(particleSystemObj, particleSystemObj);
@@ -37,7 +37,7 @@ public class ColorChangeEffectHandler : MonoBehaviour
             particleSystemObj = Instantiate(partSystObj, gameObject.transform);
             particleSystemObj.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
         }
-        
+        particleSystemObj.SetActive(true);
         _colorChangeEffectCouroutine = StartCoroutine(ActivateEffectForDuration(duration));
     }
 
