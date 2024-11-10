@@ -1,20 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BlockMerge : MonoBehaviour
 {
     [SerializeField] private List<ColorController> balls = new();
+    public CatYarnInteraction interaction;
     public bool stopMerger, allowMerger;
+
+    public GameObject cat;
     // Start is called before the first frame update
     void Start()
     {
-        //stopMerger = true;
+        stopMerger = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (cat != null)
+        {
+            //interaction = GameObject.FindGameObjectWithTag("Cat").GetComponent<CatYarnInteraction>();
+            interaction = cat.GetComponent<CatYarnInteraction>();
+            interaction.OnReject.AddListener(CatYarnRejection);
+        }
         if (stopMerger)
         {
             StartCoroutine("BlockYarnMerge");
@@ -23,6 +33,15 @@ public class BlockMerge : MonoBehaviour
         {
             StartCoroutine("AllowYarnMerger");
         }
+    }
+
+    private void OnEnable()
+    {
+        //interaction.OnReject.AddListener(CatYarnRejection);
+    }
+    private void OnDisable()
+    {
+        interaction.OnReject.RemoveListener(CatYarnRejection);
     }
 
     private IEnumerator BlockYarnMerge() //Blocks yarn merge by damaging each existing ball using the Color Controller
@@ -41,5 +60,14 @@ public class BlockMerge : MonoBehaviour
             yarn.Repair();
         }
         yield return null;
+    }
+    private void CatYarnRejection(RejectType type) 
+    {
+        Debug.Log("Cat didnt like that");
+        if (type.Equals(RejectType.Size))
+        {
+            allowMerger = true;
+            Debug.Log("Cat REALLY didnt like that");
+        }
     }
 }
