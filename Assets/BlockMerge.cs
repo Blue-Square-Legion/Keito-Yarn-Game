@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class BlockMerge : MonoBehaviour
 {
+    /// <summary>
+    /// TO DO: Cat is not spawned until after this script is created, so find a way to delay the creation of this script
+    /// </summary>
     [SerializeField] private List<ColorController> balls = new();
     public CatYarnInteraction interaction;
     public bool stopMerger, allowMerger;
@@ -19,12 +22,6 @@ public class BlockMerge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cat != null)
-        {
-            //interaction = GameObject.FindGameObjectWithTag("Cat").GetComponent<CatYarnInteraction>();
-            interaction = cat.GetComponent<CatYarnInteraction>();
-            interaction.OnReject.AddListener(CatYarnRejection);
-        }
         if (stopMerger)
         {
             StartCoroutine("BlockYarnMerge");
@@ -37,11 +34,17 @@ public class BlockMerge : MonoBehaviour
 
     private void OnEnable()
     {
-        //interaction.OnReject.AddListener(CatYarnRejection);
+        if(cat == null) 
+        {
+            cat = GameObject.FindGameObjectWithTag("Cat");
+        }
+        interaction = cat.GetComponent<CatYarnInteraction>();
+        interaction.OnReject.AddListener(CatYarnRejection);
     }
     private void OnDisable()
     {
         interaction.OnReject.RemoveListener(CatYarnRejection);
+        cat = null;
     }
 
     private IEnumerator BlockYarnMerge() //Blocks yarn merge by damaging each existing ball using the Color Controller
@@ -51,9 +54,10 @@ public class BlockMerge : MonoBehaviour
             yarn.DamageNotDull();
         }
         yield return null;
+        stopMerger = false;
     }
 
-    private IEnumerator AllowYarnMerge() //Re-Enables yarn merger by repairing each existing ball using the Color Controller
+    private IEnumerator AllowYarnMerger() //Re-Enables yarn merger by repairing each existing ball using the Color Controller
     {
         foreach (ColorController yarn in balls)
         {
@@ -63,11 +67,10 @@ public class BlockMerge : MonoBehaviour
     }
     private void CatYarnRejection(RejectType type) 
     {
-        Debug.Log("Cat didnt like that");
-        if (type.Equals(RejectType.Size))
+        if (type.Equals(RejectType.Damage))//The intention is that the yarn balls will not be able to merge until the cat has rejected a ball for being too small
+            //but because the balls start off damaged, they will be rejected for being damaged first. Effectively the same at the moment
         {
             allowMerger = true;
-            Debug.Log("Cat REALLY didnt like that");
         }
     }
 }
