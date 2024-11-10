@@ -48,11 +48,12 @@ public class StaticWalkThroughManager : MonoBehaviour
         RunNextSlide();
     }
 
-    private void OnEnable()
+    /*private void OnEnable() //Commented out so that game will flow like normal in revised walkthrough
     {
-        if (Time.timeScale != 0) Time.timeScale = 0;
+        if (Time.timeScale != 0) 
+            Time.timeScale = 0;
         InputManager.SwitchControls(ControlMap.UI);
-    }
+    }*/
 
     private void OnDisable()
     {
@@ -65,7 +66,7 @@ public class StaticWalkThroughManager : MonoBehaviour
     private void Update()
     {
         // FIXME: This is a hack to keep the game paused during static walkthrough
-        OnEnable();
+        //OnEnable(); //Commented out so that game will flow like normal in revised walkthrough
     }
 
     public void RunNextSlide()

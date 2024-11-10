@@ -41,6 +41,23 @@ public class BallCombine : MonoBehaviour
         }
     }
 
+    void OnEnable() 
+    {
+        _rigidBody = GetComponent<Rigidbody>();
+        _renderer = GetComponent<Renderer>();
+        _collider = GetComponent<SphereCollider>();
+        _colorController = GetComponent<ColorController>();
+
+        if (yarnAttributesSO)
+        {
+            _colorController.YarnAttributes = yarnAttributesSO;
+
+            _rigidBody.mass = yarnAttributesSO.mass;
+
+            InitializeYarnBall();
+        }
+    }
+
     public void SetColor(Color color)
     {
         _renderer.material.color = color;
