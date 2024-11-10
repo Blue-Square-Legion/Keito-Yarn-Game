@@ -26,4 +26,5 @@ MonoBehaviour:
   acceptableCombinations: []
   collisionEffects:
   - {fileID: 11400000, guid: 2357d8c07e6753f47b26cafe94a57715, type: 2}
-  generalEffects: []
+  launchEffects:
+  - {fileID: 11400000, guid: 2357d8c07e6753f47b26cafe94a57715, type: 2}

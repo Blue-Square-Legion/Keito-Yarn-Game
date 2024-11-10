@@ -10,8 +10,6 @@ public class ColorChangeEffectSO : YarnBallEffectSO
     
     public override void CreateEffect(GameObject ball, Transform target = null) 
     {
-        Debug.Log("Color Change Effect Created");
-
         _handler = ball.GetComponent<ColorChangeEffectHandler>();
         if (_handler == null)
         {
