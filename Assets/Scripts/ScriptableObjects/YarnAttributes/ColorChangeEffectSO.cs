@@ -12,13 +12,18 @@ public class ColorChangeEffectSO : YarnBallEffectSO
     
     public override void CreateEffect(GameObject ball, Transform target = null) 
     {
-        Debug.Log("Color Change Effect Created");
-        particleSystemObj = Instantiate(particleSystemPrefab, ball.transform);
+        //Debug.Log("Color Change Effect Created", ball);
 
         _handler = ball.GetComponent<ColorChangeEffectHandler>();
+
         if (_handler == null)
         {
             _handler = ball.AddComponent<ColorChangeEffectHandler>();
+            _handler.Initialize(_effectDuration, particleSystemPrefab);
+        }
+        else if(_handler != null && ShouldApplyOnCollision())
+        {
+            Debug.Log("handler already exists", ball);
             _handler.Initialize(_effectDuration, particleSystemPrefab);
         }
     }
@@ -54,11 +59,12 @@ public class ColorChangeEffectSO : YarnBallEffectSO
                     newBallRigidbody.mass = originalMass;
                     newBallRigidbody.velocity = originalVelocity;
                     newBallRigidbody.angularVelocity = originalAngularVelocity;
+                    newBall.GetComponent<YarnCollision>().CreateLaunchEffects();
                 }
 
                 newBall.transform.localScale = originalScale;
 
-                Debug.Log("Replaced target with new color ball: " + newBall.name);
+                //Debug.Log("Replaced target with new color ball: " + newBall.name);
             }
             else
             {
