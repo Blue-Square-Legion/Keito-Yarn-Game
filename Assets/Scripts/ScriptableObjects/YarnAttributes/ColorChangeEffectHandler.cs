@@ -22,14 +22,14 @@ public class ColorChangeEffectHandler : MonoBehaviour
         //}
         if(_colorChangeEffectCouroutine != null)
         {
-            Debug.Log("couroutine already in effect. will end it", gameObject);
+            //Debug.Log("couroutine already in effect. will end it", gameObject);
             StopCoroutine(_colorChangeEffectCouroutine);
             CleanUp();
         }
 
         if (particleSystemObj != null)
         {
-            Debug.Log(particleSystemObj, particleSystemObj);
+            //Debug.Log(particleSystemObj, particleSystemObj);
             particleSystemObj.SetActive(true);
         }
         else
@@ -43,11 +43,11 @@ public class ColorChangeEffectHandler : MonoBehaviour
 
     private IEnumerator ActivateEffectForDuration(float _effectDuration)
     {
-        Debug.Log("ColorChange effect duration Started", gameObject);
+        //Debug.Log("ColorChange effect duration Started", gameObject);
         _isEffectActive = true;
         yield return new WaitForSeconds(_effectDuration);
         CleanUp();
-        Debug.Log("ColorChange effect duration ended", gameObject);
+        //Debug.Log("ColorChange effect duration ended", gameObject);
         //Destroy(particleSystemObj);
     }
 
@@ -56,7 +56,7 @@ public class ColorChangeEffectHandler : MonoBehaviour
         _isEffectActive=false;
         particleSystemObj?.SetActive(false);
         _colorChangeEffectCouroutine = null;
-        Debug.Log(_colorChangeEffectCouroutine, gameObject);
-        Debug.Log("Did clean up", gameObject);
+        //Debug.Log(_colorChangeEffectCouroutine, gameObject);
+        //Debug.Log("Did clean up", gameObject);
     }
 }
