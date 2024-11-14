@@ -4,29 +4,47 @@ using UnityEngine;
 
 public class FirstMerge : MonoBehaviour
 {
-    private BallCombine ballCombines;
+    [SerializeField] private List<BallCombine> ballCombines = new();
+    public static FirstMerge FM;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (FM == null)
+            FM = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddToList(BallCombine addition) 
     {
-        
-    }
-    private void OnEnable() 
-    {
-        ballCombines?.OnCombine += Stuff();
+        if (!ballCombines.Contains(addition))
+        {
+            ballCombines.Add(addition);
+            addition.OnCombine.AddListener(CombineDetected);
+        }
     }
 
-    private void OnDisable()
+    private void CombineDetected() 
     {
-        ballCombines?.OnCombine -= Stuff();
+        Debug.Log("Combine Detected");
+        RevisedWalkthrough.RW.NextSlide();
+        StartCoroutine(nameof(RemoveAll));
     }
-    private void Stuff() 
-    {
 
+    private IEnumerator RemoveAll() 
+    {
+        Debug.Log("Starting to remove listners");
+        foreach (BallCombine yarn in ballCombines) 
+        {
+            if (yarn.Equals(null))
+            {
+                yield return null;
+            }
+            else
+            {
+                yarn?.OnCombine.RemoveListener(CombineDetected);
+                yield return null;
+            }
+        }
+        yield return null;
+        this.enabled = false;
     }
 }

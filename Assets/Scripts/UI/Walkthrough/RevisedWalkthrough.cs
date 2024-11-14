@@ -22,6 +22,7 @@ public class RevisedWalkthrough : MonoBehaviour
     {
         if(RW == null)
             RW = this;
+
         sling.SetRemainingYarn(0);//This will prevent the player from firing any yarn before they've completed the first slide
     }
 
@@ -29,6 +30,11 @@ public class RevisedWalkthrough : MonoBehaviour
     {
         _revisedWalkthrough.RunNextSlide();
         sling.SetUnlimitedYarn(true);//Added this to enable the player to launch yarn again like normal
+    }
+
+    public void PrintYourName(GameObject myName) 
+    {
+        Debug.Log($"Roll Call: {myName.name}, present");
     }
 
 }

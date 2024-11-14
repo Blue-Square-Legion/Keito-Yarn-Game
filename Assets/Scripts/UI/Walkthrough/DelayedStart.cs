@@ -9,6 +9,7 @@ public class DelayedStart : MonoBehaviour
     /// OnEnable is called before Start
     /// </summary>
     [SerializeField] private BlockMerge script;
+    [SerializeField] private FirstMerge target;
     private float timer = .5f;
 
     // Update is called once per frame
@@ -17,6 +18,7 @@ public class DelayedStart : MonoBehaviour
         if (timer <= 0)
         {
             script.enabled = true;
+            target.enabled = true;
             this.enabled = false;
         }
         else 

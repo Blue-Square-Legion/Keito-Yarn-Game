@@ -131,9 +131,10 @@ public class BallCombine : MonoBehaviour
         {
             return;
         }
+        Debug.Log($"Attempting to combine {collision.gameObject.name} & {hitBall.gameObject.name} were combined");
 
-        Destroy(collision.gameObject);
-
+        //Destroy(collision.gameObject);
+        collision.gameObject.SetActive( false );
         //Combine / absorb the mass
         transform.localScale = Vector3.Min(combinedScale, _scaleVectorCap);
         _rigidBody.mass = Mathf.Min(combinedMass, yarnAttributesSO.massCap);
@@ -141,10 +142,10 @@ public class BallCombine : MonoBehaviour
         if (transform.localScale == _scaleVectorCap)// || _rigidBody.mass == _massCap)
         {
             OnMaxSize.Invoke();
+            //return;
         }
 
         OnCombine.Invoke();
-
         AkSoundEngine.PostEvent(YarnCombineSound, gameObject);
     }
 }

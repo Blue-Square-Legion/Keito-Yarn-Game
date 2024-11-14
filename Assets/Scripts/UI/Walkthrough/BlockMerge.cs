@@ -46,6 +46,7 @@ public class BlockMerge : MonoBehaviour
         foreach (ColorController yarn in balls)
         {
             yarn.DamageNotDull();
+            FirstMerge.FM.AddToList(yarn.gameObject.GetComponent<BallCombine>());
         }
         yield return null;
         stopMerger = false;
@@ -67,6 +68,7 @@ public class BlockMerge : MonoBehaviour
             yarn.Repair();
         }
         yield return null;
+        this.enabled = false;
     }
     private void CatYarnRejection(RejectType type) 
     {
