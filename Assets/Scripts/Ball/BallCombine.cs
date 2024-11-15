@@ -133,11 +133,6 @@ public class BallCombine : MonoBehaviour
             return;
         }
 
-        //if (gameObject.GetComponent<ColorChangeEffectHandler>() != null)
-        //{
-        //    gameObject.GetComponent<YarnCollision>().CreateLaunchEffects();
-        //}
-
         Destroy(collision.gameObject);
 
         //Combine / absorb the mass

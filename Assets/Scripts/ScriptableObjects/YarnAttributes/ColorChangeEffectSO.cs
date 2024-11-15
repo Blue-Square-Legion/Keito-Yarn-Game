@@ -7,6 +7,7 @@ public class ColorChangeEffectSO : YarnBallEffectSO
     [SerializeField] private GameObject newBallPrefab;
     [SerializeField] private float _effectDuration = 5f; // Duration for which the effect is active
     private ColorChangeEffectHandler _handler;
+    private GameObject _ball;
     [SerializeField] private GameObject particleSystemPrefab;
     private GameObject particleSystemObj;
     
@@ -14,17 +15,12 @@ public class ColorChangeEffectSO : YarnBallEffectSO
     {
         //Debug.Log("Color Change Effect Created", ball);
 
+        _ball = ball;
+
         _handler = ball.GetComponent<ColorChangeEffectHandler>();
-        //Debug.Log(_handler, _handler);
         if (_handler == null)
         {
             _handler = ball.AddComponent<ColorChangeEffectHandler>();
-            //Debug.Log("handler does not exists", ball);
-            _handler.Initialize(_effectDuration, particleSystemPrefab);
-        }
-        else if(_handler != null)
-        {
-            //Debug.Log("handler already exists", ball);
             _handler.Initialize(_effectDuration, particleSystemPrefab);
         }
     }
@@ -35,6 +31,13 @@ public class ColorChangeEffectSO : YarnBallEffectSO
     
     public override void ApplyEffect(GameObject ball, Rigidbody ballRigidbody, Rigidbody targetRigidbody)
     {
+        if (targetRigidbody.gameObject.GetComponent<ColorChangeEffectHandler>() != null)
+        {
+            Debug.Log(_ball,  _ball);
+            Debug.Log(ball,  ball);
+            _ball.GetComponent<ColorChangeEffectHandler>().Initialize(_effectDuration, particleSystemPrefab);
+            return;
+        }
         if (_handler._isEffectActive && ballRigidbody != null && targetRigidbody != null)
         {
             GameObject targetObject = targetRigidbody.gameObject;
@@ -71,6 +74,10 @@ public class ColorChangeEffectSO : YarnBallEffectSO
             {
                 Debug.LogError("New ball prefab is not assigned.");
             }
+        }
+        else if(_handler._isEffectActive == false)
+        {
+            Debug.Log("effect is not active");
         }
         else
         {
