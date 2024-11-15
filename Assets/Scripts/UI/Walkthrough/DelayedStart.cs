@@ -10,6 +10,7 @@ public class DelayedStart : MonoBehaviour
     /// </summary>
     [SerializeField] private BlockMerge script;
     [SerializeField] private FirstMerge target;
+    [SerializeField] private CatAcception third;
     private float timer = .5f;
 
     // Update is called once per frame
@@ -19,6 +20,7 @@ public class DelayedStart : MonoBehaviour
         {
             script.enabled = true;
             target.enabled = true;
+            third.enabled = true;
             this.enabled = false;
         }
         else 

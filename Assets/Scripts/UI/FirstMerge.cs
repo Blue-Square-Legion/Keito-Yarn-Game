@@ -18,7 +18,7 @@ public class FirstMerge : MonoBehaviour
         if (!ballCombines.Contains(addition))
         {
             ballCombines.Add(addition);
-            addition.OnCombine.AddListener(CombineDetected);
+            addition?.OnCombine.AddListener(CombineDetected);
         }
     }
 

@@ -4734,7 +4734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
       propertyPath: _colorList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
       propertyPath: _colorList.Array.data[0]
@@ -4743,7 +4743,7 @@ PrefabInstance:
     - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
       propertyPath: _colorList.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 853307e61ecf1f34cbb7809ce9e09159, type: 2}
+      objectReference: {fileID: 11400000, guid: fdee1be18ada1094bab3391314636695, type: 2}
     - target: {fileID: 3745909187391131161, guid: 9a77eb49f5bd97343a3415c62f7639be, type: 3}
       propertyPath: OnCatScored.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -6047,6 +6047,7 @@ GameObject:
   - component: {fileID: 1037381672}
   - component: {fileID: 1037381673}
   - component: {fileID: 1037381674}
+  - component: {fileID: 1037381675}
   m_Layer: 0
   m_Name: AddedYarnBalls
   m_TagString: Untagged
@@ -6122,6 +6123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   script: {fileID: 1037381672}
   target: {fileID: 1037381674}
+  third: {fileID: 1037381675}
 --- !u!114 &1037381674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6135,6 +6137,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballCombines: []
+--- !u!114 &1037381675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037381670}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341b9734316c54343a3fae73b5b6ae80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 2143083998}
+  catYarn: {fileID: 0}
+  redYarn: {fileID: 11400000, guid: 8e8ab487bc8dc234b898f2d5a1aa7c51, type: 2}
 --- !u!1 &1038539263 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2545526001873249477, guid: a0d0d423053018245b802fff8ff48a03, type: 3}

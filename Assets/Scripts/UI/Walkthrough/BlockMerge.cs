@@ -33,6 +33,7 @@ public class BlockMerge : MonoBehaviour
     {
         CheckForCat();
         interaction = cat.GetComponent<CatYarnInteraction>();
+        gameObject.GetComponent<CatAcception>().AssignCat(interaction);
         interaction?.OnReject.AddListener(CatYarnRejection);
     }
     private void OnDisable()
