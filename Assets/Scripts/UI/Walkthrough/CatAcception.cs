@@ -11,7 +11,8 @@ public class CatAcception : MonoBehaviour
 
     private void Start()
     {
-        gameManager.AddNewColor(redYarn);
+        gameManager.AddNewColor(redYarn, 1);
+        gameManager.EnforceCatColor(null);
         //gameManager.EnforceCatColor(null);
     }
 
@@ -24,16 +25,17 @@ public class CatAcception : MonoBehaviour
     private void CatAcceptYarn(float unUsed, bool notReq)
     {
         RevisedWalkthrough.RW.NextSlide();
-        RemoveCatYarn();
-        //gameManager.
+        RemoveCatYarn();//Cat gets destroyed when the yarn collides so no need to remove the listener.
     }
 
     private void AddCatYarn() 
     {
         catYarn?.OnCatScored.AddListener(CatAcceptYarn);
+        Debug.Log($"Adding Listener to {catYarn.name}");
     }
     private void RemoveCatYarn()
     {
         catYarn?.OnCatScored.RemoveListener(CatAcceptYarn);
+        Debug.Log("Removing Listener from CatYarn");
     }
 }

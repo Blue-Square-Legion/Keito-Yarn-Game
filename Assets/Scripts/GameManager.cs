@@ -313,11 +313,11 @@ public class GameManager : MonoBehaviour
         _score.AddPoints(collectableSO.points);
     }
 
-    public void AddNewColor(YarnAttributesSO newColor) 
+    public void AddNewColor(YarnAttributesSO newColor, int position) 
     {
         if (!_colorList.Contains(newColor)) 
         {
-            _colorList[1] = newColor;
+            _colorList[position] = newColor;
         }
     }
 

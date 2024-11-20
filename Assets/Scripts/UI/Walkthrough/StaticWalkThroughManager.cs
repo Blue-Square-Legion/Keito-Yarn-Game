@@ -37,6 +37,8 @@ public class StaticWalkThroughManager : MonoBehaviour
     private int _currentSlide = -1;
     private CursorLockMode originalLockMode;
 
+    public int numOfSlides => _slides.Length;
+
     private void Start()
     {
         if (!_gameManager) _gameManager = FindAnyObjectByType<GameManager>();
