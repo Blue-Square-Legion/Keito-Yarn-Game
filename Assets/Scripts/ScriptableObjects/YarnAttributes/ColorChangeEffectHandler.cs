@@ -18,7 +18,8 @@ public class ColorChangeEffectHandler : MonoBehaviour
         if (particleSystemObj == null)
         {
             particleSystemObj = Instantiate(partSystObj, gameObject.transform);
-            particleSystemObj.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            //particleSystemObj.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            //particleSystemObj.transform.localScale = gameObject.transform.localScale;
         }
         Debug.Log("being created", gameObject);
         _colorChangeEffectCouroutine = StartCoroutine(ActivateEffectForDuration(duration));
