@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Manager.Score;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -310,5 +311,18 @@ public class GameManager : MonoBehaviour
     {
         ColorSO favColor = catGameObject.GetComponent<CatYarnInteraction>().FavoriteColor;
         _score.AddPoints(collectableSO.points);
+    }
+
+    public void AddNewColor(YarnAttributesSO newColor, int position) 
+    {
+        if (!_colorList.Contains(newColor)) 
+        {
+            _colorList[position] = newColor;
+        }
+    }
+
+    public void EnforceCatColor(ColorSO catColor) 
+    {
+        _enforcedCatColor = catColor;
     }
 }

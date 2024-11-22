@@ -37,6 +37,8 @@ public class StaticWalkThroughManager : MonoBehaviour
     private int _currentSlide = -1;
     private CursorLockMode originalLockMode;
 
+    public int numOfSlides => _slides.Length;
+
     private void Start()
     {
         if (!_gameManager) _gameManager = FindAnyObjectByType<GameManager>();
@@ -48,24 +50,24 @@ public class StaticWalkThroughManager : MonoBehaviour
         RunNextSlide();
     }
 
-    private void OnEnable()
+    /*private void OnEnable() //Commented out so that game will flow like normal in revised walkthrough
     {
-        if (Time.timeScale != 0) Time.timeScale = 0;
+        if (Time.timeScale != 0) 
+            Time.timeScale = 0;
         InputManager.SwitchControls(ControlMap.UI);
-    }
+    }*/
 
     private void OnDisable()
     {
         if (Time.timeScale == 0) Time.timeScale = 1;
         InputManager.SwitchControls(ControlMap.Player);
-
     }
 
 
     private void Update()
     {
         // FIXME: This is a hack to keep the game paused during static walkthrough
-        OnEnable();
+        //OnEnable(); //Commented out so that game will flow like normal in revised walkthrough
     }
 
     public void RunNextSlide()

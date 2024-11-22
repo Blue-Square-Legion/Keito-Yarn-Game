@@ -32,6 +32,15 @@ public class ColorController : MonoBehaviour, IDamageable, IRepairable
         }        
     }
 
+    public void DamageNotDull() //Sets the ball as damaged without dulling the color. Used in Revised tutorial
+    {
+        if (!_isDamaged)
+        {
+            _isDamaged = true;
+            SetColor();
+        }
+    }
+
     public void Repair()
     {
         _isDamaged = false;

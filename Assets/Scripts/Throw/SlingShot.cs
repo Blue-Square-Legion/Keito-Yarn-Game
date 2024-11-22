@@ -40,8 +40,8 @@ public class SlingShot : MonoBehaviour
     
     #endregion
     private List<GameObject> obstructingUIElements = new List<GameObject>();
-    private bool _unlimitedYarn = true;
-    private int _remainingYarn = 30;
+    public bool _unlimitedYarn = true;
+    public int _remainingYarn = 30;
 
     #region Events
     //Events:
@@ -415,5 +415,6 @@ public class SlingShot : MonoBehaviour
     public void SetRemainingYarn(int numYarn)
     {
         _remainingYarn = numYarn;
+        SetUnlimitedYarn(false);//Added this because coudlnt see why we'd have both a set yarn limit and allowing unlimited yarn
     }
 }
