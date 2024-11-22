@@ -11,6 +11,8 @@ public class RevisedWalkthrough : MonoBehaviour
     public SlingShot sling;
     [SerializeField] private float timeForFinalSlide;
     private bool _finalSlideReached;
+    [SerializeField] private GameObject _scoreProgressBar;
+    public GameManager gameManager;
     ///First: Has the player used the WASD/F keys to move around enough. --- Done
     ///Second: has the player made a yarn ball collide with the cat --- Done
     ///Third: Has the player merged a yarn ball to make a larger one yet?
@@ -47,6 +49,8 @@ public class RevisedWalkthrough : MonoBehaviour
         if (_numSlidesPassed == _revisedWalkthrough.numOfSlides-1)
         {
             _finalSlideReached = true;
+            _scoreProgressBar.SetActive(true);
+            gameManager.EnforceCatColor(null);//will make it so the final few cats are random colors
         }
         sling.SetUnlimitedYarn(true);//Added this to enable the player to launch yarn again like normal
     }

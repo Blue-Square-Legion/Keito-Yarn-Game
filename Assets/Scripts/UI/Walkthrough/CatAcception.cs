@@ -6,14 +6,14 @@ public class CatAcception : MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
     [SerializeField] private CatYarnInteraction catYarn;
+    [SerializeField] private ColorSO nextCatColor;
     [SerializeField] private YarnAttributesSO redYarn;
     // Start is called before the first frame update
 
     private void Start()
     {
-        gameManager.AddNewColor(redYarn, 1);
-        gameManager.EnforceCatColor(null);
-        //gameManager.EnforceCatColor(null);
+        gameManager.EnforceCatColor(nextCatColor);//This is to make the next cat spawn blue because the player will have more blue yarns before a red one will appear in the list
+        RevisedWalkthrough.RW.gameManager = gameManager;
     }
 
     public void AssignCat(CatYarnInteraction newCat) 
@@ -35,6 +35,7 @@ public class CatAcception : MonoBehaviour
     }
     private void RemoveCatYarn()
     {
+        gameManager.AddNewColor(redYarn, 1);
         catYarn?.OnCatScored.RemoveListener(CatAcceptYarn);
         Debug.Log("Removing Listener from CatYarn");
     }

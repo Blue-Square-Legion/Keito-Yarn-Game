@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 public class SwitchMouse : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class SwitchMouse : MonoBehaviour
                 mouse.sprite = mouseClick;
                 timer = 1.5f;
             }
+        }
+        if (Input.GetButtonUp("Fire1")) {
+            this.gameObject.SetActive(false);
         }
     }
 }
