@@ -21,8 +21,8 @@ public class ColorChangeEffectSO : YarnBallEffectSO
         if (_handler == null)
         {
             _handler = ball.AddComponent<ColorChangeEffectHandler>();
-            _handler.Initialize(_effectDuration, particleSystemPrefab);
         }
+        _handler.Initialize(_effectDuration, particleSystemPrefab);
     }
     public override bool ShouldApplyOnCollision()
     {
