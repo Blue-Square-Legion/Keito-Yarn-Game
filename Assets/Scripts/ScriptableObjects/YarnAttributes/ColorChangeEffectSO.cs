@@ -7,15 +7,22 @@ public class ColorChangeEffectSO : YarnBallEffectSO
     [SerializeField] private GameObject newBallPrefab;
     [SerializeField] private float _effectDuration = 5f; // Duration for which the effect is active
     private ColorChangeEffectHandler _handler;
+    private GameObject _ball;
+    [SerializeField] private GameObject particleSystemPrefab;
+    private GameObject particleSystemObj;
     
     public override void CreateEffect(GameObject ball, Transform target = null) 
     {
+        //Debug.Log("Color Change Effect Created", ball);
+
+        _ball = ball;
+
         _handler = ball.GetComponent<ColorChangeEffectHandler>();
         if (_handler == null)
         {
             _handler = ball.AddComponent<ColorChangeEffectHandler>();
-            _handler.Initialize(_effectDuration);
         }
+        _handler.Initialize(_effectDuration, particleSystemPrefab);
     }
     public override bool ShouldApplyOnCollision()
     {
@@ -24,6 +31,13 @@ public class ColorChangeEffectSO : YarnBallEffectSO
     
     public override void ApplyEffect(GameObject ball, Rigidbody ballRigidbody, Rigidbody targetRigidbody)
     {
+        if (targetRigidbody.gameObject.GetComponent<ColorChangeEffectHandler>() != null)
+        {
+            Debug.Log(_ball,  _ball);
+            Debug.Log(ball,  ball);
+            _ball.GetComponent<ColorChangeEffectHandler>().Initialize(_effectDuration, particleSystemPrefab);
+            return;
+        }
         if (_handler._isEffectActive && ballRigidbody != null && targetRigidbody != null)
         {
             GameObject targetObject = targetRigidbody.gameObject;
@@ -35,6 +49,7 @@ public class ColorChangeEffectSO : YarnBallEffectSO
 
             Vector3 targetPosition = targetObject.transform.position;
             Quaternion targetRotation = targetObject.transform.rotation;
+
 
             Destroy(targetObject);
 
@@ -48,16 +63,21 @@ public class ColorChangeEffectSO : YarnBallEffectSO
                     newBallRigidbody.mass = originalMass;
                     newBallRigidbody.velocity = originalVelocity;
                     newBallRigidbody.angularVelocity = originalAngularVelocity;
+                    newBall.GetComponent<YarnCollision>().CreateLaunchEffects();
                 }
 
                 newBall.transform.localScale = originalScale;
 
-                Debug.Log("Replaced target with new color ball: " + newBall.name);
+                //Debug.Log("Replaced target with new color ball: " + newBall.name);
             }
             else
             {
                 Debug.LogError("New ball prefab is not assigned.");
             }
+        }
+        else if(_handler._isEffectActive == false)
+        {
+            Debug.Log("effect is not active");
         }
         else
         {

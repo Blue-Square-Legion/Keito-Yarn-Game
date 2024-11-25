@@ -41,6 +41,7 @@ public class YarnCollision : MonoBehaviour
             {
                 // TODO: Yarn combining SFX
                 // PostYarnMergeCollisionEvent();
+                ApplyCollisionEffects(other);
             }
             else
             {
@@ -111,7 +112,7 @@ public class YarnCollision : MonoBehaviour
         foreach (var effect in yarnAttributes.collisionEffects)
         {
             effect.CreateEffect(gameObject, collision.transform);
-
+            //Debug.Log(gameObject, gameObject);
             if (effect.ShouldApplyOnCollision())
             {
                 effect.ApplyEffect(gameObject, ballRigidbody, otherRigidbody);
@@ -127,7 +128,7 @@ public class YarnCollision : MonoBehaviour
 
         foreach (var effect in yarnAttributes.launchEffects)
         {
-            Debug.Log("Creating Launch Effect");
+            //Debug.Log("Creating Launch Effect", gameObject);
             effect.CreateEffect(gameObject);
         }
     }

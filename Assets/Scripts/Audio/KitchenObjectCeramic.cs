@@ -21,7 +21,7 @@ public class KitchenObjectCeramic : MonoBehaviour
     {
         if (!isInitialized)
             return;
-        Debug.Log("Collision detected with: " + collision.gameObject.name);
+        //Debug.Log("Collision detected with: " + collision.gameObject.name);
         ceramicCollisionSound.Post(gameObject);
 
     }
