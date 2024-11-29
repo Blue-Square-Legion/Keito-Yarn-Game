@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newBallPrefab: {fileID: 660840053069172341, guid: 181c938fd1dbd674b97e726610844b80, type: 3}
   _effectDuration: 5
-  particleSystemPrefab: {fileID: 2155955226458069970, guid: 60e173a32f8887a46b01ae0ea265b9ed, type: 3}
+  particleSystemPrefab: {fileID: 3607954055101674734, guid: f29d4342b2754134bbe08ad86a4bd1c7, type: 3}
+  _glowMaterial: {fileID: 2100000, guid: b0cf50539b770c8408c5ca91b6b19f6c, type: 2}
