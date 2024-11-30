@@ -9,14 +9,14 @@ public class ColorChangeEffectSO : YarnBallEffectSO
     private ColorChangeEffectHandler _handler;
     private GameObject _ball;
     [SerializeField] private Material _glowMaterial;
-    private Material _baseMaterial;
+    [SerializeField] private Material _baseMaterial;
     
     public override void CreateEffect(GameObject ball, Transform target = null) 
     {
         Debug.Log("Color Change Effect Created", ball);
         
         _ball = ball;
-        _baseMaterial = ball.GetComponent<MeshRenderer>().material;
+        //_baseMaterial = ball.GetComponent<MeshRenderer>().material;
         //Debug.Log(_baseMaterial.ToString());
         _handler = ball.GetComponent<ColorChangeEffectHandler>();
         if (_handler == null)
