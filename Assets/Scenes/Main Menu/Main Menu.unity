@@ -674,7 +674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1996256974358285960, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Tutorial Room Scene
+      value: TutorialRoom 1
       objectReference: {fileID: 0}
     - target: {fileID: 2163392399125312730, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_AnchorMax.y
