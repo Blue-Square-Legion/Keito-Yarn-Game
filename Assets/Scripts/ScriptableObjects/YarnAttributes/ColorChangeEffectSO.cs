@@ -8,21 +8,22 @@ public class ColorChangeEffectSO : YarnBallEffectSO
     [SerializeField] private float _effectDuration = 5f; // Duration for which the effect is active
     private ColorChangeEffectHandler _handler;
     private GameObject _ball;
-    [SerializeField] private GameObject particleSystemPrefab;
-    private GameObject particleSystemObj;
+    [SerializeField] private Material _glowMaterial;
+    [SerializeField] private Material _baseMaterial;
     
     public override void CreateEffect(GameObject ball, Transform target = null) 
     {
-        //Debug.Log("Color Change Effect Created", ball);
-
+        Debug.Log("Color Change Effect Created", ball);
+        
         _ball = ball;
-
+        //_baseMaterial = ball.GetComponent<MeshRenderer>().material;
+        //Debug.Log(_baseMaterial.ToString());
         _handler = ball.GetComponent<ColorChangeEffectHandler>();
         if (_handler == null)
         {
             _handler = ball.AddComponent<ColorChangeEffectHandler>();
         }
-        _handler.Initialize(_effectDuration, particleSystemPrefab);
+        _handler.Initialize(_effectDuration, _glowMaterial, _baseMaterial);
     }
     public override bool ShouldApplyOnCollision()
     {
@@ -33,9 +34,9 @@ public class ColorChangeEffectSO : YarnBallEffectSO
     {
         if (targetRigidbody.gameObject.GetComponent<ColorChangeEffectHandler>() != null)
         {
-            Debug.Log(_ball,  _ball);
-            Debug.Log(ball,  ball);
-            _ball.GetComponent<ColorChangeEffectHandler>().Initialize(_effectDuration, particleSystemPrefab);
+            //Debug.Log(_ball,  _ball);
+            //Debug.Log(ball,  ball);
+            _ball.GetComponent<ColorChangeEffectHandler>().Initialize(_effectDuration, _glowMaterial, _baseMaterial);
             return;
         }
         if (_handler._isEffectActive && ballRigidbody != null && targetRigidbody != null)

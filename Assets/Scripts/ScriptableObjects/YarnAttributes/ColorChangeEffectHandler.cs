@@ -6,19 +6,18 @@ public class ColorChangeEffectHandler : MonoBehaviour
 {
     private Coroutine _colorChangeEffectCouroutine;
     public bool _isEffectActive;
-    private GameObject particleSystemObj;
-    public void Initialize(float duration, GameObject partSystObj)
+    private Material _material;
+    public void Initialize(float duration, Material _glow, Material _base)
     {
-        if (particleSystemObj == null)
-        {
-            particleSystemObj = Instantiate(partSystObj, gameObject.transform);
-        }
 
         if(_colorChangeEffectCouroutine == null)
         {
             /*CleanUp();*/
             _colorChangeEffectCouroutine = StartCoroutine(ActivateEffectForDuration(duration));
-            Debug.Log("being created", gameObject);
+            _material = _base;
+            gameObject.GetComponent<MeshRenderer>().material = _glow;
+            //Debug.Log(gameObject.GetComponent<MeshRenderer>().material, gameObject);
+            //Debug.Log("being created", gameObject);
             /*StopCoroutine(_colorChangeEffectCouroutine);*/
         }
     }
@@ -31,17 +30,16 @@ public class ColorChangeEffectHandler : MonoBehaviour
     private IEnumerator ActivateEffectForDuration(float _effectDuration)
     {
         //Debug.Log("ColorChange effect duration Started", gameObject);
-        particleSystemObj.SetActive(true);
+
         _isEffectActive = true;
         yield return new WaitForSeconds(_effectDuration);
         CleanUp();
         //Debug.Log("ColorChange effect duration ended", gameObject);
-        //Destroy(particleSystemObj);
     }
 
     private void CleanUp()
     {
         _isEffectActive=false;
-        particleSystemObj?.SetActive(false);
+        gameObject.GetComponent<MeshRenderer>().material = _material;
     }
 }
