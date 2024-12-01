@@ -108,6 +108,6 @@ public class CMFreeLookFlip : MonoBehaviour
 
     private void Focus_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        StartCoroutine(FlipCamera());
+        //StartCoroutine(FlipCamera());
     }
 }

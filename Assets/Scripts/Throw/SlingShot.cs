@@ -98,6 +98,8 @@ public class SlingShot : MonoBehaviour
         InputManager.Input.Player.Fire.performed += Fire_performed;
 
         InputManager.Input.Player.Cancel.performed += Cancel_performed;
+
+        InputManager.Input.Player.Focus.performed += Flip_slingshot_pos;
     }
 
 
@@ -108,6 +110,8 @@ public class SlingShot : MonoBehaviour
         InputManager.Input.Player.Fire.canceled -= Fire_completed;
 
         InputManager.Input.Player.Cancel.performed -= Cancel_performed;
+
+        InputManager.Input.Player.Focus.performed -= Flip_slingshot_pos;
     }
 
     private void Update()
@@ -162,6 +166,11 @@ public class SlingShot : MonoBehaviour
         {
             CompleteThrow();
         }
+    }
+
+    private void Flip_slingshot_pos(InputAction.CallbackContext obj) 
+    {
+        _postionOffset = new Vector3(_postionOffset.x, _postionOffset.y, _postionOffset.z * -1);
     }
 
     //Released
