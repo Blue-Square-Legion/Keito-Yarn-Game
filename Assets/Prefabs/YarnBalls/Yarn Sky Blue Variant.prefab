@@ -19,6 +19,34 @@ PrefabInstance:
       propertyPath: yarnAttributesSO
       value: 
       objectReference: {fileID: 11400000, guid: e17d1c430e969e941ae27ce31bdbb38b, type: 2}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: -1425227527468287026}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ActivateEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ColorChangeEffectHandler, Scripts
+      objectReference: {fileID: 0}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: -4293314133452894743, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 1
@@ -97,3 +125,21 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 10d48055db26ca3488b7567f5ec8a5be, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+--- !u!1 &660840053069172341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1998775315433358910, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+  m_PrefabInstance: {fileID: 1339492177556817995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-1425227527468287026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660840053069172341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f17b5ed98d9e70488bae88c04c1bf2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isEffectActive: 0

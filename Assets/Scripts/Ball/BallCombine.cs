@@ -61,7 +61,7 @@ public class BallCombine : MonoBehaviour
     /// Combine balls scale and mass.
     /// Prevent combine if total greater than either cap.
     /// </summary>
-    /// <param name="collision"></param>
+    /// <param name="collision"></param>//ball that is thrown
     private void OnCollisionEnter(Collision collision)
     {
         if(!yarnAttributesSO.allowDamageCombine && (IsDamaged || !collision.gameObject.TryGetComponent(out IDamageable hitDamage) || hitDamage.isDamaged()))
@@ -77,7 +77,8 @@ public class BallCombine : MonoBehaviour
             }
 
             CombineBalls(collision, hitBall);
-        } else if(FindObjectOfType<GameManager>()._challengeMode && transform.localScale == hitBall.transform.localScale)
+        } 
+        else if(FindObjectOfType<GameManager>()._challengeMode && transform.localScale == hitBall.transform.localScale)
         {
             // If the thrown ball can merge with the struck ball and both of their colors have not changed, merge both together and change
             // the balls color.
