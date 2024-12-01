@@ -8867,8 +8867,8 @@ MonoBehaviour:
   _walkThroughDialog: {fileID: 1621732063}
   _walkThroughModal: {fileID: 1772246687}
   _slides:
-  - text: First, lets get a feel for the controls. Use WASD to move and F to flip
-      the camera backwards
+  - text: First, lets get a feel for the controls. Use WASD to move and F to switch
+      the side the yarn is on
     usesImage: 0
     image: {fileID: 0}
   - text: Purrrfect. Next, try to throw your blue yarn at the red yarn so that it
