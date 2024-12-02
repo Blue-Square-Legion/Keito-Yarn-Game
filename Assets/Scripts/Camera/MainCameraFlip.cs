@@ -43,22 +43,22 @@ public class MainCameraFlip : MonoBehaviour
         yield return null;
     }
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         InputManager.Input.Player.Enable();
 
         InputManager.Input.Player.Focus.performed += Focus_performed;
-    }
+    }*/
 
-    private void OnDisable()
+    /*private void OnDisable()
     {
         InputManager.Input.Player.Disable();
 
         InputManager.Input.Player.Focus.performed -= Focus_performed;
-    }
+    }*/
 
     private void Focus_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        StartCoroutine(FlipCamera());
+        //StartCoroutine(FlipCamera());
     }
 }
