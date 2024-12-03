@@ -534,7 +534,7 @@
 				<GameParameter Id="2801574179" Name="VolumeChange" ObjectPath="\Game Parameters\Default Work Unit\VolumeChange"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3589812408" Language="SFX" Hash="2299710058">
+		<SoundBank Id="3589812408" Language="SFX" Hash="2507522684">
 			<ObjectPath>\SoundBanks\Default Work Unit\Music_SoundBank</ObjectPath>
 			<ShortName>Music_SoundBank</ShortName>
 			<Path>Music_SoundBank.bnk</Path>
