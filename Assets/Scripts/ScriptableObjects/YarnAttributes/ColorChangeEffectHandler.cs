@@ -9,7 +9,6 @@ public class ColorChangeEffectHandler : MonoBehaviour
     private Material _material;
     public void Initialize(float duration, Material _glow, Material _base)
     {
-
         if(_colorChangeEffectCouroutine == null)
         {
             /*CleanUp();*/
