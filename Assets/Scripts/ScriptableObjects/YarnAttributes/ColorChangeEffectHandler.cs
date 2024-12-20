@@ -7,17 +7,18 @@ public class ColorChangeEffectHandler : MonoBehaviour
     private Coroutine _colorChangeEffectCouroutine;
     public bool _isEffectActive;
     private Material _material;
+    private float oldScale = 0f;
+
+    // Starts the effect if it is not already started
     public void Initialize(float duration, Material _glow, Material _base)
     {
-        if(_colorChangeEffectCouroutine == null)
+        // If ball grew, re-apply effect
+        if(_colorChangeEffectCouroutine == null && oldScale < transform.localScale.x)
         {
-            /*CleanUp();*/
             _colorChangeEffectCouroutine = StartCoroutine(ActivateEffectForDuration(duration));
             _material = _base;
             gameObject.GetComponent<MeshRenderer>().material = _glow;
-            //Debug.Log(gameObject.GetComponent<MeshRenderer>().material, gameObject);
-            //Debug.Log("being created", gameObject);
-            /*StopCoroutine(_colorChangeEffectCouroutine);*/
+            oldScale = transform.localScale.x;
         }
     }
 
@@ -28,17 +29,15 @@ public class ColorChangeEffectHandler : MonoBehaviour
     
     private IEnumerator ActivateEffectForDuration(float _effectDuration)
     {
-        //Debug.Log("ColorChange effect duration Started", gameObject);
-
         _isEffectActive = true;
         yield return new WaitForSeconds(_effectDuration);
         CleanUp();
-        //Debug.Log("ColorChange effect duration ended", gameObject);
     }
 
     private void CleanUp()
     {
         _isEffectActive=false;
         gameObject.GetComponent<MeshRenderer>().material = _material;
+        _colorChangeEffectCouroutine = null;
     }
 }
