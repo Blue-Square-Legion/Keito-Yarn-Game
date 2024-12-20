@@ -82,6 +82,15 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ResetAim"",
+                    ""type"": ""Button"",
+                    ""id"": ""185f1f1e-69dc-4c7b-adb1-17e3e522e716"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -330,7 +339,7 @@ namespace UnityEngine.InputSystem
                 {
                     ""name"": """",
                     ""id"": ""8c70a191-d9ae-4632-88f3-511572899913"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -341,7 +350,7 @@ namespace UnityEngine.InputSystem
                 {
                     ""name"": """",
                     ""id"": ""6351bed6-7650-4686-8676-c6a424fd1454"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -368,6 +377,17 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e8682277-4e54-4c75-b88c-dc8b8c251b0a"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ResetAim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -961,6 +981,7 @@ namespace UnityEngine.InputSystem
             m_Player_Menu = m_Player.FindAction("Menu", throwIfNotFound: true);
             m_Player_Focus = m_Player.FindAction("Focus", throwIfNotFound: true);
             m_Player_Cancel = m_Player.FindAction("Cancel", throwIfNotFound: true);
+            m_Player_ResetAim = m_Player.FindAction("ResetAim", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1040,6 +1061,7 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_Player_Menu;
         private readonly InputAction m_Player_Focus;
         private readonly InputAction m_Player_Cancel;
+        private readonly InputAction m_Player_ResetAim;
         public struct PlayerActions
         {
             private @PlayerControls m_Wrapper;
@@ -1050,6 +1072,7 @@ namespace UnityEngine.InputSystem
             public InputAction @Menu => m_Wrapper.m_Player_Menu;
             public InputAction @Focus => m_Wrapper.m_Player_Focus;
             public InputAction @Cancel => m_Wrapper.m_Player_Cancel;
+            public InputAction @ResetAim => m_Wrapper.m_Player_ResetAim;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1077,6 +1100,9 @@ namespace UnityEngine.InputSystem
                 @Cancel.started += instance.OnCancel;
                 @Cancel.performed += instance.OnCancel;
                 @Cancel.canceled += instance.OnCancel;
+                @ResetAim.started += instance.OnResetAim;
+                @ResetAim.performed += instance.OnResetAim;
+                @ResetAim.canceled += instance.OnResetAim;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -1099,6 +1125,9 @@ namespace UnityEngine.InputSystem
                 @Cancel.started -= instance.OnCancel;
                 @Cancel.performed -= instance.OnCancel;
                 @Cancel.canceled -= instance.OnCancel;
+                @ResetAim.started -= instance.OnResetAim;
+                @ResetAim.performed -= instance.OnResetAim;
+                @ResetAim.canceled -= instance.OnResetAim;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -1287,6 +1316,7 @@ namespace UnityEngine.InputSystem
             void OnMenu(InputAction.CallbackContext context);
             void OnFocus(InputAction.CallbackContext context);
             void OnCancel(InputAction.CallbackContext context);
+            void OnResetAim(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {
