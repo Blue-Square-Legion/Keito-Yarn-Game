@@ -19,6 +19,34 @@ PrefabInstance:
       propertyPath: yarnAttributesSO
       value: 
       objectReference: {fileID: 11400000, guid: 9cbcd1d1b3825134680017bd4d4274fa, type: 2}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3474239980616663658}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CreateLaunchEffects
+      objectReference: {fileID: 0}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: YarnCollision, Scripts
+      objectReference: {fileID: 0}
+    - target: {fileID: -5202593958063176576, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: OnCombine.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: -4293314133452894743, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 0
@@ -97,3 +125,14 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 126f444b8fac2704aa3e799e79fa06e7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+--- !u!114 &3474239980616663658 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2495046777849088545, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+  m_PrefabInstance: {fileID: 1339492177556817995}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76dd1c0d838104f69830665014a601de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
