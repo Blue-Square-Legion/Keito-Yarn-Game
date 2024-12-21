@@ -23,6 +23,13 @@ public class ExcessiveForceEffectSO : YarnBallEffectSO
             return;
         }
 
+        if (targetRigidbody.gameObject.TryGetComponent(out ColorController cc)
+            && cc.Color == ball.GetComponent<ColorController>().Color)
+        {
+            Debug.Log($"Did not apply force; balls are combining.");
+            return;
+        }
+
         if (ballRigidbody.velocity.magnitude > velocityThreshold)
         {
             Vector3 multiplicativeForce = ballRigidbody.velocity * forceMultiplier * -1;
