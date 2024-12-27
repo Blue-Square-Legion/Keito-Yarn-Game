@@ -121,6 +121,8 @@ public class SlingShot : MonoBehaviour
 
         }
         // Try having them outside the is held
+        if (InputManager.Input.Player.ResetAim.triggered) ResetSelf();
+
         UpdateRotation();
 
         _forceVector = _force * transform.forward;

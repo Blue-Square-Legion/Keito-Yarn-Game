@@ -8,11 +8,11 @@ public class AddGlow : MonoBehaviour
 
     private Renderer _renderer;
 
-    void Start()
+    void Awake()
     {
         _renderer = GetComponent<Renderer>();
         _renderer.material.SetColor("_EmissionColor", _renderer.material.color * _intensity);
-       
+
     }
 
     public void Toggle()
