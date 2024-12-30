@@ -116,9 +116,11 @@ public class SlingShot : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0) return;
+
         if (_isHeld)
         {
-
+            // Change force vector
         }
 
         // Try having them outside the is held
