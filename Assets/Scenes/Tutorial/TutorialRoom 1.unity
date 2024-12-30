@@ -1825,6 +1825,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 142827655131330919, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+      propertyPath: _cancelTarget
+      value: 
+      objectReference: {fileID: 325238075}
     - target: {fileID: 152972653239147083, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1889,6 +1893,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: TutorialRoom 1
       objectReference: {fileID: 0}
+    - target: {fileID: 979409397251008079, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+      propertyPath: _cancelTarget
+      value: 
+      objectReference: {fileID: 325238073}
     - target: {fileID: 1021918794678639781, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2261,6 +2269,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3015680946388850611, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+      propertyPath: _cancelTarget
+      value: 
+      objectReference: {fileID: 325238074}
     - target: {fileID: 3041285810675773335, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2994,6 +3006,21 @@ PrefabInstance:
 --- !u!1 &325238072 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2217923974736115869, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+  m_PrefabInstance: {fileID: 325238071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &325238073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6193377630539675998, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+  m_PrefabInstance: {fileID: 325238071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &325238074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5190975645328556339, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+  m_PrefabInstance: {fileID: 325238071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &325238075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 355629258735552655, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
   m_PrefabInstance: {fileID: 325238071}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &332505795 stripped
