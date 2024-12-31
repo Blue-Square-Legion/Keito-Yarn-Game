@@ -6148,6 +6148,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 142827655131330919, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+      propertyPath: _cancelTarget
+      value: 
+      objectReference: {fileID: 1451109979}
     - target: {fileID: 208883453566829537, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -6196,6 +6200,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: TutorialRoom 1
       objectReference: {fileID: 0}
+    - target: {fileID: 979409397251008079, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+      propertyPath: _cancelTarget
+      value: 
+      objectReference: {fileID: 1451109978}
     - target: {fileID: 1125963186834692979, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6552,6 +6560,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3015680946388850611, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+      propertyPath: _cancelTarget
+      value: 
+      objectReference: {fileID: 1451109973}
     - target: {fileID: 3041285810675773335, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -7484,6 +7496,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1451109973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5190975645328556339, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+  m_PrefabInstance: {fileID: 1451109968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1451109974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4197659515238862120, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
@@ -7522,6 +7539,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc5a1d180136b74d8d73d0a6766ad4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1451109978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6193377630539675998, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+  m_PrefabInstance: {fileID: 1451109968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1451109979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 355629258735552655, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
+  m_PrefabInstance: {fileID: 1451109968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1451109980 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8536782246522338284, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}

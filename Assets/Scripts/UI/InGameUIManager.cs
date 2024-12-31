@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using Manager.Score;
+using System;
 
 public class InGameUIManager : MonoBehaviour
 {
@@ -103,6 +104,10 @@ public class InGameUIManager : MonoBehaviour
         else if (_confirmationUI.activeSelf)
         {
             OnCloseConfirmation();
+        }
+        else if (_yarnBallViewer.activeSelf)
+        {
+            OnCloseYarnBallViewer();
         }
         else if (!_pauseUI.activeSelf)
         {
@@ -227,10 +232,8 @@ public class InGameUIManager : MonoBehaviour
 
     public void OnPauseGame()
     {
-        if(_gameOverUI.activeSelf) {
-            return;
-        }
-        
+        if (_gameOverUI.activeSelf) return;
+
         OnPauseMenuOpen.Invoke();
         _pauseUI.SetActive(true);
         _gameManager.PauseGame();
@@ -300,6 +303,11 @@ public class InGameUIManager : MonoBehaviour
     {
         _pauseUI.SetActive(true);
         _confirmationUI.SetActive(false);
+    }
+
+    private void OnCloseYarnBallViewer() {
+        _yarnBallViewer.SetActive(false);
+        _pauseUI.SetActive(true);
     }
 
     public void OnBackToMainMenu()

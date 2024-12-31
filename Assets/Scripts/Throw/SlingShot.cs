@@ -116,19 +116,27 @@ public class SlingShot : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0) return;
+
         if (_isHeld)
         {
-
+            // Change force vector
         }
+
         // Try having them outside the is held
+        if (InputManager.Input.Player.ResetAim.triggered) ResetSelf();
+
         UpdateRotation();
 
         _forceVector = _force * transform.forward;
 
-        DrawWithDrag(_forceVector);
-        _currentBall.transform.position = StartOffset;
+        if (_currentBall != null)
+        {
+            DrawWithDrag(_forceVector);
+            _currentBall.transform.position = StartOffset;
 
-        _indicator.transform.position = _lineRenderer.GetPosition(_lineRenderer.positionCount - 1);
+            _indicator.transform.position = _lineRenderer.GetPosition(_lineRenderer.positionCount - 1);
+        }
     }
 
     private void UpdateRotation()
