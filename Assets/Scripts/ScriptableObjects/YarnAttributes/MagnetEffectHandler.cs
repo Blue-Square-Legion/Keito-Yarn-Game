@@ -19,6 +19,8 @@ public class MagnetEffectHandler : MonoBehaviour
         float elapsedTime = 0f;
         GameObject particleObj = Instantiate(particlePrefab, transform);
         particleObj.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);//hard coded but may be able to adjust size later
+        Destroy(particleObj, duration); //Gets rid of the particles after duration
+
         while (elapsedTime < duration)
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, radius, layerMask);
@@ -46,7 +48,6 @@ public class MagnetEffectHandler : MonoBehaviour
             elapsedTime += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
-        Destroy(particleObj);//Gets rid of the particles after duration
         Debug.Log("Magnet Effect Ended");
     }
 }
