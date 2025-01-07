@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wall
+  m_Name: BasementWall
   m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_ValidKeywords:
   - _EMISSIVE_SIMPLE
@@ -516,15 +516,15 @@ Material:
     - _utsVersionY: 10
     - _utsVersionZ: 1
     m_Colors:
-    - _1st_ShadeColor: {r: 0.6494118, g: 0.55529416, b: 0.8, a: 1}
-    - _2nd_ShadeColor: {r: 0.48705885, g: 0.41647062, b: 0.6, a: 1}
+    - _1st_ShadeColor: {r: 0.24947177, g: 0.2282841, b: 0.2830189, a: 1}
+    - _2nd_ShadeColor: {r: 0.120159, g: 0.11276256, b: 0.13207549, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.8117647, g: 0.69411767, b: 1, a: 1}
+    - _BaseColor: {r: 0.17453514, g: 0.15979886, b: 0.1981132, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.8117647, g: 0.69411767, b: 1, a: 1}
+    - _Color: {r: 0.17453514, g: 0.15979886, b: 0.1981132, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
