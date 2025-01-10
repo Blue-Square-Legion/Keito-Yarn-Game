@@ -20,6 +20,7 @@ public class IceCollision : MonoBehaviour
     }
 
     void OnTriggerExit(Collider other) {
+        if (other.gameObject.GetComponent<IceTrail>() == null) return; // don't reset ice values to normal values
         Rigidbody otherRB = other.GetComponentInParent<Rigidbody>();
         otherRB.drag = normalRB.drag;
         otherRB.GetComponentInParent<Rigidbody>().angularDrag = normalRB.angularDrag;

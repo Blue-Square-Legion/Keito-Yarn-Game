@@ -93,11 +93,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8781174676102523480, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: m_Drag
-      value: 0.3
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8781174676102523480, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: m_AngularDrag
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8781174676102523480, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: m_CollisionDetection
@@ -131,4 +131,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: {fileID: 7030297965422215991, guid: 02452d60eb99ef642b58c044890a830a, type: 3}
+  particles: {fileID: 1687378155740214210, guid: f61abdfc43edaa742be82ee93d071d30, type: 3}
   duration: 5

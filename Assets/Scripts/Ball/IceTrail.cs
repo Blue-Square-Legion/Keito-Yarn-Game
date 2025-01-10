@@ -11,6 +11,7 @@ public class IceTrail : MonoBehaviour
     private bool active = false;
 
     [SerializeField] private GameObject point;
+    [SerializeField] private GameObject particles;
     [SerializeField] private float duration;
 
     void Awake()
@@ -58,8 +59,13 @@ public class IceTrail : MonoBehaviour
             Vector3 pos = gameObject.transform.position;
             if (path.Count == 0 || Vector3.Distance(pos, path[path.Count - 1].transform.position) > 0.5f) {
                 GameObject newpoint = GameObject.Instantiate(point, pos, Quaternion.identity);
-                SphereCollider ballCollider = gameObject.GetComponent<SphereCollider>();
-                newpoint.GetComponent<SphereCollider>().radius = ballCollider.radius;
+
+                float radius = gameObject.transform.localScale.x; // any dimension works here because spheres are uniform
+                newpoint.GetComponent<SphereCollider>().radius = radius;
+                GameObject particleObj = GameObject.Instantiate(particles, newpoint.transform);
+                particleObj.transform.localScale *= (2 * radius);
+                Destroy(particleObj, duration);
+
                 path.Add(newpoint);
                 timestamps.Add(timer + duration);
             }
