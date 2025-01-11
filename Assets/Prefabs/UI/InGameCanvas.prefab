@@ -1442,8 +1442,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Any ball that comes into contact with the Cyan Ball will be turned into
-    another Cyan Ball!
+  m_text: Any ball that comes into contact with a cyan ball will be turned into another
+    cyan ball!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfe631acefbb3984a8ad61d5f41c9259, type: 2}
   m_sharedMaterial: {fileID: 3182887998236978296, guid: dfe631acefbb3984a8ad61d5f41c9259, type: 2}
@@ -4763,7 +4763,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Red balls Add a lot force to whatever ball it touches before it stops moving!
+  m_text: Red balls add a lot force to whatever balls they touch before they stop
+    moving!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfe631acefbb3984a8ad61d5f41c9259, type: 2}
   m_sharedMaterial: {fileID: 3182887998236978296, guid: dfe631acefbb3984a8ad61d5f41c9259, type: 2}
@@ -7363,7 +7364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yellow balls will pull other yellow balls towards itself and push non-yellow
+  m_text: Yellow balls will pull other yellow balls towards themselves and push non-yellow
     balls away for a short time!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfe631acefbb3984a8ad61d5f41c9259, type: 2}
@@ -10339,7 +10340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Blue ball
+  m_text: Blue Ball
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfe631acefbb3984a8ad61d5f41c9259, type: 2}
   m_sharedMaterial: {fileID: 3182887998236978296, guid: dfe631acefbb3984a8ad61d5f41c9259, type: 2}
@@ -13178,8 +13179,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your standard Yarn ball. Can combine with other blue yarn balls to make
-    them bigger!
+  m_text: Your standard yarn ball. They can combine with other blue yarn balls to
+    make them bigger!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfe631acefbb3984a8ad61d5f41c9259, type: 2}
   m_sharedMaterial: {fileID: 3182887998236978296, guid: dfe631acefbb3984a8ad61d5f41c9259, type: 2}
@@ -14741,7 +14742,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Green balls sticks to any non-green ball. These can be broken with enough
+  m_text: Green balls stick to any non-green ball. These can be broken with enough
     force!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfe631acefbb3984a8ad61d5f41c9259, type: 2}
