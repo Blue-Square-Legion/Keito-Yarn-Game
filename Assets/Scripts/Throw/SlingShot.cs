@@ -87,6 +87,8 @@ public class SlingShot : MonoBehaviour
         gameSetupPhase = true;
         SetupFirstShot();
 
+        transform.rotation = Quaternion.Euler(22, 0, 0);  // Setting up the rotation of the slingshot. A bit scuffed.
+
         var gameUIManager = FindObjectOfType<InGameUIManager>();
         gameUIManager.UpdateBallsLeft(_remainingYarn);
     }
@@ -123,7 +125,7 @@ public class SlingShot : MonoBehaviour
         // Try having them outside the is held
         if (InputManager.Input.Player.ResetAim.triggered) ResetSelf();
 
-        UpdateRotation();
+        //UpdateRotation();
 
         _forceVector = _force * transform.forward;
 

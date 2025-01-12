@@ -16,7 +16,7 @@ public class MainCameraFlip : MonoBehaviour
         cinemachineBrain = Camera.main.GetComponent<CinemachineBrain>();
         if (cinemachineBrain == null)
         {
-            Debug.LogError("CinemachineBrain not found on the main camera!");
+            //Debug.LogError("CinemachineBrain not found on the main camera!");
         }
     }
 

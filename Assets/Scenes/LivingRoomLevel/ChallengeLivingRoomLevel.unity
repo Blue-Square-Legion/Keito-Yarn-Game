@@ -911,6 +911,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2027691228, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
+      propertyPath: maxDistance
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184288, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -1045,6 +1049,7 @@ PrefabInstance:
     - target: {fileID: 863281095492602002, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: TutorialRoom 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1125963186834692979, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
