@@ -31,7 +31,7 @@ public class ColorChangeEffectSO : YarnBallEffectSO
 
     public override bool ShouldApplyOnCollision()
     {
-        return _handler._isEffectActive;
+        return _handler._isEffectActive && _handler.isGlowing();
     }
     
     public override void ApplyEffect(GameObject ball, Rigidbody ballRigidbody, Rigidbody targetRigidbody)
