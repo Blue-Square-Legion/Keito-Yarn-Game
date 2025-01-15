@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent<GameObject> OnCatSpawn = new();
     public UnityEvent<ColorSO> OnNewColor = new();
 
-    private CameraController cmController;
+    private CMFreeLookFlip cmFreelook;
 
     public enum LevelMode
     {
@@ -123,8 +123,8 @@ public class GameManager : MonoBehaviour
             item.OnCollect.AddListener(UpdateScoreCollectable);
         }
 
-        cmController = FindObjectOfType<CameraController>();
-        if (!cmController) Debug.LogError("cmController not found");
+        cmFreelook = FindObjectOfType<CMFreeLookFlip>();
+        if (!cmFreelook) Debug.LogError("cmfreelook not found");
 
         ResumeGame();
     }
@@ -276,14 +276,14 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
-        if (cmController) cmController.enabled = false;
+        if (cmFreelook) cmFreelook.enabled = false;
         InputManager.SwitchControls(ControlMap.UI);
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        if (cmController) cmController.enabled = true;
+        if (cmFreelook) cmFreelook.enabled = true;
         InputManager.SwitchControls(ControlMap.Player);
     }
 

@@ -58,7 +58,6 @@ public class CameraSettings : MonoBehaviour
 
     private void AdjustSensitivity(float value)
     {
-        /**
         var cmfreelook = FindObjectOfType<CMFreeLookFlip>();
         if (cmfreelook != null)
         {
@@ -67,16 +66,6 @@ public class CameraSettings : MonoBehaviour
         else
         {
             Debug.LogError("no cmfreelook found");
-        }
-        */
-        var camControls = FindObjectOfType<CameraController>();
-
-        if (camControls)
-        {
-            camControls.sensitivity = value;
-        }
-        else {
-            Debug.Log("Could not find CameraController object");
         }
     }
 }

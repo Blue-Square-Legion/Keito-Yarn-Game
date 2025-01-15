@@ -1120,14 +1120,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7069503432326537262, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
-      propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1028827405}
-    - target: {fileID: 7069503432326537262, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
-      propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CameraSettings, Scripts
-      objectReference: {fileID: 0}
     - target: {fileID: 7371806287639985262, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
       propertyPath: m_Interactable
       value: 1
@@ -1551,17 +1543,6 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
---- !u!114 &1028827405 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4579059682518902123, guid: fc5f8689d7b054d9f98a8798ba6c3195, type: 3}
-  m_PrefabInstance: {fileID: 920832281}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7ec4d79ca67e2c48a8969d62945c3f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1079272577
 PrefabInstance:
   m_ObjectHideFlags: 0
