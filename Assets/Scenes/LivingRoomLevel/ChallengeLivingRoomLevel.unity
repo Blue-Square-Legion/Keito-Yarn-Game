@@ -911,6 +911,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2027691228, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
+      propertyPath: maxDistance
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5588047438257184288, guid: 435b8911744a2394685439d73f0fd1e7, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -998,10 +1002,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 142827655131330919, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
-      propertyPath: _cancelTarget
-      value: 
-      objectReference: {fileID: 325238074}
     - target: {fileID: 208883453566829537, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -1050,10 +1050,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: TutorialRoom 1
       objectReference: {fileID: 0}
-    - target: {fileID: 979409397251008079, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
-      propertyPath: _cancelTarget
-      value: 
-      objectReference: {fileID: 325238073}
     - target: {fileID: 1125963186834692979, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1422,10 +1418,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 3015680946388850611, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
-      propertyPath: _cancelTarget
-      value: 
-      objectReference: {fileID: 325238072}
     - target: {fileID: 3041285810675773335, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2340,21 +2332,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
---- !u!1 &325238072 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5190975645328556339, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
-  m_PrefabInstance: {fileID: 325238071}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &325238073 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6193377630539675998, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
-  m_PrefabInstance: {fileID: 325238071}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &325238074 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 355629258735552655, guid: 03055bf8e2c5ceb46a63bb23fbd35593, type: 3}
-  m_PrefabInstance: {fileID: 325238071}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &348447543
 PrefabInstance:
   m_ObjectHideFlags: 0
