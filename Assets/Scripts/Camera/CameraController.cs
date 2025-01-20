@@ -6,7 +6,9 @@ public class CameraController : MonoBehaviour
 {
     public float sensitivity = 2f; // Mouse sensitivity
     public float moveSpeed = 10f; // Speed of movement with keys
-    [SerializeField] private float maxDistance = 7f;
+    // [SerializeField] private float maxDistance = 7f;
+    [SerializeField] private float _xMaxDistance = 7f;
+    [SerializeField] private float _zMaxDistance = 7f;
 
     private float xRotation = 0f; // Current X rotation angle
     private float yRotation = 0f; // Current Y rotation angle
@@ -14,6 +16,7 @@ public class CameraController : MonoBehaviour
     private bool isPaused = false;
 
     private Vector3 focalPoint; // The focal point around which the camera orbits (optional for reference)
+
 
     void Start()
     {
@@ -50,15 +53,13 @@ public class CameraController : MonoBehaviour
 
         transform.position += movement;
 
-        // Ensure the camera doesn't move farther than 10 units from the target
-        if (focalPoint != null)
-        {
-            float currentDistance = Vector3.Distance(transform.position, focalPoint);
-            if (currentDistance > maxDistance)
-            {
-                Vector3 direction = (transform.position - focalPoint).normalized;
-                transform.position = focalPoint + direction * maxDistance;
-            }
-        }
+        // Ensure the camera doesn't move outside rectangular region
+        Vector3 clampedPosition = transform.position; 
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -_xMaxDistance, _xMaxDistance); 
+        clampedPosition.z = Mathf.Clamp(clampedPosition.z, -_zMaxDistance, _zMaxDistance);
+        transform.position = clampedPosition;
+
+
+
     }
 }
