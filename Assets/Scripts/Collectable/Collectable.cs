@@ -61,7 +61,7 @@ public class Collectable : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (_yarnTag.Compare(collision.gameObject))
+        if (_yarnTag.Compare(collision.gameObject) && !_collectableData.isCollected)
         {
             _collectableData.isCollected = true;
             OnCollect.Invoke(_collectableData);
