@@ -44,8 +44,7 @@ GameObject:
   - component: {fileID: 4090236051612699684}
   - component: {fileID: 7897218770134308256}
   - component: {fileID: 8072434704593621136}
-  - component: {fileID: 168181185729128590}
-  - component: {fileID: 3711530373638132022}
+  - component: {fileID: 6281105250059092428}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -134,7 +133,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &168181185729128590
+--- !u!114 &6281105250059092428
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,77 +142,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3053438795244652784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c7b0747c4ff564bab261a57dba2f70, type: 3}
+  m_Script: {fileID: 11500000, guid: db9d191fc895a3148bc9866bfd309d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: {fileID: 11400000, guid: a1d0c64b2d711b1408fdeb64edc363fb, type: 2}
-  _state: 0
-  OnToggleOn:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2770493669475854980}
-        m_TargetAssemblyTypeName: AddGlow, Scripts
-        m_MethodName: EnableGlowEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3711530373638132022}
-        m_TargetAssemblyTypeName: TVAudio, Scripts
-        m_MethodName: PlayOn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnToggleOff:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2770493669475854980}
-        m_TargetAssemblyTypeName: AddGlow, Scripts
-        m_MethodName: DisableGlowEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3711530373638132022}
-        m_TargetAssemblyTypeName: TVAudio, Scripts
-        m_MethodName: PlayOff
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &3711530373638132022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3053438795244652784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fbee83d55dc35e4ea895cab9c7fc9cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  switchables:
+  - {fileID: 7085797002635099860}
 --- !u!1 &4984866465907735898
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +241,8 @@ GameObject:
   - component: {fileID: 2567903681991189846}
   - component: {fileID: 5976253873539489451}
   - component: {fileID: 4103154493091282200}
-  - component: {fileID: 2770493669475854980}
+  - component: {fileID: 3886190720153765872}
+  - component: {fileID: 2895711956508942135}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -323,9 +257,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7085797002635099860}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.6, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
+  m_LocalScale: {x: 0.89999986, y: 0.9, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7175137813518249845}
@@ -381,7 +315,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2770493669475854980
+--- !u!114 &3886190720153765872
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -390,10 +324,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 7085797002635099860}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84318ca259e34594b87cdf44d90fad52, type: 3}
+  m_Script: {fileID: 11500000, guid: e38f6759669cf1b4991bf5316c6c31b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _intensity: 2
+  offMat: {fileID: 2100000, guid: 6d6faf0fbecf85b42b3848ca355199d5, type: 2}
+  onMat: {fileID: 2100000, guid: 73f259e81d48a423498aeecf29ea92fe, type: 2}
+--- !u!114 &2895711956508942135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7085797002635099860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fbee83d55dc35e4ea895cab9c7fc9cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tvOn:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  tvOff:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &7965805931537274574
 GameObject:
   m_ObjectHideFlags: 0
