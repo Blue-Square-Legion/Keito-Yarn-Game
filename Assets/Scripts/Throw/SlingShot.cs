@@ -178,7 +178,7 @@ public class SlingShot : MonoBehaviour
 
     private void Flip_slingshot_pos(InputAction.CallbackContext obj) 
     {
-        _postionOffset = new Vector3(_postionOffset.x, _postionOffset.y, _postionOffset.z * -1);
+        if (!_isHeld) _postionOffset.z *= -1;
     }
 
     //Released
