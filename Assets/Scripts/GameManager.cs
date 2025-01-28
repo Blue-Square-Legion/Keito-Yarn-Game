@@ -108,6 +108,10 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        // Set RNG seed to ensure virtually no exact level repeats; uses current time in UTC
+        int seed = (int) System.DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        Random.InitState(seed);
+
         SetUpChallengeMode();
     }
 
