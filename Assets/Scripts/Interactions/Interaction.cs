@@ -13,4 +13,12 @@ public abstract class Interaction : MonoBehaviour
     private void OnCollisionExit(Collision collision) {
         EndInteract(collision.gameObject);
     }
+
+    private void OnTriggerEnter(Collider other) {
+        Interact(other.gameObject);
+    }
+
+    private void OnTriggerExit(Collider other) {
+        EndInteract(other.gameObject);
+    }
 }

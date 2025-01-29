@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: yarnAttributes
       value: 
       objectReference: {fileID: 11400000, guid: e17d1c430e969e941ae27ce31bdbb38b, type: 2}
+    - target: {fileID: 2871870402261756764, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
+      propertyPath: yarnBallAttributes
+      value: 
+      objectReference: {fileID: 11400000, guid: e17d1c430e969e941ae27ce31bdbb38b, type: 2}
     - target: {fileID: 5146000436537263095, guid: 6f1991215cd624462896b6ad92f28885, type: 3}
       propertyPath: m_RootOrder
       value: 0
